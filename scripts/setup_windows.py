@@ -28,6 +28,7 @@ def main():
              "--require-hashes", "-r", str(root / "requirements.txt")],
             cwd=root, check=True,
         )
+        subprocess.run([str(python), '-m', 'playwright', 'install', 'chromium'], cwd=root, check=True)
         return subprocess.run([str(python), str(root / "run.py")], cwd=root).returncode
     except (OSError, subprocess.CalledProcessError) as error:
         print(f"Setup did not finish: {error}")

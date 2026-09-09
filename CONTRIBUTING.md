@@ -1,6 +1,6 @@
 # Contributing
 
-This edition is in early development. Read the [current status](docs/progress.md) and [design requirements](docs/design.md) before proposing a change. Windows setup and essay collection are available; PDF output and the app come later.
+This edition is in early development. Read the [current status](docs/progress.md) and [design requirements](docs/design.md) before proposing a change. Windows setup, essay collection and sample PDF output are available; the app comes later.
 
 ## Report a problem
 
@@ -20,6 +20,6 @@ python scripts/setup_windows.py
 git diff --check
 ```
 
-For setup changes, also install in a fresh copy whose path contains spaces; do not copy an existing `.venv`. Record actual outcomes. There is no browser app or PDF test suite yet, and Windows checks do not prove iPad reading quality.
+For setup changes, also install in a fresh copy whose path contains spaces; do not copy an existing `.venv`. Record actual outcomes. Run `.\.venv\Scripts\python.exe scripts/check_windows_pdf_setup.py` for the clean-install sample check, and `scripts/check_pdf.py` with an actual PDF path for export checks. There is no browser app yet, and Windows checks do not prove iPad reading quality.
 
 Do not commit downloaded essays, generated books, annotations, personal settings, credentials, or Python environments. The ignore rules cover the current local-data locations. Keep upstream attribution intact and read the [reuse review](docs/upstream/PROVENANCE.md) before adding or distributing third-party assets.

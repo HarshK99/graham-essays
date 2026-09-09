@@ -8,7 +8,7 @@
 
 **Spec:** [Design specification](../../design.md). Read it together with [decisions and evidence](../../decisions.md).
 
-This plan was saved during documentation-only planning. The user authorised Phase 1 on 2026-09-09; its completed work and exact setup commands are recorded in docs/progress.md and docs/windows-setup.md. Phase 2 is complete with user-approved grouping; Phases 3-5 remain unstarted. The writing-plans skill informed the file map, task checklists, and acceptance checks. No additional skills or subagents are required to read this document.
+This plan was saved during documentation-only planning. The user authorised Phase 1 on 2026-09-09; its completed work and exact setup commands are recorded in docs/progress.md and docs/windows-setup.md. Phase 2 is complete with user-approved grouping; Phase 3 awaits iPad review; Phases 4-5 remain unstarted. The writing-plans skill informed the file map, task checklists, and acceptance checks. No additional skills or subagents are required to read this document.
 
 ## Global constraints
 
@@ -99,18 +99,18 @@ At planning time only Markdown documentation existed. Phase 1 added scripts/setu
 
 **Inputs:** Selected essay records, book order, and page settings. **Outputs:** A uniquely named sample PDF and a record of its settings and content.
 
-- [ ] Select a direct PDF tool using a representative sample. Check precise margins, text selection, embedded fonts, links, and bookmarks; do not require an EPUB intermediate.
-- [ ] Include the cover as the first page, without essay handwriting margins, and keep cover selection configurable.
-- [ ] Include a short essay, a long essay, an essay with author notes, and Lisp/code content; cover meaningful images/tables where present.
-- [ ] Define exact page dimensions and outer margins alongside the initial fonts, 14 pt size, 1.45 line height, 30% right space, and 15% bottom space.
-- [ ] Embed permitted font files so the reading device does not substitute a different font. Detect missing fonts visibly.
-- [ ] Keep page titles, page numbers, code, images, and author notes clear of the handwriting areas.
-- [ ] Implement linked contents and section/essay bookmarks. Verify both in the generated PDF rather than assuming the export tool supplies them.
-- [ ] Reject settings that leave no usable text area, and explain the conflicting fields in plain language.
-- [ ] Inspect rendered sample pages on Windows for clipping, unwanted blank pages, broken notes, and unreadable code. Check selectable text and link destinations.
-- [ ] Record the chosen PDF tool and why it passed the sample checks.
-- [ ] Design and inspect a coherent cover, title page, contents, section/essay openings, reading pages, quotations, author notes, and page details. Refine typography and avoid stranded single lines and awkward breaks; judge the sample as a published book with intentional handwriting margins.
-- [ ] Begin skills/book-design/SKILL.md using the available skill-creator instructions at execution time. Capture design rules and a configurable preset as the sample evolves; keep trial settings distinct from user-approved choices. Record iteration feedback in docs/sample-review.md and update the draft accordingly.
+- [x] Select a direct PDF tool using a representative sample. Check precise margins, text selection, embedded fonts, links, and bookmarks; do not require an EPUB intermediate.
+- [x] Include the cover as the first page, without essay handwriting margins, and keep cover selection configurable.
+- [x] Include a short essay, a long essay, an essay with author notes, and Lisp/code content; cover meaningful images/tables where present.
+- [x] Define exact page dimensions and outer margins alongside the initial fonts, 14 pt size, 1.45 line height, 30% right space, and 15% bottom space.
+- [x] Embed permitted font files so the reading device does not substitute a different font. Detect missing fonts visibly.
+- [x] Keep page titles, page numbers, code, images, and author notes clear of the handwriting areas.
+- [x] Implement linked contents and section/essay bookmarks. Verify both in the generated PDF rather than assuming the export tool supplies them.
+- [x] Reject settings that leave no usable text area, and explain the conflicting fields in plain language.
+- [x] Inspect rendered sample pages on Windows for clipping, unwanted blank pages, broken notes, and unreadable code. Check selectable text and link destinations.
+- [x] Record the chosen PDF tool and why it passed the sample checks.
+- [x] Design and inspect a coherent cover, title page, contents, section/essay openings, reading pages, quotations, author notes, and page details. Refine typography and avoid stranded single lines and awkward breaks; judge the sample as a published book with intentional handwriting margins.
+- [x] Begin skills/book-design/SKILL.md using the available skill-creator instructions at execution time. Capture design rules and a configurable preset as the sample evolves; keep trial settings distinct from user-approved choices. Record iteration feedback in docs/sample-review.md and update the draft accordingly.
 - [ ] Ask the user to try reading, highlighting, and handwriting in Preview and Goodnotes on the iPad A16. Record actual feedback and adjust the sample.
 
 **Pass condition:** Windows sample checks pass and the user finds the layout comfortable on the iPad. If device feedback is pending, label the sample unapproved; independent app work may continue, but do not describe the reading experience as validated.
@@ -170,3 +170,14 @@ The full project is complete when all five phase pass conditions are met. Do not
 Delivered 2026-09-09. Added `src/__init__.py` for module commands and `scripts/check_collection.py` for offline collection checks; `config/book.local.json` holds ignored personal overrides. `docs/collection-checks.md` records preservation evidence and companion-document limitations. Original sources, reading fragments, images, companion files and the catalog remain local under `data/`. No extra conversion library was needed.
 
 All Phase 2 checklist outputs are present. The user approved the grouped list on 2026-09-09; Phase 2 is complete. Ten tests pass. The complete Roots of Lisp PostScript companion is preserved but needs conversion before full export; its introduction is not the full article. Read the current progress and collection-check documents before Phase 3. No later-phase checklist is marked complete.
+
+## Phase 3 execution record
+
+- [x] Validate page geometry and bundled fonts in `src/settings.py`, with focused settings tests.
+- [x] Separate print preparation into `src/print_content.py`; preserve wording while repairing tables and linking notes.
+- [x] Render and assemble cover, title, contents, essays and navigation in `src/pdf_builder.py` with `templates/book.css`; save unique PDFs and build records.
+- [x] Add actual PDF verification and a fresh Windows installation check in `scripts/`; inspect output and fix observed layout defects.
+- [x] Draft the reusable book-design skill and update public setup/review/handoff records.
+- [ ] Receive actual iPad feedback and revise/approve the layout.
+
+The 19-page trial uses labelled excerpts in `config/sample-selection.json`; the 110-page proof checks all five pieces in full. See `docs/sample-review.md` and `docs/progress.md` for exact files and evidence. Execution stayed in this session under the phase request. No Phase 4/5 task is complete. The builder's original-text test fixture does not replace Phase 5's independent reusable-skill exercise.

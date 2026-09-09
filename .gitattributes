@@ -1,0 +1,5 @@
+# Preserve downloaded font/licence bytes so recorded fingerprints survive Windows clones.
+assets/fonts/*.ttf -text
+assets/fonts/*LICENSE.md -text
+# The upstream font notices contain intentional original whitespace; keep their bytes.
+assets/fonts/*LICENSE.md whitespace=-blank-at-eol

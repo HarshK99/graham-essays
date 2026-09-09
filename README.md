@@ -2,7 +2,7 @@
 
 A Windows project for turning Paul Graham's essays into a PDF with room to read, highlight, and write handwritten notes. The planned reading trial uses an iPad A16 with Preview or Goodnotes.
 
-Status: Phase 2 complete; grouping approved; setup verification is recorded in [progress](docs/progress.md). The upstream history and cover are preserved, and [the GitHub fork](https://github.com/HarshK99/graham-essays) exists. The collection can be downloaded locally and its proposed sections reviewed. No browser app or generated PDF exists yet.
+Status: the sample PDF builder is available; Phase 3 awaits iPad feedback. Grouping is approved. Generate a local reading trial with a cover, selectable text, navigation and writing margins. The browser app is planned for Phase 4. See [sample review](docs/sample-review.md) and [tested progress](docs/progress.md).
 
 ## Windows setup
 
@@ -15,9 +15,9 @@ python scripts/setup_windows.py
 .\.venv\Scripts\python.exe run.py
 ```
 
-This installs the collection foundation and checks local storage. It does not download essays or open an app. See [Windows setup](docs/windows-setup.md) for details.
+This installs the collection/PDF tools and Chromium, the browser used to print the PDF, and checks local storage. It does not download essays or open an app. See [Windows setup](docs/windows-setup.md) for details.
 
-Expected result: `Windows foundation ready.` Setup has been checked on Windows with Python 3.14.7, including a fresh folder with spaces in its name. Browser, PDF, and iPad checks are still ahead.
+Expected result: `Windows foundation ready.` Setup has been checked on Windows with Python 3.14.7, including a fresh folder with spaces in its name. PDF checks are recorded in the sample review; actual iPad reading and handwriting approval remains pending.
 
 ## Download and organise essays
 
@@ -33,17 +33,35 @@ The first command saves the article index, original pages, reading content and i
 
 Read [the approved essay order](docs/essay-review.md). `config/book.json` holds the approved grouping; copy it to `config/book.local.json` before making personal changes. The catalog command prefers that local file when present. Changing a section or setting `included` to `false` preserves the downloaded original. The current grouping is user-approved; Lisp is last by default. Missing dates are marked rather than guessed.
 
+## Generate a reading trial
+
+After downloading the collection, run:
+
+```powershell
+.\.venv\Scripts\python.exe -m src.pdf_builder
+```
+
+The command prints the new PDF location under `output/` and saves a companion JSON record of its settings and sources. The default trial contains complete short/table essays and labelled excerpts of longer prose and Lisp code, including referenced author notes. Use `--complete-essays` for the longer five-piece proof.
+
+Copy `config/reading-defaults.json` to `config/reading-settings.json` to adjust the trial, then run:
+
+```powershell
+.\.venv\Scripts\python.exe -m src.pdf_builder --settings config/reading-settings.json
+```
+
+Fonts, page dimensions, spacing, writing margins, colours and cover selection are configurable. The default is an original typographic cover; the inherited image remains preserved with unresolved reuse terms. Read [Windows setup](docs/windows-setup.md) for all options and [the iPad trial guide](docs/sample-review.md) for what to check. Keep annotated copies separately: new exports contain no notes from older copies.
+
 ## What is available
 
 | Stage | Status |
 | --- | --- |
 | Windows setup and local storage | Complete |
 | Essay downloads and subject grouping | Complete; grouping approved |
-| Sample PDF and iPad trial | Planned — Phase 3 |
+| Sample PDF and iPad trial | Builder available; awaiting iPad feedback |
 | Local browser app with saved choices | Planned — Phase 4 |
 | Full book and reusable book-design guide | Planned — Phase 5 |
 
-This is an early development version, with no ready-to-read book or app download. The roadmap describes intended behaviour, not features already delivered.
+This is an early development version. Samples are generated locally; a complete book and browser app are not delivered yet. The book-design skill is a draft, to be finalised after design approval.
 
 ## Project documents
 
@@ -66,7 +84,7 @@ This is an early development version, with no ready-to-read book or app download
 - A short sample export for checking the layout on the iPad before building the whole book.
 - Published-book design quality and a reusable book-design skill, refined during sample design and finalised with the finished book.
 
-The planned exporter will create a new file every time. Notes added in Preview or Goodnotes will belong to that particular PDF or app document; new exports will start without those notes.
+The sample exporter creates a new file every time. Notes added in Preview or Goodnotes will belong to that particular PDF or app document; new exports will start without those notes.
 
 ## Starting point
 

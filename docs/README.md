@@ -1,11 +1,12 @@
 # Documentation guide
 
-New here? Start with the [project README](../README.md), then [Windows setup](windows-setup.md). Windows setup and Phase 2 collection tools are available; PDF and app work are still ahead.
+New here? Start with the [project README](../README.md), then [Windows setup](windows-setup.md). Windows setup, collection tools and sample PDF export are available; the browser app is still ahead.
 
 | Document | What it answers |
 | --- | --- |
 | [Windows setup](windows-setup.md) | How do I install and check the current version? |
 | [Essay order](essay-review.md) | Which section is proposed for each essay, and what needs review? |
+| [Sample review](sample-review.md) | Which PDF should I try, and what has been checked? |
 | [Progress](progress.md) | What was actually built and tested, and what comes next? |
 | [Design](design.md) | What should the book and app eventually do? |
 | [Decisions](decisions.md) | Which choices are confirmed, provisional, or unresolved? |

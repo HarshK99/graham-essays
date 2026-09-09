@@ -11,7 +11,7 @@
 | Organisation | Broad subject sections in one book |
 | Lisp placement | End of the main book |
 | Formatting | Good starting defaults, configurable later in the app |
-| Current work | Phase 2 complete on 2026-09-09; grouping approved; no app or PDF yet |
+| Current work | Phase 3 sample builder Windows-checked; iPad feedback pending; no browser app yet |
 | New exports | New files, without notes from previous copies |
 | Cover | Required; retain upstream cover for reuse after checking terms |
 | PDF route | Generate directly from essay content, without EPUB as an intermediate |
@@ -72,3 +72,13 @@ Ten linked author-hosted documents are also saved. The Roots of Lisp page is onl
 The six default sections and all 234 inclusion choices are shipped in `config/book.json`. Five unknown publication dates stay unknown; a printed year stays year-only. A content-based first pass plus review of openings and ambiguous cases produced the proposed grouping, with overlap reasons retained. The user approved this grouping on 2026-09-09. Personal edits belong in ignored `config/book.local.json`, which takes precedence; source data never depends on these choices.
 
 The collector and catalog are command-line tools in this phase. `run.py` still checks the foundation. No new dependencies, PDF tool, app interface or iPad-approved settings have been introduced. See [collection checks](collection-checks.md) and [essay review](essay-review.md).
+
+## Phase 3 implementation — 2026-09-09
+
+Selected Playwright/Chromium for direct PDF printing after native Windows output checks. pypdf supplies explicit section/essay bookmarks, contents destinations and global numbering; PDFium independently renders and checks the PDF. Exact dependencies are locked. See [sample review](sample-review.md) for primary documentation links and actual evidence.
+
+Bundled unmodified Source Serif 4, Source Sans 3 and Source Code Pro files from pinned Adobe repository revisions, with original OFL notices and fingerprints. Fonts used in the final PDFs are embedded. The original typographic cover avoids relying on unconfirmed upstream-image permission; configurable local image covers are supported.
+
+Trial dimensions are 612 × 880 pt with 36 pt margins, 24 pt header/footer bands, 14 pt body at 1.45 line height and 11 pt code. The 19-page trial is explicitly excerpted; the 110-page proof contains complete representative pieces. Both remain local. Source originals are unchanged; table structure is repaired without duplicating words, inspected translation/purchase furniture is recorded as removed, and note-return links are added.
+
+Windows automated and rendered-PDF checks pass. Physical iPad highlighting/handwriting and reading-app preference remain pending. The draft book-design skill captures tested mechanics and iterations; standalone packaging and approved settings remain Phase 5 work. Full Roots of Lisp conversion remains unresolved; the builder explicitly rejects its introduction if selected. No app, full collection or separate skill release is claimed.

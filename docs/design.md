@@ -111,3 +111,9 @@ Acceptance requires a real iPad check: text is comfortable at a useful page view
 ## Export behaviour
 
 Use a new, unique filename for every sample and full export. Store a companion build record with the chosen settings, essay order, source versions, and any exclusions or failures. A new export contains no personal annotations. The original annotated document stays independent in its reading app or saved file.
+
+## Phase 3 trial implementation
+
+The configurable preset now specifies 612 × 880 pt pages, 36 pt outer margins and 24 pt header/footer bands. Source Code Pro at 11 pt is the trial code family. The specified 14 pt body, 1.45 line height and 30%/15% writing reserves remain trial values. An original typographic cover is the default while inherited image terms remain unresolved. Visible numbering matches PDF page positions; the cover has no visible number.
+
+Direct Chromium printing with explicit pypdf navigation passed Windows checks. The short trial uses labelled excerpts plus referenced notes; the longer proof contains the five representative pieces in full. Sample cuts do not alter book inclusion. Short notes stay together; prose uses three-line widow/orphan settings, with actual pages inspected. Read `docs/sample-review.md` for iterations and pending iPad acceptance. No final layout approval is implied.

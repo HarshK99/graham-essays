@@ -4,13 +4,13 @@ Last updated: 2026-09-09
 
 ## Current state
 
-Phase 2 is complete: 234 index entries saved successfully, six approved sections with Lisp last, and a grouped review list. No sources are intentionally excluded. The user approved the grouping on 2026-09-09. The collection includes 10 author-hosted companion files; the complete Roots of Lisp PostScript document is saved but needs conversion before a full export. No browser app, PDF or iPad check exists yet. Phase 1 remains complete.
+Phase 3's sample builder is implemented and Windows-checked. The 19-page trial and 110-page complete five-piece proof are saved locally. Phase 3 awaits actual iPad reading, highlighting and handwriting feedback. Phase 2 remains complete with 234 saved entries and approved grouping. The browser app and full collection edition are not built. The complete Roots of Lisp companion still needs conversion before full export.
 
 | Phase | Status | Evidence / remaining work |
 | --- | --- | --- |
 | 1 — Windows foundation | Complete | Fork and upstream history retained; clean Windows setup and repeat-run checks passed |
 | 2 - Collection and sections | Complete | 234 saved entries; grouping approved by user on 2026-09-09; checks passed |
-| 3 — Sample PDF and iPad trial | Not started | Requires representative essay content; include cover |
+| 3 — Sample PDF and iPad trial | Awaiting user review | 19-page trial and 110-page proof pass Windows checks; iPad feedback pending |
 | 4 — Configurable app | Not started | Requires working sample generation |
 | 5 — Full reading edition | Not started | Requires usable app, reviewed content order and approved layout |
 
@@ -21,7 +21,7 @@ Phase 2 is complete: 234 index entries saved successfully, six approved sections
 - The user will start each phase in a new chat in this same project.
 - `/phase N` and `Start phase N` both mean implement or resume that phase under AGENTS.md.
 - Published-book visual quality is required, alongside the handwriting margins.
-- Phase 3 drafts a reusable book-design skill; Phase 5 finalises, tests, and packages it from the design approved through iteration. No skill has been created or installed yet.
+- Phase 3 drafts a reusable book-design skill; Phase 5 finalises, tests, and packages it from the design approved through iteration. The repository draft exists; it is not installed or separately released.
 
 ## Verification at instruction setup
 
@@ -29,9 +29,9 @@ Documentation-only inspection and local link checks. No phase code, browser work
 
 ## Next action
 
-The user approved [the essay grouping](essay-review.md) and requested Phase 2 closure. No further grouping review is required for the current snapshot.
+Try the actual 19-page PDF named in [sample review](sample-review.md) on the iPad A16 in Preview and Goodnotes. Grouping is already approved. Reading comfort, highlighting, handwriting and app navigation remain pending.
 
-For the next phase, open a new chat in this project and send `Start phase 3`. Read the required project docs plus `docs/collection-checks.md` and `docs/essay-review.md`. Run `.\.venv\Scripts\python.exe scripts/check_collection.py`. Use `writing44.html` for short prose, `greatwork.html` for long prose and notes, the second ANSI Common Lisp chapter for code, `wtax.html` for tables, and `langdes.html` for image handling. Handle `content_scope` and companion records explicitly: `rootsoflisp.html` is an introduction with the full text in saved PostScript, while `lwba.html` has a saved plain-text companion. Do not call an introductory page the complete essay. Strip identified site promotions from typesetting without changing the originals. Draft the book-design skill in Phase 3. Grouping is approved; iPad/layout approval remains pending; do not start Phase 4 automatically.
+To revise, send `Start phase 3` with feedback; read the required project records and `docs/sample-review.md`, adjust personal settings or layout, then export and audit a new file. If the user requests independent app work first, the next command is `Start phase 4`; retain Phase 3's pending review status. Do not start later phases automatically. Resolve full-text companions before the final collection; the current builder rejects introduction-only sources.
 
 ## Phase work log
 
@@ -112,3 +112,35 @@ Final checks: the full collection audit returned `234/234` and `0 issues`; all t
 User feedback: "grouping looks right, close this phase". Marked Phase 2 Complete and saved approval for all 234 current assignments in `config/book.json`. Regenerated the review list with approved status and aligned the README, design, decisions, setup and plan. Topic overlap notes, five unknown dates and linked-document conversion flags are retained. Approval applies to grouping only; no PDF design or iPad approval is implied.
 
 Verification: regenerated the catalog review and checked all 234 choices retain their section and inclusion settings; ran the existing ten tests and whitespace checks. These closeout changes are committed and pushed with the authorised project workflow. Next: `Start phase 3` in a new project chat. Phase 3 has not started.
+
+### 2026-09-09 — Phase 3 implementation; awaiting iPad review
+
+**Outputs:** `src/settings.py`, `src/print_content.py`, `src/pdf_builder.py`, reading defaults and excerpt choices in `config/`, `templates/book.css`, bundled OFL fonts/licences and pinned provenance in `assets/fonts/`, `scripts/check_pdf.py`, `scripts/check_windows_pdf_setup.py`, nine additional tests, and draft `skills/book-design/SKILL.md` with its workflow reference. Updated dependency lock, setup, public guides, design, decisions and plan. The added content-preparation module separates source handling from layout; the excerpt configuration keeps sample cuts separate from approved book inclusion.
+
+**Actual local deliverables:** `output/sample-20260909-145000-91927e03.pdf` (19 pages, 665,885 bytes), `output/sample-20260909-144810-3895d5e9.pdf` (110-page complete five-piece proof), matching build/audit JSON files, and review images in `output/review/final/`. Earlier drafts remain separate files; use the named handoff trial. No generated book or downloaded essay belongs in source sharing.
+
+**Commands and results on native Windows:**
+
+| Command/check | Outcome |
+| --- | --- |
+| `.\.venv\Scripts\python.exe scripts/check_collection.py` | 234/234 saved sources, zero issues before implementation |
+| `.\.venv\Scripts\python.exe -m pip install playwright pypdf pypdfium2 pillow` | Installed native Windows PDF candidates; selected after sample checks |
+| `.\.venv\Scripts\python.exe -m playwright install chromium` | Matching browser available |
+| `uv pip compile requirements.in --python-version 3.14 --generate-hashes --output-file requirements.txt` | Fourteen packages pinned and hashed |
+| `python scripts/setup_windows.py` | Locked installation and readiness passed |
+| `.\.venv\Scripts\python.exe -m src.pdf_builder` | Final 19-page trial generated under a unique name |
+| `.\.venv\Scripts\python.exe -m src.pdf_builder --complete-essays` | Complete five-piece proof generated; not the whole collection |
+| `.\.venv\Scripts\python.exe scripts/check_pdf.py output/sample-20260909-145000-91927e03.pdf` | Zero issues; 18 internal rectangles, one external, 13 outline entries, one image |
+| `.\.venv\Scripts\python.exe scripts/check_pdf.py output/sample-20260909-144810-3895d5e9.pdf` | Zero issues; 78 internal rectangles, four external, 13 outline entries, five images |
+| `.\.venv\Scripts\python.exe -m unittest discover -s tests -v` | Nineteen tests passed, including custom image cover, changed settings and preserving prior exports |
+| `.\.venv\Scripts\python.exe scripts/check_windows_pdf_setup.py` | Fresh Python environment in a spaced Windows path: setup, sample and audit passed; existing per-user Chromium cache reused |
+| `uv run --with pyyaml python C:/Users/acer/.codex/skills/.system/skill-creator/scripts/quick_validate.py skills/book-design` | Skill format valid; the first plain-Python attempt lacked PyYAML, then passed with a temporary validator dependency |
+| Rendered-PDF and destination inspection | Trial pages reviewed; proof boundaries, notes, code, quotation, images, tables and last page inspected; short notes refined to avoid stranded continuations |
+
+The audit caught and prompted fixes for a duplicate table heading and a trailing-ornament page. PDFium's bounded text extraction marks some line-ending hyphens with U+0002; the audit normalises that marker. Serif ink can overhang the left alignment edge, so the left tolerance is 2 pt; writing-area tolerance remains 1 pt. The original slower text-diff diagnostic was replaced with a practical comparison. See `docs/sample-review.md` for design iterations and actual inspection limits.
+
+**Not tested:** manual Windows PDF-reader click/drag interaction, browser app, physical iPad behaviour. The builder's original-text fixture is not Phase 5's independent reusable-skill exercise.
+
+Final source checks: collection still reports 234/234 and zero issues; `pip check` passes; all new local documentation links resolve. Staged scope excludes essays, PDFs and personal settings. Font/licence fingerprints match pinned downloads. `.gitattributes` preserves those exact bytes across Windows clones; original licence trailing whitespace is retained under a narrowly scoped whitespace rule.
+
+**Remaining / exact handoff:** Phase 3 is Awaiting user review, not Complete. Try the named trial using `docs/sample-review.md`; resume with `Start phase 3` and feedback to revise. Independent Phase 4 requires a separate request. Keep the skill a draft until Phase 5 approval, packaging and original-manuscript validation. Inherited cover terms remain unresolved; sample cover is original typography. Roots of Lisp still needs full-text preparation before a whole-collection edition. Source/doc commit and push follow existing authorisation; no separate skill release or essay publication is authorised.
