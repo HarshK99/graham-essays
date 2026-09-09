@@ -2,7 +2,7 @@
 
 A Windows project for turning Paul Graham's essays into a PDF with room to read, highlight, and write handwritten notes. The planned reading trial uses an iPad A16 with Preview or Goodnotes.
 
-Status: saved settings and sample/full PDF commands are available. Phase 3's revised sample and essay grouping are approved. Full-collection checks currently block 11 entries that need print preparation; the exporter reports them before creating a PDF. See [sample review](docs/sample-review.md), [Windows commands](docs/windows-setup.md#saved-choices-and-full-export-phase-4) and [tested progress](docs/progress.md). No app is required.
+Status: The approved compact book contains 224 essays across 1,348 pages (13.6 MB). The user approved the sample design and chose to skip the 10 essays in the final Lisp section. Full-book iPad review remains pending. See [sample review](docs/sample-review.md), [Windows commands](docs/windows-setup.md#saved-choices-and-full-export-phase-4) and [tested progress](docs/progress.md). No app is required.
 
 ## Windows setup
 
@@ -31,7 +31,7 @@ After setup, run in PowerShell:
 
 The first command saves the article index, original pages, reading content and images in `data/`. It pauses between requests and saves progress after every essay. Run it again to retry failures without downloading successful essays again. Use `--refresh` only when you want to fetch the latest index and sources; older source bytes remain saved.
 
-Read [the approved essay order](docs/essay-review.md). `config/book.json` holds the approved grouping; copy it to `config/book.local.json` before making personal changes. The catalog command prefers that local file when present. Changing a section or setting `included` to `false` preserves the downloaded original. The current grouping is user-approved; Lisp is last by default. Missing dates are marked rather than guessed.
+Read [the approved essay order](docs/essay-review.md). `config/book.json` holds the approved grouping; copy it to `config/book.local.json` before making personal changes. The catalog command prefers that local file when present. Changing a section or setting `included` to `false` preserves the downloaded original. The current grouping is user-approved; the 10 essays in the final Lisp section are excluded at the user?s request. Their sources and section assignments are preserved for optional reuse. Missing dates are marked rather than guessed.
 
 ## Generate a reading trial
 
@@ -41,7 +41,7 @@ After downloading the collection, run:
 .\.venv\Scripts\python.exe -m src.pdf_builder
 ```
 
-The command prints the new PDF location under `output/` and saves a companion JSON record of its settings and sources. The default trial contains complete short/table essays and labelled excerpts of longer prose and Lisp code, including referenced author notes. Use `--complete-essays` for the longer five-piece proof.
+The command prints the new PDF location under `output/` and saves a companion JSON record of its settings and sources. The default trial contains complete short/table essays and labelled excerpts of longer prose, including referenced author notes. The current sample has four pieces; use `--complete-essays` for those four pieces in full.
 
 Create `config/reading-settings.json` for personal formatting; it is reused automatically by every sample/full export. Missing fields inherit approved defaults. See [configuration examples and backup/reset steps](config/README.md). You can also choose a settings file explicitly:
 
@@ -60,7 +60,7 @@ Fonts, page dimensions, spacing, writing margins, colours and cover selection ar
 .\.venv\Scripts\python.exe -m src.pdf_builder --full
 ```
 
-The first command lists titles and their stable IDs. The second exports complete Writing, Briefly. `--full --check` checks every included essay without printing; `--full` exports that complete selection using the same saved settings and book order. Unlike `--complete-essays`, `--full` selects all included entries. Both currently report the collection's 11 preparation blockers; no partial book is saved and no entries are silently dropped. Resolving those blockers and verifying the final book belongs to Phase 5.
+The first command lists titles and their stable IDs. The second exports complete Writing, Briefly. `--full --check` checks every included essay without printing; `--full` exports that complete selection using the same saved settings and book order. Unlike `--complete-essays`, `--full` selects all included entries. The shipped selection includes 224 essays and explicitly excludes the 10 Lisp-section entries. Content preparation passes for that selection. Re-enabling either introduction-only Lisp entry still requires its companion text to be prepared; incomplete selected sources fail visibly.
 
 You can ask an agent: “Make the right writing space 20% and export a sample.” It should update the personal file, run these same commands, check the resulting PDF and report its new filename.
 
@@ -74,7 +74,7 @@ You can ask an agent: “Make the right writing space 20% and export a sample.�
 | Saved settings and command-line export workflow | Complete; full export reports remaining content blockers |
 | Full book and reusable book-design guide | Planned — Phase 5 |
 
-This is an early development version. Samples are generated locally; full-export mechanics are tested on an original manuscript, while the final collection PDF is still to come. The book-design skill is a draft, to be finalised and independently validated in Phase 5.
+PDFs are generated locally and excluded from this repository. The [book-design package](skills/book-design/README.md) includes the renderer, fonts, approved preset and an original example; it is prepared for sharing, not separately released. See the progress record for actual output checks and pending device review.
 
 ## Project documents
 
@@ -88,7 +88,7 @@ This is an early development version. Samples are generated locally; full-export
 
 ## Intended result
 
-- One main PDF, divided into broad subject sections, with Lisp essays last.
+- One main PDF, divided into broad subject sections, with the Lisp section currently excluded at the user?s request.
 - A cover, with PDF pages generated directly from essay content.
 - A wide writing margin on the right and a smaller writing area at the bottom of every reading page.
 - No extra blank notes page after each essay.
@@ -108,3 +108,7 @@ Based on [ofou/graham-essays](https://github.com/ofou/graham-essays), revision `
 The essays are Paul Graham's writing. The original cover and its attribution are preserved. No upstream licence was found at the inspected revision, and cover reuse permission remains unconfirmed. This repository does not establish redistribution permission for those materials. See the [source and cover review](docs/upstream/PROVENANCE.md) for the evidence.
 
 Downloaded essays, generated PDFs, personal settings, and local Python environments are excluded from source commits. Sharing this repository is separate from publishing an essay collection.
+
+
+
+Current defaults: **12 pt text, 1.25 line spacing, 25% right writing space and 3.75% bottom space**. Essay images are omitted; contents use 10 pt text in two columns. Tap the top title or page number to return to Contents. See [progress](docs/progress.md) for the current full-book filename and checks.

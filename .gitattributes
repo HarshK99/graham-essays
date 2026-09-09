@@ -3,3 +3,8 @@ assets/fonts/*.ttf -text
 assets/fonts/*LICENSE.md -text
 # The upstream font notices contain intentional original whitespace; keep their bytes.
 assets/fonts/*LICENSE.md whitespace=-blank-at-eol
+
+# The shareable runtime retains the same original font/licence bytes.
+skills/book-design/assets/runtime/assets/fonts/*.ttf -text
+skills/book-design/assets/runtime/assets/fonts/*LICENSE.md -text
+skills/book-design/assets/runtime/assets/fonts/*LICENSE.md whitespace=-blank-at-eol

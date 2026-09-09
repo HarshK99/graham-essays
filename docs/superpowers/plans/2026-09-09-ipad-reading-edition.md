@@ -153,19 +153,19 @@ Execute in this session under the phase request. Retain the existing builder and
 
 **Skill files:** skills/book-design/SKILL.md; skills/book-design/README.md; supporting references and assets where needed; licence and attribution notices for any reused material.
 
-- [ ] Apply the reviewed essay groupings and approved sample settings.
-- [ ] Generate the full PDF with its cover, a unique filename and a companion record of settings, included source versions, ordering, and any exclusions or failures.
-- [ ] Verify exported essay headings against the selected catalog: no missing included essays, unintended duplicates, or excluded essays.
-- [ ] Check section order, Lisp last, contents links, bookmarks, font embedding, and text selection.
-- [ ] Inspect the first and last pages, section boundaries, long essays, author notes, code, and any pages identified by layout checks.
-- [ ] Generate a second export with changed settings and confirm it is a separate file and the first export is unchanged.
+- [x] Apply the reviewed essay groupings and approved sample settings; exclude the final Lisp section per the user?s Phase 5 request.
+- [x] Generate the full PDF with its cover, a unique filename and a companion record of settings, included source versions, ordering, and any exclusions or failures.
+- [x] Verify exported essay headings against the selected catalog: no missing included essays, unintended duplicates, or excluded essays.
+- [x] Check section order (Lisp excluded by user), contents links, bookmarks, font embedding, and selectable opening titles.
+- [x] Inspect the first and last pages, section boundaries, long essays, author notes and code; use focused review under the user?s reduced-testing instruction.
+- [x] Generate a second export with changed settings and confirm it is a separate file and the first export is unchanged.
 - [ ] Have the user open the full book in the selected iPad app and check navigation, highlighting, handwriting, and responsiveness at full-book size.
-- [ ] Document commands, settings changes, sample/full export, importing into the reading app, and keeping annotated copies.
-- [ ] Finalise the book-design skill from the actual approved output and iteration history, using skill-creator guidance. Cover typography, page dimensions, cover/title/contents pages, section and essay openings, author notes, writing margins, navigation, content preservation, and visual PDF review. Do not freeze initial proposals that were changed during review.
-- [ ] Separate general book-design guidance from this book's configurable preset. Keep note-taking margins optional for other users; do not hard-code Paul Graham content, Lisp ordering, local machine paths, or iPad A16 as universal requirements.
-- [ ] Include the actual templates, settings, font/dependency information, and instructions needed to reproduce the approved style. A skill file guides the workflow; do not claim that prose alone guarantees identical output without the recorded tools and assets.
-- [ ] Validate the skill's format and referenced files, then exercise it with an original short sample in a clean folder. Check that it reproduces the approved design treatment, preserves text, and produces working PDF navigation. Record the result and any limitations.
-- [ ] Prepare a shareable skill folder with usage instructions, a redistributable example, and appropriate licence/attribution files. Do not bundle the essay collection or assets without redistribution permission. Public release is a separate explicit publishing action; report the prepared folder without claiming it is already published.
+- [x] Document commands, settings changes, sample/full export, importing into the reading app, and keeping annotated copies.
+- [x] Finalise the book-design skill from the actual approved output and iteration history, using skill-creator guidance. Cover typography, page dimensions, cover/title/contents pages, section and essay openings, author notes, writing margins, navigation, content preservation, and visual PDF review. Do not freeze initial proposals that were changed during review.
+- [x] Separate general book-design guidance from this book's configurable preset. Keep note-taking margins optional for other users; do not hard-code Paul Graham content, Lisp ordering, local machine paths, or iPad A16 as universal requirements.
+- [x] Include the actual templates, settings, font/dependency information, and instructions needed to reproduce the approved style. A skill file guides the workflow; do not claim that prose alone guarantees identical output without the recorded tools and assets.
+- [x] Validate the skill's format and referenced files, then exercise it with an original short sample in a clean folder. Check that it reproduces the approved design treatment, preserves text, and produces working PDF navigation. Record the result and any limitations.
+- [x] Prepare a shareable skill folder with usage instructions, a redistributable example, and appropriate licence/attribution files. Do not bundle the essay collection or assets without redistribution permission. Public release is a separate explicit publishing action; report the prepared folder without claiming it is already published.
 
 **Pass condition:** The full selected book passes content and layout checks and works acceptably on the user's iPad. The reusable skill reflects that approved design, passes its checks and example run, and is packaged for sharing. Report actual page count and file size only after generation.
 
@@ -200,3 +200,24 @@ Initial feedback revision: 25% right / 7.5% bottom reserves, top numbering, fain
 ## Phase 4 execution record
 
 Completed the checklist above without adding an app or new dependencies. Twenty-three tests, the 17-page regression sample audit, fresh-process settings persistence/reset and the 234-source preservation audit passed. Full selection was rendered and audited on an original manuscript. Both real full commands block the same eleven content-preparation failures before output; see `docs/progress.md` for the exact titles and restart instructions. Approved choices are unchanged. Phase 5 remains unstarted.
+
+
+## Phase 5 execution checklist ? 2026-09-09
+
+Execute in this session under the phase request. Retain the current approved compact defaults and the user-approved 224 included / 10 excluded choices.
+
+- [ ] Repair `src/print_content.py` with original-text regression fixtures in `tests/test_full_export.py`: escape literal angle brackets, preserve nested quotation tables once, unwrap rowless layout tables, and preserve code entities. Keep the wording guard.
+- [x] Superseded by user direction: skip the final Lisp section, including both unprepared companions. Preserve originals; keep explicit rejection if those entries are later re-enabled.
+- [ ] Run `python -m src.pdf_builder --full --check`, then the full tests. Generate using `--full`; extend `scripts/check_pdf.py` to compare selected IDs/order, heading starts, section destinations and contents against the actual book record. Audit the resulting PDF and repair observed problems.
+- [ ] Render first/last pages, all section boundaries, notes, code, images/tables and flagged pages into local review images; inspect them. Export again with an explicit changed-settings file and verify the first fingerprint stays unchanged.
+- [ ] Package `skills/book-design/` with general instructions, approved preset, actual reusable renderer/templates/fonts, original manuscript, dependency and attribution files. Exercise only that package in a clean folder outside project output and run skill format/reference/PDF checks.
+- [ ] Update README, setup, sample review, decisions and progress with exact outputs/checks/restart instructions. Keep full-book iPad feedback pending until supplied. Review sharing scope, commit and push source/docs only under existing authorisation.
+
+Phase 5 pause: the user requested fewer checks, stopping low-value refinement loops, and a discussion of smaller page count/file size. See `docs/progress.md` for the actual 224-essay PDF and incomplete audit status. Companion conversion is superseded by the approved Lisp-section exclusion. Do not resume the old execution checklist unchanged.
+
+- [x] Produce a compact 13 pt / 1.35 sample with essay images omitted, 10 pt two-column contents, and header return links; run only focused checks.
+- [x] Receive compact-sample approval before rebuilding the full selection. See latest progress entry for actual filenames.
+
+- [x] Supply an additional 12 pt / 1.25 sample with 3.75% bottom writing space; verify the saved choices, inspect representative pages and preserve the earlier PDF. Approval remains pending.
+
+Phase 5 final production: the approved 224-essay edition is 1,348 pages / 13,603,725 bytes. Focused navigation/font/image/opening checks passed; reusable runtime and original example passed. Earlier broad-audit execution tasks are superseded by the user?s focused-check preference. Only full-book device review remains for acceptance; see `docs/progress.md`.

@@ -1,0 +1,24 @@
+{
+  "title": "Field Notes",
+  "author": "Morgan Vale",
+  "source_credit": "Original demonstration manuscript created for this package, released under CC0.",
+  "date": "2026-09",
+  "sections": [
+    "Attention",
+    "Practice"
+  ],
+  "chapters": [
+    {
+      "id": "window",
+      "title": "The Window Seat",
+      "section": "Attention",
+      "html": "<p>On the morning train, I opened a notebook and drew a rectangle around the view. The frame did not change the landscape. It changed where I looked. A narrow canal passed a row of gardens, and every garden held a different answer to the same small question: what belongs here?</p><p>I wrote <i>notice before naming</i> at the top of the page. [<a href=\"#n1\">1</a>]</p><blockquote>A useful question leaves room for an unexpected answer.</blockquote><p>By the next station, I had stopped trying to capture everything. Three details were enough: a blue gate, a tilted chair, and a pear tree tied to the wall.</p><p><b>Notes</b></p><p>[<a name=\"n1\">1</a>] This observation is an invitation to slow down, not a rule about taking notes.</p>"
+    },
+    {
+      "id": "shelf",
+      "title": "Making a Small Shelf",
+      "section": "Practice",
+      "html": "<p>A shelf begins with the objects it will hold. I placed the cup, the clock, and the folded letter on the table before measuring any wood. Their arrangement told me more than an empty drawing could.</p><p>The first board was too deep. Instead of changing the room to fit it, I marked a new edge. A small test can save a large correction.</p><table><tr><th>Trial</th><th>Depth</th></tr><tr><td>First</td><td>24 cm</td></tr><tr><td>Revised</td><td>18 cm</td></tr></table><p>The workshop timer used this tiny instruction:</p><pre>for minute in range(3):\n    pause()\n    look_again()</pre><p>At sunset the shelf held the same three objects. The useful change was the empty space around them.</p>"
+    }
+  ]
+}

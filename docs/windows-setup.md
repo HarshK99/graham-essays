@@ -78,9 +78,9 @@ Rerun setup after updating to this phase. It installs the pinned PDF libraries a
 .\.venv\Scripts\python.exe -m src.pdf_builder
 ```
 
-The builder prints the exact new filename. A `.json` file beside it records settings, font versions, source fingerprints, order, excerpts, removals and excluded/outside-sample entries. The normal sample is a short trial of five pieces: complete Writing, Briefly and Modeling a Wealth Tax; opening excerpts of How to Do Great Work, Five Questions about Language Design and the second ANSI Common Lisp chapter. Referenced author notes accompany excerpts; return labels are disabled in the approved preset. The complete chapter attribution stays in the code sample.
+The builder prints the exact new filename. A `.json` file beside it records settings, font versions, source fingerprints, order, excerpts, removals and excluded/outside-sample entries. The normal sample is a short trial of four pieces: complete Writing, Briefly and Modeling a Wealth Tax; opening excerpts of How to Do Great Work and Five Questions about Language Design. Referenced author notes accompany excerpts; return labels are disabled in the approved preset.
 
-For the longer proof containing all five complete pieces:
+For the longer proof containing all four complete pieces:
 
 ```powershell
 .\.venv\Scripts\python.exe -m src.pdf_builder --complete-essays
@@ -95,7 +95,7 @@ if (!(Test-Path -LiteralPath config/reading-settings.json)) {
 .\.venv\Scripts\python.exe -m src.pdf_builder --settings config/reading-settings.json
 ```
 
-Copy the preset only the first time, so you retain your changes. Settings files can contain only the fields you want to override. Sizes are PDF points, with 72 points per inch; writing-space fractions use `0.25` for the approved 25% right space and `0.075` for 7.5% bottom space. Available font families are the three bundled Source families. Keep their font files and licence notices in `assets/fonts/`. Invalid geometry, missing fonts and unknown settings produce a visible error.
+Copy the preset only the first time, so you retain your changes. Settings files can contain only the fields you want to override. Sizes are PDF points, with 72 points per inch; writing-space fractions use `0.25` for the approved 25% right space and `0.0375` for 3.75% bottom space. Available font families are the three bundled Source families. Keep their font files and licence notices in `assets/fonts/`. Invalid geometry, missing fonts and unknown settings produce a visible error.
 
 Set `notes_background` to `blank` or `dots`. Set `cover` to `typographic` or the path of a local image you are entitled to use. Relative cover paths are resolved from the project folder. `--essays` accepts saved catalog IDs and exports complete selected pieces in the current book order; it rejects excluded, unknown and repeated IDs. `--output` changes the export folder. Every export has a unique filename and contains no personal annotations.
 
@@ -116,11 +116,11 @@ Every export automatically uses `config/reading-settings.json` when present, wit
 From the project folder, these commands use the same saved settings:
 
 ```powershell
-# Short five-piece trial, with labelled excerpts
+# Short four-piece trial, with labelled excerpts
 .\.venv\Scripts\python.exe -m src.pdf_builder
 # Complete selected essay: Writing, Briefly
 .\.venv\Scripts\python.exe -m src.pdf_builder --essays 3855b9d49700d8423e1e
-# Complete five-piece proof, not the whole collection
+# Complete four-piece proof, not the whole collection
 .\.venv\Scripts\python.exe -m src.pdf_builder --complete-essays
 # Check all included content without creating a PDF
 .\.venv\Scripts\python.exe -m src.pdf_builder --full --check
@@ -136,7 +136,7 @@ Use `--settings config/reading-defaults.json` and/or `--book config/book.json` t
 
 Full exports use `full-<time>-<unique suffix>.pdf`; samples use `sample-<time>-<unique suffix>.pdf`. A matching JSON record stores effective formatting and book choices, essay order, source fingerprints, excerpts if any, intentional exclusions and entries outside the selection. A full export means all **included** entries from the saved catalog; it does not claim to include excluded entries or essays absent from that catalog. Every export starts without personal highlights or handwriting.
 
-The full collection's remaining content blockers are recorded in [progress](progress.md). Keep the approved inclusion choices until the content is prepared, or explicitly choose exclusions for a personal edition. A successful download alone does not establish complete print content. Phase 5 produces and checks the final full collection and handles full-book iPad review.
+The current selection is 224 essays, with all 10 entries in the final Lisp section excluded at the user?s request. Their originals remain saved. The two introduction-only entries still require companion preparation if re-enabled. See [progress](progress.md) for actual full-book checks. Phase 5 remains open until full-book iPad review.
 
 ## Asking an agent for changes
 
@@ -148,3 +148,11 @@ Examples:
 - “Check whether the full book can export with my saved choices.”
 
 The agent should edit the same private files described above, preserve other fields, run the existing builder, audit the actual new PDF and report its filename and any failures. Changing defaults requires an explicit request. Content checks never substitute for a PDF audit or an iPad check. Sources are reused locally; downloading updates is a separate request.
+
+## Approved compact edition
+
+The current defaults use 12 pt essay text, 1.25 line spacing, 25% side and 3.75% bottom writing space, no essay pictures, and 10 pt two-column contents. Tap the title or page number at the top of any numbered page to return to Contents. Text headings previously transcribed from images are retained.
+
+Export with `.\.venv\Scripts\python.exe -m src.pdf_builder --full`, then transfer the newly named PDF to Files on the iPad and open it in Preview or import it into Goodnotes. Keep the older annotated copy under its existing name. A new export contains no old handwriting or highlights. Try a contents entry and the top return link, highlight a sentence, write in both margins and check scrolling at full-book size. Device results are still pending.
+
+For the focused final-edition check, run `.\.venv\Scripts\python.exe scripts/check_navigation.py output/<actual-new-filename>.pdf` with the real filename. This checks selected essays, opening titles, contents/bookmarks/header destinations, embedded fonts and omitted images. It does not compare every word or establish iPad behaviour. The older comprehensive audit may flag generated list numbering and Type 3 glyph fonts; those historical checker limitations do not justify repeated full rebuilds.

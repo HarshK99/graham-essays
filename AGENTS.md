@@ -39,3 +39,14 @@ Preserve these instructions and project docs when bringing in upstream source. R
 Before ending phase work, update docs/progress.md and the corresponding plan checkboxes with changes, checks and outcomes, remaining work, and exact restart instructions. Mark iPad/user review as pending until feedback arrives. Do not run subsequent phases automatically.
 
 The user has authorised committing and pushing this project's work to the GitHub fork for sharing. Keep the public README and relevant setup/documentation guides current as phases are delivered, with a final pass at project completion. Exclude local data, generated books, annotations, credentials, and personal settings. This does not authorise publishing the essay collection or a separate skill release.
+
+## Phase 5 selection change ? 2026-09-09
+
+The user chose to skip Lisp essays rather than spend more effort preparing them. Exclude the 10 entries assigned to `Lisp & Technical Deep Dives`; keep their original files and section choices. The current edition contains 224 essays across the other five sections. Keep the optional Lisp section last if later re-enabled. Clear image-only section headings may be replaced with visually verified text; retain meaningful images.
+
+## Verification preference ? 2026-09-09
+
+The user asked for fewer tests in every phase and no repeated fixing/testing loop for things that can be skipped. Use focused checks for the change and reuse existing evidence. Distinguish a confirmed content problem from a limitation of the checker before doing more work. Do not repeatedly run the whole test suite or rebuild the whole book for low-impact refinements. Prefer a small reviewable sample for layout changes.
+
+
+Latest user change (2026-09-09): omit all essay images, including meaningful pictures, while preserving saved originals and text headings. This supersedes earlier image-retention requirements for this edition. Use smaller two-column contents and clickable top titles/page numbers returning to Contents. Trial 13 pt body / 1.35 spacing in a sample before a full rebuild; final approval is pending.

@@ -2,7 +2,7 @@
 
 Status: Grouping approved by the user. This file contains titles and source links, not essay text.
 
-Sources: 234; successful: 234; failed/pending: 0; intentionally excluded: 0.
+Sources: 234; successful: 234; failed/pending: 0; intentionally excluded: 10.
 
 Dates keep only the precision printed in the opening. Unknown dates appear last in source order. Topic overlaps are marked; grouping approval does not resolve unknown dates or conversion work. Moving or excluding an essay changes book choices only.
 
@@ -261,16 +261,16 @@ Copy `config/book.json` to `config/book.local.json` before personal edits, then 
 
 | Essay | Date | Included | Download | Placement / review |
 | --- | --- | --- | --- | --- |
-| [Programming Bottom-Up](https://paulgraham.com/progbot.html) | 1993 | Yes | success | Content-based grouping approved by user. Also overlaps Programming & Technology. |
-| [Beating the Averages](https://paulgraham.com/avg.html) | 2001-04 | Yes | success | Content-based grouping approved by user. Also overlaps Programming & Technology, Startups & Building Companies. |
-| [The Roots of Lisp](https://paulgraham.com/rootsoflisp.html) | 2001-05 | Yes | success | Content-based grouping approved by user. Also overlaps Programming & Technology. Introduction only in main page; full text is a companion document. Companion: [Complete Article (Postscript)](https://sep.turbifycdn.com/ty/cdn/paulgraham/jmc.ps?t=1772732230&) — success; saved; conversion review required before full export. Companion: [The Code](https://sep.turbifycdn.com/ty/cdn/paulgraham/jmc.lisp?t=1772732230&) — success; ready. |
-| [What Made Lisp Different](https://paulgraham.com/diff.html) | 2001-12 | Yes | success | Content-based grouping approved by user. Also overlaps Programming & Technology. |
-| [Revenge of the Nerds](https://paulgraham.com/icad.html) | 2002-05 | Yes | success | Content-based grouping approved by user. Also overlaps Programming & Technology. Companion: [eval](https://sep.turbifycdn.com/ty/cdn/paulgraham/jmc.lisp?t=1772732230&) — success; ready. |
-| [If Lisp is So Great](https://paulgraham.com/iflisp.html) | 2003-05 | Yes | success | Content-based grouping approved by user. Also overlaps Programming & Technology. Companion: [unlike](https://sep.turbifycdn.com/ty/cdn/paulgraham/acl2.lisp?t=1772732230&) — success; ready. |
-| [Why Arc Isn't Especially Object-Oriented](https://paulgraham.com/noop.html) | Unknown — review | Yes | success | Arc design and object orientation; Lisp-family technical discussion. Grouping approved by user. |
-| [Lisp for Web-Based Applications](https://paulgraham.com/lwba.html) | Unknown — review | Yes | success | Content-based grouping approved by user. Introduction only in main page; full text is a companion document. Companion: [BBN Talk Excerpts (ASCII)](https://sep.turbifycdn.com/ty/cdn/paulgraham/bbnexcerpts.txt?t=1772732230&) — success; ready. |
-| [Chapter 1 of Ansi Common Lisp](https://sep.turbifycdn.com/ty/cdn/paulgraham/acl1.txt?t=1787683699&) | Unknown — review | Yes | success | Common Lisp textbook chapter; publication date not printed in saved text. Grouping approved by user. |
-| [Chapter 2 of Ansi Common Lisp](https://sep.turbifycdn.com/ty/cdn/paulgraham/acl2.txt?t=1787683699&) | Unknown — review | Yes | success | Common Lisp textbook chapter with code; publication date not printed in saved text. Grouping approved by user. |
+| [Programming Bottom-Up](https://paulgraham.com/progbot.html) | 1993 | No | success | Content-based grouping approved by user. Also overlaps Programming & Technology. Excluded at the user's request on 2026-09-09 to skip Lisp essays. |
+| [Beating the Averages](https://paulgraham.com/avg.html) | 2001-04 | No | success | Content-based grouping approved by user. Also overlaps Programming & Technology, Startups & Building Companies. Excluded at the user's request on 2026-09-09 to skip Lisp essays. |
+| [The Roots of Lisp](https://paulgraham.com/rootsoflisp.html) | 2001-05 | No | success | Content-based grouping approved by user. Also overlaps Programming & Technology. Excluded at the user's request on 2026-09-09 to skip Lisp essays. Introduction only in main page; full text is a companion document. Companion: [Complete Article (Postscript)](https://sep.turbifycdn.com/ty/cdn/paulgraham/jmc.ps?t=1772732230&) — success; saved; conversion review required before full export. Companion: [The Code](https://sep.turbifycdn.com/ty/cdn/paulgraham/jmc.lisp?t=1772732230&) — success; ready. |
+| [What Made Lisp Different](https://paulgraham.com/diff.html) | 2001-12 | No | success | Content-based grouping approved by user. Also overlaps Programming & Technology. Excluded at the user's request on 2026-09-09 to skip Lisp essays. |
+| [Revenge of the Nerds](https://paulgraham.com/icad.html) | 2002-05 | No | success | Content-based grouping approved by user. Also overlaps Programming & Technology. Excluded at the user's request on 2026-09-09 to skip Lisp essays. Companion: [eval](https://sep.turbifycdn.com/ty/cdn/paulgraham/jmc.lisp?t=1772732230&) — success; ready. |
+| [If Lisp is So Great](https://paulgraham.com/iflisp.html) | 2003-05 | No | success | Content-based grouping approved by user. Also overlaps Programming & Technology. Excluded at the user's request on 2026-09-09 to skip Lisp essays. Companion: [unlike](https://sep.turbifycdn.com/ty/cdn/paulgraham/acl2.lisp?t=1772732230&) — success; ready. |
+| [Why Arc Isn't Especially Object-Oriented](https://paulgraham.com/noop.html) | Unknown — review | No | success | Arc design and object orientation; Lisp-family technical discussion. Grouping approved by user. Excluded at the user's request on 2026-09-09 to skip Lisp essays. |
+| [Lisp for Web-Based Applications](https://paulgraham.com/lwba.html) | Unknown — review | No | success | Content-based grouping approved by user. Excluded at the user's request on 2026-09-09 to skip Lisp essays. Introduction only in main page; full text is a companion document. Companion: [BBN Talk Excerpts (ASCII)](https://sep.turbifycdn.com/ty/cdn/paulgraham/bbnexcerpts.txt?t=1772732230&) — success; ready. |
+| [Chapter 1 of Ansi Common Lisp](https://sep.turbifycdn.com/ty/cdn/paulgraham/acl1.txt?t=1787683699&) | Unknown — review | No | success | Common Lisp textbook chapter; publication date not printed in saved text. Grouping approved by user. Excluded at the user's request on 2026-09-09 to skip Lisp essays. |
+| [Chapter 2 of Ansi Common Lisp](https://sep.turbifycdn.com/ty/cdn/paulgraham/acl2.txt?t=1787683699&) | Unknown — review | No | success | Common Lisp textbook chapter with code; publication date not printed in saved text. Grouping approved by user. Excluded at the user's request on 2026-09-09 to skip Lisp essays. |
 
 ## Image failures
 

@@ -20,8 +20,7 @@ from .collection import ROOT
 from .print_content import data_url, excerpt, prepare
 from .settings import FONTS, geometry, load, validate
 
-SAMPLE = ['c11523703cab29b2850d', '3855b9d49700d8423e1e', 'b5344f6ddd1c17701bd7',
-          'ed31db79cd9ddc04671b']
+SAMPLE = []
 LINK_BASE = 'https://reading-edition.invalid/'
 
 

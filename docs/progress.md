@@ -4,7 +4,7 @@ Last updated: 2026-09-09
 
 ## Current state
 
-Phase 4's saved-settings and command-line export workflow is complete. Sample/full exports share settings and saved book choices; all-included export is explicit and blocks incomplete content before printing. Phase 3 remains Complete on the user's revised-sample approval; individual iPad interaction results were not reported. All 234 sources remain saved with approved grouping. Full-collection preparation now identifies 11 blockers (listed below); the final collection edition is not built. No app is required.
+The user approved the compact sample and authorised the full build. Current output: `output/full-20260909-173907-6e051f73.pdf`, 224 essays, 1,348 pages, 13,603,725 bytes. That is 618 fewer pages than the previous 1,966-page edition. Settings: 12 pt body / 1.25 spacing / 25% right / 3.75% bottom, no essay pictures, four pages of two-column contents, and top-title/page-number return links. The 10 Lisp-section entries remain explicitly excluded. Full-book device review is pending; Phase 5 is not marked Complete.
 
 | Phase | Status | Evidence / remaining work |
 | --- | --- | --- |
@@ -29,9 +29,7 @@ Documentation-only inspection and local link checks. No phase code, browser work
 
 ## Next action
 
-Open a new chat in this project and send `Start phase 5`. Read the required records plus `docs/sample-review.md`, `docs/windows-setup.md`, and this phase's blocker list below. Run `.\.venv\Scripts\python.exe -m src.pdf_builder --full --check` to reproduce the content blockers. Repair print preparation against preserved originals and prepare both required companion texts; retain the wording guard and approved inclusion choices. Then use `--full` for the actual book, audit it and inspect rendered pages. The full-export branch has been tested on an original manuscript, not on a successfully printed 234-entry collection.
-
-Keep the approved 25% right / 7.5% bottom preset, justified prose, 12 pt notes, top numbering and faint bottom separator as reset defaults. Do not treat either introduction-only essay as its complete article. Phase 5 also records actual full-book device feedback and finalises/tests/packages the draft book-design skill. Do not start it automatically.
+Open `output/full-20260909-173907-6e051f73.pdf` in the preferred iPad app. Try Contents, a top title/page number return link, text highlighting, handwriting in both margins and scrolling at full-book size. Resume with `Start phase 5` and that feedback to close the remaining device review or make a specific change. Do not restart broad audit/refinement loops; use the focused check and existing evidence below.
 
 ## Phase work log
 
@@ -222,3 +220,49 @@ Successful source acquisition and failed print preparation are different results
 Final closeout checks: local Markdown links and `git diff --check` passed; both previously approved PDF fingerprints still match their records. The new sample is 666,798 bytes and matches its record. No `full-*.pdf` exists in the main output folder. Phase 4 checkboxes are complete; Phase 5 checkboxes are untouched. Approved book choices and the reading-default preset have no source changes.
 
 Verified source sharing: commit `8e11b0351a21f837c17716ce52340aa160e0f4ce` was pushed to `origin/ipad-reading-edition`; `git ls-remote origin refs/heads/ipad-reading-edition` matched local HEAD and the working tree was clean. The 16 files contain only source, tests and documentation. PDFs, source downloads, diagnostics and personal settings remain ignored. This follow-up documentation commit records the verified push; no essay collection or separate skill release was published.
+
+
+### 2026-09-09 ? Phase 5 generated; compact-layout discussion
+
+Repaired nine content-preparation blockers without disabling wording comparison: literal angle brackets, nested quotation duplication, rowless layout tables and raw code entities. User chose to skip the 10-entry Lisp section, so both companion conversions were stopped and remain unprepared. Updated shipped inclusion choices and grouped review; originals retained. Visually inspected saved images, transcribed five section headings, and removed duplicate title images/known footer icons. Fixed contents pagination and removed inspected website promotions/labels.
+
+Actual outputs: first draft `output/full-20260909-170109-3d59d4bc.pdf` (1,970 pages, 90,130,363 bytes); revised `output/full-20260909-170856-ab9fe596.pdf` (1,966 pages, 88,968,432 bytes); losslessly compacted new copy `output/full-20260909-171654-caa6fa25.pdf` (1,966 pages, 14,690,581 bytes), with companion build records. Stream compression is now in the builder. A changed-settings four-piece sample at 20% right margin is `output/sample-20260909-171610-020356c5.pdf` (13 pages). That sample is not a smaller-font trial.
+
+Checks actually run: 27 tests passed, then the five focused full-content tests passed after adding image-heading coverage (28 test cases now exist). Full content preparation passed for all 224 included records. Rendered cover/title/contents, every section boundary, representative long essays, notes, pictures and flagged italic edges on Windows. Earlier audit flagged italic ink extending up to 2.89 pt beyond alignment edges, still in the 14 pt gap; recorded a 3 pt horizontal tolerance. No manual PDF-reader or iPad interaction was tested.
+
+The revised full audit (`output/phase5-final-audit.log`) is NOT clean. Remaining flags include Type 3 fonts whose glyph drawings are stored inside the PDF but are not recognised by the checker's font-file rule, and numbered-list labels added by the browser but absent from the checker's plain-text expectation. Diagnostics show inserted list numbers, without detected source-word deletions in those cases. The compacted copy has not received a separate complete audit. These findings are limitations requiring honest reporting, not grounds for claiming clean validation. The user explicitly asked to stop the refinement loop; no further audit or full rebuild should run just to clear these flags.
+
+Prepared `skills/book-design/` with renderer/templates, approved settings, permitted fonts/licences, manuscript adapter and original sample. Skill format validator passed. A separate original manuscript in `../book-design-original-trial-final-20260909/` produced a five-page PDF with a clean audit; another run in `../book-design-original-no-margins-20260909/` demonstrated zero writing margins and also passed. All five original-sample pages were visually inspected. Last stream-compression change still needs refreshing into the packaged runtime before final sharing. No separate skill release or essay publication occurred.
+
+User's latest request: fewer tests per phase; explain and consider reducing the page count/file size. All relevant Python build/check processes had finished when inspected. Current work is uncommitted; source/doc review and authorised GitHub push remain pending. Keep Phase 5 open for the chosen layout, practical device feedback and brief final packaging/handoff work.
+
+
+## Compact sample update - 2026-09-09
+
+User requested no essay images, smaller two-column contents, and a link from the top title/page number back to Contents. Then requested slightly smaller essay text or tighter spacing. Implemented configurable `include_images=false`, `contents_size=10`, `contents_columns=2`; saved a personal trial of 13 pt body text and 1.35 line height in ignored `config/reading-settings.json`. The approved body defaults remain 14 pt / 1.45 until sample review. Writing margins remain 25% / 7.5%. Text headings transcribed from images remain; essay pictures are intentionally omitted and originals retained. The typographic cover remains.
+
+Review sample: `output/sample-20260909-172648-ebf18356.pdf` (13 pages, 220,967 bytes), with matching settings/build record. The whole 224-title list is shown separately in `output/contents-preview-714398a3.pdf` (4 pages). That visual-only preview explicitly uses page numbers from the previous edition; it is not a newly rebuilt book and its entries are not navigation links.
+
+Focused checks only: no image objects in the sample, correct internal Contents destinations on all 12 numbered pages, and image removal from What I Did this Summer (the essay on page 122 of the previous edition). Inspected sample contents/prose and all four dense contents-preview pages. A first short draft exposed numeric rather than page-object header destinations; fixed and regenerated the sample once. No full test suite, full-book rebuild or device test. Exact results are in `output/compact-sample-checks.json`.
+
+Next: user reviews the compact sample, then explicitly agrees on the full rebuild. Phase 5 remains Awaiting user review. Previous full PDFs are unchanged. Sharing/packaged-runtime refresh and final phase closeout remain pending; current source edits are uncommitted.
+
+
+### Smaller sample - 2026-09-09
+
+At the user's request, generated another four-piece sample with 12 pt body text, 1.25 line height and bottom writing space halved from 7.5% to 3.75% (28.5 pt). Right writing space stays 25%; image omission, two-column 10 pt contents and header return links carry forward. Personal settings saved in `config/reading-settings.json`; prior 13 pt / 1.35 settings backed up to `output/reading-settings-before-smaller-9035f4f4.json`. Shipped body defaults remain unchanged pending review.
+
+Output: `output/sample-20260909-173419-b81f54d6.pdf`, 11 pages, 216,531 bytes, versus the previous 13-page sample. Checked effective settings and verified the previous PDF fingerprint remains unchanged. Visually inspected rendered opening, continuation, notes and last page; no full test suite or full-book rebuild. iPad comfort and approval remain pending. Next: review this new sample and choose the preferred settings before rebuilding the whole book.
+
+
+### Approved compact edition delivered - 2026-09-09
+
+User approval: ?cool - go ahead and proceed? accepted the 12 pt / 1.25 / 3.75% bottom sample and authorised full production. Promoted those choices to reset defaults. Actual output: `output/full-20260909-173907-6e051f73.pdf` (224 essays, 1,348 pages, 13,603,725 bytes), with matching build record. Contents is four pages (3-6); every numbered page has the top return link. This saves 618 pages compared with the previous 1,966-page full edition. Ten Lisp-section entries are explicitly excluded; no essay pictures are included. Previous full PDF and approved sample fingerprints still match their original build records.
+
+Commands/checks: `.\.venv\Scripts\python.exe -m src.pdf_builder --full` prepared all 224 selected sources successfully and generated the new file. `.\.venv\Scripts\python.exe scripts/check_navigation.py output/full-20260909-173907-6e051f73.pdf` passed with zero issues: selection/order, every selectable opening title, all contents/section/essay destinations, 1,347 header return links, embedded font data (including Type 3 glyph drawings), and zero reading images. This is a focused check, not an every-word comparison or exhaustive layout audit. No full unit suite or old comprehensive audit was rerun.
+
+Rendered-PDF inspection covered pages 1-7, 78-79, 84, 545-546, 770-771, 796, 819-820, 995-996, 1110-1111, 1171-1172, 1233-1234, 1245 and 1348: full front matter, all section boundaries, representative long prose, notes, tables, code, the previously pictured essay and last page. Review images: `output/review/approved-full/`. No manual Windows-reader click/drag or physical iPad test is claimed.
+
+Refreshed the shareable runtime via `scripts/package_book_design.py`, including approved defaults, current templates, lossless stream compression and correct header links. `skills/book-design/scripts/build_book.py` generated the original manuscript in `../book-design-approved-example-20260909/`; its five-page PDF and audit passed, and metadata correctly identifies the original author. Earlier separate example runs also established optional zero writing margins and visual treatment. The skill format validator passed. Bundled font/licence byte-preservation rules now cover the portable runtime. The package is ready in `skills/book-design/`; it has no essay collection and is not a separate public release.
+
+Remaining: actual full-book iPad navigation/highlighting/handwriting/responsiveness feedback. Phase 5 is Awaiting user review, not Complete. Resume `Start phase 5` with feedback; if acceptable, close the phase without another rebuild or broad test loop. Source/docs are being committed and pushed under existing authorisation; generated PDFs, local sources, annotations and personal settings remain ignored.

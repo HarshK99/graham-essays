@@ -53,3 +53,27 @@ Report which app feels better and whether text or writing space should change. I
 Next: `Start phase 4` in a new project chat to finish the saved-settings and command-line export workflow; do not start automatically. The complete Roots of Lisp companion still needs preparation before full-collection export; the builder refuses to label its introduction a complete essay.
 
 Phase 4 regression check, 2026-09-09: `output/sample-20260909-153709-7413129a.pdf` is a new 17-page export using the same approved defaults. Its PDF audit passes all five text checks with zero issues. No new visual or device review was performed; sample approval still refers to the Phase 3 file above. Phase 4 is complete; next is `Start phase 5`, including the full preparation blockers listed in `docs/progress.md`.
+
+
+## Compact sample update - 2026-09-09
+
+User requested no essay images, smaller two-column contents, and a link from the top title/page number back to Contents. Then requested slightly smaller essay text or tighter spacing. Implemented configurable `include_images=false`, `contents_size=10`, `contents_columns=2`; saved a personal trial of 13 pt body text and 1.35 line height in ignored `config/reading-settings.json`. The approved body defaults remain 14 pt / 1.45 until sample review. Writing margins remain 25% / 7.5%. Text headings transcribed from images remain; essay pictures are intentionally omitted and originals retained. The typographic cover remains.
+
+Review sample: `output/sample-20260909-172648-ebf18356.pdf` (13 pages, 220,967 bytes), with matching settings/build record. The whole 224-title list is shown separately in `output/contents-preview-714398a3.pdf` (4 pages). That visual-only preview explicitly uses page numbers from the previous edition; it is not a newly rebuilt book and its entries are not navigation links.
+
+Focused checks only: no image objects in the sample, correct internal Contents destinations on all 12 numbered pages, and image removal from What I Did this Summer (the essay on page 122 of the previous edition). Inspected sample contents/prose and all four dense contents-preview pages. A first short draft exposed numeric rather than page-object header destinations; fixed and regenerated the sample once. No full test suite, full-book rebuild or device test. Exact results are in `output/compact-sample-checks.json`.
+
+Next: user reviews the compact sample, then explicitly agrees on the full rebuild. Phase 5 remains Awaiting user review. Previous full PDFs are unchanged. Sharing/packaged-runtime refresh and final phase closeout remain pending; current source edits are uncommitted.
+
+
+### Smaller sample - 2026-09-09
+
+At the user's request, generated another four-piece sample with 12 pt body text, 1.25 line height and bottom writing space halved from 7.5% to 3.75% (28.5 pt). Right writing space stays 25%; image omission, two-column 10 pt contents and header return links carry forward. Personal settings saved in `config/reading-settings.json`; prior 13 pt / 1.35 settings backed up to `output/reading-settings-before-smaller-9035f4f4.json`. Shipped body defaults remain unchanged pending review.
+
+Output: `output/sample-20260909-173419-b81f54d6.pdf`, 11 pages, 216,531 bytes, versus the previous 13-page sample. Checked effective settings and verified the previous PDF fingerprint remains unchanged. Visually inspected rendered opening, continuation, notes and last page; no full test suite or full-book rebuild. iPad comfort and approval remain pending. Next: review this new sample and choose the preferred settings before rebuilding the whole book.
+
+## Approved compact full book - 2026-09-09
+
+The user approved the 12 pt / 1.25 / 3.75% bottom sample and requested the full build. Latest file: `output/full-20260909-173907-6e051f73.pdf`, 1,348 pages, 13,603,725 bytes, with 224 included essays and 10 explicit Lisp-section exclusions. Contents occupies pages 3-6; the first essay starts on page 7. Every numbered page has a top return link to Contents. No essay images are included; source originals remain local and intact.
+
+Rendered Windows review covered all front matter, every section boundary, long prose, notes, tables, code, the formerly pictured essay and the last page. Device interactions remain pending. Try Contents, the top return links, highlighting, handwriting and scrolling in your preferred iPad app. Keep annotated copies independently from future exports.

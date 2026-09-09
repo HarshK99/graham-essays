@@ -1,24 +1,26 @@
-# Approved sample workflow - skill package still a draft
+# Production workflow and approved preset
 
-This reference applies to the surrounding reading-edition repository. The draft skill is not yet a standalone reproduction package. Phase 5 will supply the approved preset/templates and exercise it in a separate clean folder.
+Use the packaged runtime for reproduction. Playwright/Chromium prints HTML directly to PDF; pypdf joins chapters, installs contents destinations and nested bookmarks, then overlays global page numbers. PDFium independently reads text positions and renders pages. Exact package versions are locked in [requirements.txt](../assets/runtime/requirements.txt).
 
-The actual engine is Python Playwright controlling Chromium's direct HTML-to-PDF print path. pypdf joins essay PDFs, installs the section/essay outline and contents destinations, and overlays global page numbers. PDFium renders pages and reads text positions for verification. See the repository's locked `requirements.txt`, `templates/book.css`, `src/print_content.py`, `src/pdf_builder.py`, and `scripts/check_pdf.py`.
+The approved preset is 612 ? 880 pt, 36 pt outer margins, 24 pt header/footer bands, Source Serif 4 at 12 pt and 1.25 line height, 10 pt paragraph spacing, Source Sans 3 labels, and Source Code Pro at 11 pt. Notes are 12 pt. Justified prose has automatic word breaks and left-aligned final lines. At those dimensions, the 540 ? 760 pt usable area yields a 391 ? 731.5 pt reading column, 14 pt gap, 135 pt side space (25%) and 28.5 pt bottom space (3.75%). Handwriting areas are optional for other books.
 
-The trial preset is `config/reading-defaults.json`: 612 × 880 pt, 36 pt outer margins, 24 pt header/footer bands, Source Serif 4 at 14 pt with 1.45 line height, 10 pt paragraph spacing, Source Sans 3 labels, and Source Code Pro at 11 pt. The 540 × 760 pt usable area yields a 391 × 703 pt reading column, 14 pt gap, 135 pt side notes (25%), and 57 pt bottom notes (7.5%). These are adjustable trial values, not universal book dimensions.
+The typographic cover uses the same families. The title page, contents, chapter openings, quotations and page details follow the bundled `book.css`. Section openings share the first chapter's page. Each chapter starts a new page. Contents and bookmarks have two levels. Notes remain in the text column; note-return labels are off. Page number and title share the top line; the bottom writing area has a faint divider. No blank notes pages are inserted.
 
-Fonts and original OFL licences are bundled in `assets/fonts/`; `manifest.json` records exact upstream revisions and file fingerprints. Font embedding and missing-file failures must be checked after changing families. The upstream image cover is preserved separately and is not part of the permitted skill asset package.
+## Iteration evidence
 
-From the repository folder on Windows:
+The first trial had 30% side and 15% bottom space, left-aligned prose, larger notes and return labels. User feedback changed these to 25%, 7.5%, justification, 12 pt notes, top numbering, a faint bottom divider and no return labels. The revised sample was approved on 2026-09-09. Detailed iPad interactions were not reported; whole-book device review remains separate.
 
-```powershell
-python scripts/setup_windows.py
-.\.venv\Scripts\python.exe -m src.pdf_builder
-.\.venv\Scripts\python.exe scripts/check_pdf.py output/<actual-new-filename>.pdf
-```
+Production content repairs preserve literal angle brackets, nested quotations once, prose inside broken layout tables and raw code entities. Image-only headings may be transcribed after visual inspection; compare the text to the actual image and record the change. Duplicate title graphics are unnecessary when the book already supplies a text heading. Meaningful pictures stay pictures.
 
-The normal sample uses explicitly labelled opening excerpts plus their linked notes for long material, and complete short/table essays. `--complete-essays` creates the longer five-piece proof. `--settings config/reading-settings.json` applies personal JSON overrides. `--essays <saved-id> ...` uses complete selected pieces in the configured book order. All commands require saved source data; this draft does not bundle a manuscript.
+## Reproduction and checking
 
-Read `docs/sample-review.md` for observed iterations and user approval. Review first/last pages, every section boundary, notes, code, images, tables and the audit's sparse-page list. In Phase 5, separate general manuscript adapters from collection-specific rules, copy the approved style resources into the package, and test with original writing outside `output/`.
+Use the commands and manuscript schema in [README.md](../README.md). The package's small manuscript adapter passes explicit author, book title and section names to the same renderer, so no particular author, topic order or device is required. It uses original text only, without collection downloads or old conversion tools.
+
+Font files are unmodified Adobe Source releases; exact origins and fingerprints are in [the font manifest](../assets/runtime/assets/fonts/manifest.json). Preserve all OFL files. Dependency installation includes Chromium; export itself uses embedded assets and blocks network requests. Do not substitute another browser version and assume identical pagination.
+
+Review [the checklist](review-checklist.md) after every design change. The audit checks wording, font embedding, geometry, selection order, headings, navigation, sparse pages and personal annotations. The full PDF is the page-layout preview. Windows automation and rendered-page review cannot establish physical iPad highlighting or writing comfort.
 
 
-Initial feedback revision: justified prose with automatic word breaks, 12 pt notes, no return labels, title and number on the same top line, and a faint bottom separator only. This replaces the first 30%/15% left-aligned trial; the user approved the revised layout on 2026-09-09. Detailed device interactions were not reported.
+Final sample approval (2026-09-09): after the earlier 14 pt trial, the user approved 12 pt body text, 1.25 line height and 3.75% bottom space, retaining 25% right space. Essay images are omitted at this user?s request, while transcribed headings remain. The configurable preset uses 10 pt, two-column contents. The top title/number area on every numbered page links to the first Contents page. These choices describe this preset, not universal manuscript rules. Restore images with `include_images: true` when the manuscript needs them. Whole-book physical-device checks remain pending.
+
+Validation record: the refreshed package produced its original five-page manuscript in a separate clean folder after the final preset/header-link changes, and its PDF audit passed. The collection?s final 224-entry export has 1,348 pages; focused selection, navigation, opening-title, font and image checks passed. Whole-book device interaction remains untested. No generated collection is included in this package.

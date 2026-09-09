@@ -28,7 +28,7 @@ The user removed the app requirement on 2026-09-09. Run the Python commands dire
 
 The cover is the first page and does not need handwriting margins. Cover selection should be configurable. The reading-page rules below apply to essay and author-note pages.
 
-The user approved these revised sample settings and closed Phase 3 on 2026-09-09. They remain adjustable. Approval does not establish which device interactions were tested.
+The user approved a more compact Phase 5 sample on 2026-09-09 and requested the full export. These are the current reset defaults. Approval does not establish which device interactions were tested.
 
 | Setting | Approved sample default |
 | --- | --- |
@@ -36,15 +36,15 @@ The user approved these revised sample settings and closed Phase 3 on 2026-09-09
 | Page proportions | Approximately the iPad A16 display proportions; refine using the actual app viewport |
 | Essay font | Source Serif 4 |
 | Section labels and page details | Source Sans 3 |
-| Body size | 14 pt at the selected PDF page dimensions |
-| Line height | 1.45 times the body size |
+| Body size | 12 pt at the selected PDF page dimensions |
+| Line height | 1.25 times the body size |
 | Alignment | Justified prose with automatic word breaks; final lines stay left aligned |
 | Text and background | Dark text on white |
 | Right writing area | 25% of usable page width |
-| Bottom writing area | 7.5% of usable page height |
+| Bottom writing area | 3.75% of usable page height |
 | Writing background | Blank, with a very faint bottom separator only |
 | Essay opening | Start each essay on a new page |
-| Page details | Small essay title and page number on the same top line |
+| Page details | Small essay title and page number on the same top line; both return to Contents when tapped |
 | Author notes | 12 pt, with links to notes and no return labels |
 
 Usable page space means the area inside the outer margins, header, and footer. Reserve the bottom writing area first, then split the remaining area between essay text and right-side notes. Leave a small gap between text and handwriting space. This keeps the two writing areas from being counted twice.
@@ -122,3 +122,12 @@ Direct Chromium printing with explicit pypdf navigation passed Windows checks. T
 ## Phase 4 workflow implementation
 
 Sample and full exports now automatically reuse personal settings and book choices, with explicit file overrides and documented backup/reset commands. `--full` selects every included essay without sample cuts; `--check` prepares that selection without printing and reports all preparation failures. Full output uses its own unique filename prefix and saves effective book choices alongside settings and source evidence. See `docs/windows-setup.md` and `config/README.md` for commands. Full-collection content preparation has explicit blockers recorded in `docs/progress.md`; successful command tests do not establish final-book layout or device approval.
+
+## Phase 5 selection change ? 2026-09-09
+
+The user chose to skip Lisp essays rather than spend more effort preparing them. Exclude the 10 entries assigned to `Lisp & Technical Deep Dives`; keep their original files and section choices. The current edition contains 224 essays across the other five sections. Keep the optional Lisp section last if later re-enabled. Clear image-only section headings may be replaced with visually verified text; retain meaningful images.
+
+
+Latest user change (2026-09-09): omit all essay images, including meaningful pictures, while preserving saved originals and text headings. This supersedes earlier image-retention requirements for this edition. Use smaller two-column contents and clickable top titles/page numbers returning to Contents. Trial 13 pt body / 1.35 spacing in a sample before a full rebuild; final approval is pending.
+
+Current compact sample accepted: `sample-20260909-173419-b81f54d6.pdf` (12 pt / 1.25 / 3.75% bottom) is approved. Keep essay images omitted and 10 pt two-column contents. The 14 pt values in historical Phase 3 implementation notes describe earlier output.

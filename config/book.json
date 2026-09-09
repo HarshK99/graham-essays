@@ -1590,12 +1590,12 @@
     },
     "873c35645f64ce2d8032": {
       "section": "Lisp & Technical Deep Dives",
-      "included": true,
+      "included": false,
       "secondary_topics": [
         "Programming & Technology"
       ],
       "review_required": false,
-      "reason": "Content-based grouping approved by user. Also overlaps Programming & Technology."
+      "reason": "Content-based grouping approved by user. Also overlaps Programming & Technology. Excluded at the user's request on 2026-09-09 to skip Lisp essays."
     },
     "9641c9d7a158bb67d136": {
       "section": "Programming & Technology",
@@ -1636,12 +1636,12 @@
     },
     "4c8e08e8bd00f258c08f": {
       "section": "Lisp & Technical Deep Dives",
-      "included": true,
+      "included": false,
       "secondary_topics": [
         "Programming & Technology"
       ],
       "review_required": false,
-      "reason": "Content-based grouping approved by user. Also overlaps Programming & Technology."
+      "reason": "Content-based grouping approved by user. Also overlaps Programming & Technology. Excluded at the user's request on 2026-09-09 to skip Lisp essays."
     },
     "b4434856f6918768e576": {
       "section": "Programming & Technology",
@@ -1668,19 +1668,19 @@
     },
     "3d8f2b3c9161e2614455": {
       "section": "Lisp & Technical Deep Dives",
-      "included": true,
+      "included": false,
       "secondary_topics": [],
       "review_required": false,
-      "reason": "Arc design and object orientation; Lisp-family technical discussion. Grouping approved by user."
+      "reason": "Arc design and object orientation; Lisp-family technical discussion. Grouping approved by user. Excluded at the user's request on 2026-09-09 to skip Lisp essays."
     },
     "8d92b4136ece285e13df": {
       "section": "Lisp & Technical Deep Dives",
-      "included": true,
+      "included": false,
       "secondary_topics": [
         "Programming & Technology"
       ],
       "review_required": false,
-      "reason": "Content-based grouping approved by user. Also overlaps Programming & Technology."
+      "reason": "Content-based grouping approved by user. Also overlaps Programming & Technology. Excluded at the user's request on 2026-09-09 to skip Lisp essays."
     },
     "fde46314dc93038c40b3": {
       "section": "Programming & Technology",
@@ -1693,12 +1693,12 @@
     },
     "bd06b77c3ca90aff1c4b": {
       "section": "Lisp & Technical Deep Dives",
-      "included": true,
+      "included": false,
       "secondary_topics": [
         "Programming & Technology"
       ],
       "review_required": false,
-      "reason": "Content-based grouping approved by user. Also overlaps Programming & Technology."
+      "reason": "Content-based grouping approved by user. Also overlaps Programming & Technology. Excluded at the user's request on 2026-09-09 to skip Lisp essays."
     },
     "ed31db79cd9ddc04671b": {
       "section": "Programming & Technology",
@@ -1723,45 +1723,45 @@
     },
     "ae1b2e08aa01ded23ee6": {
       "section": "Lisp & Technical Deep Dives",
-      "included": true,
+      "included": false,
       "secondary_topics": [
         "Programming & Technology",
         "Startups & Building Companies"
       ],
       "review_required": false,
-      "reason": "Content-based grouping approved by user. Also overlaps Programming & Technology, Startups & Building Companies."
+      "reason": "Content-based grouping approved by user. Also overlaps Programming & Technology, Startups & Building Companies. Excluded at the user's request on 2026-09-09 to skip Lisp essays."
     },
     "e34d340bf9b9003f5a85": {
       "section": "Lisp & Technical Deep Dives",
-      "included": true,
+      "included": false,
       "secondary_topics": [],
       "review_required": false,
-      "reason": "Content-based grouping approved by user."
+      "reason": "Content-based grouping approved by user. Excluded at the user's request on 2026-09-09 to skip Lisp essays."
     },
     "dc3f452dc7e415ffee7d": {
       "section": "Lisp & Technical Deep Dives",
-      "included": true,
+      "included": false,
       "secondary_topics": [
         "Programming & Technology"
       ],
       "review_required": false,
-      "reason": "Common Lisp textbook chapter; publication date not printed in saved text. Grouping approved by user."
+      "reason": "Common Lisp textbook chapter; publication date not printed in saved text. Grouping approved by user. Excluded at the user's request on 2026-09-09 to skip Lisp essays."
     },
     "d650febe466d594d32b3": {
       "section": "Lisp & Technical Deep Dives",
-      "included": true,
+      "included": false,
       "secondary_topics": [],
       "review_required": false,
-      "reason": "Common Lisp textbook chapter with code; publication date not printed in saved text. Grouping approved by user."
+      "reason": "Common Lisp textbook chapter with code; publication date not printed in saved text. Grouping approved by user. Excluded at the user's request on 2026-09-09 to skip Lisp essays."
     },
     "b36dbde123e593a59fe2": {
       "section": "Lisp & Technical Deep Dives",
-      "included": true,
+      "included": false,
       "secondary_topics": [
         "Programming & Technology"
       ],
       "review_required": false,
-      "reason": "Content-based grouping approved by user. Also overlaps Programming & Technology."
+      "reason": "Content-based grouping approved by user. Also overlaps Programming & Technology. Excluded at the user's request on 2026-09-09 to skip Lisp essays."
     },
     "9a35bcce0aa72dfbb138": {
       "section": "Society, Wealth & Power",

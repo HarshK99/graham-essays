@@ -5,13 +5,13 @@ description: Design and refine a book PDF from a manuscript, including typograph
 
 # Book design
 
-This is a draft, informed by a Windows reading-edition trial. The user approved the revised sample layout on 2026-09-09; specific device interactions were not reported. Standalone validation and packaging remain Phase 5 work. Read [the trial workflow](references/trial-workflow.md) when using this repository's builder; other manuscripts may need a different content adapter.
+This package captures the user-approved reading design and its tested Windows PDF workflow. Read [the production workflow](references/trial-workflow.md) to reproduce it with the bundled renderer and original manuscript. The preset is optional; full-book device acceptance is separate from sample design approval. The package is prepared for sharing, not separately published.
 
 Start with the actual manuscript and the reader's intended page view. Choose page dimensions together with type size; points alone cannot establish reading comfort. Establish one typographic hierarchy spanning cover, title page, contents, section openings, essay/chapter openings, body, notes, and page details. Use an original typographic cover when no permitted image is available.
 
 For optional handwriting space, reserve bottom space first, then divide the remaining width between text, a gap, and side notes. Keep author notes in the reading column. Place page details outside the usable writing areas. A manuscript without handwriting requirements can use zero writing-space fractions; do not impose this project's device or section choices.
 
-Keep body text selectable and embed permitted fonts, including italic and emphasis variants. Preserve the source's wording, punctuation, emphasis, code indentation, tables, meaningful images and attribution. Separate site promotions from author content using inspected evidence, and record each removal. Label excerpts and carry their referenced notes into the sample. Make note-return labels optional. Reject incomplete sources visibly.
+Keep body text selectable and embed permitted fonts, including italic and emphasis variants. Preserve the source's wording, punctuation, emphasis, code indentation, tables and attribution. Preserve meaningful images unless the user explicitly chooses to omit them; record those omissions. Separate site promotions from author content using inspected evidence, and record each removal. Label excerpts and carry their referenced notes into the sample. Make note-return labels optional. Reject incomplete sources visibly.
 
 Avoid shrinking text to meet a page count. Reflow prose, retain code structure, wrap long code visibly, and inspect any wrapping that could change its interpretation. Keep headings with following content; use at least three-line widow/orphan control for ordinary paragraphs. Inspect actual rendered pages for isolated headings, note markers, sparse continuations and awkward table breaks.
 
@@ -21,4 +21,4 @@ Generate directly to PDF with the tested engine. Verify the exported file indepe
 
 Export to new filenames with companion records of settings, source versions, excerpt boundaries, and tool versions. Keep annotated copies independent. Record each design iteration and distinguish automated checks, visual PDF inspection, and actual reader/device feedback.
 
-Finalise reusable settings and assets only from the approved design. Validate the workflow on a separate original manuscript before packaging. Include only permitted assets; preparing a shareable folder does not publish it.
+Keep the reusable preset aligned with approved design changes. After changing the renderer, exercise the original manuscript in a new folder and inspect the resulting pages. Use the schema and commands in [README.md](README.md); read [the review checklist](references/review-checklist.md) for acceptance checks. Include only permitted assets; preparing a shareable folder does not publish it.

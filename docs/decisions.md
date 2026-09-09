@@ -11,7 +11,7 @@
 | Organisation | Broad subject sections in one book |
 | Lisp placement | End of the main book |
 | Formatting | Approved defaults, configurable through saved files, commands or agent requests |
-| Current work | Phase 4 command-line workflow complete; Phase 5 full book and reusable skill next |
+| Current work | Phase 5 in progress; 224-essay selection, excluding the final Lisp section |
 | New exports | New files, without notes from previous copies |
 | Cover | Required; retain upstream cover for reuse after checking terms |
 | PDF route | Generate directly from essay content, without EPUB as an intermediate |
@@ -24,8 +24,8 @@ Additional confirmed deliverable: a reusable book-design skill, drafted during P
 ## Approved sample defaults and workflow
 
 - Source Serif 4 body text and Source Sans 3 labels.
-- 14 pt body text, line height 1.45, justified prose, white background; 12 pt author notes.
-- Right notes area 25% of usable width; bottom area 7.5% of usable height, with a faint bottom separator. Title and page number share the top line; no note-return labels.
+- Current approved body text is 12 pt with 1.25 line height, justified prose, white background; 12 pt author notes.
+- Right notes area 25% of usable width; bottom area 3.75% of usable height, with a faint bottom separator. Title and page number share the top line; no note-return labels.
 - Six sections listed in the design specification, with chronological order within each.
 - Windows command-line tools with saved configuration files; an agent can edit choices and run exports. No browser or desktop app is required.
 
@@ -99,3 +99,12 @@ Retained the working PDF builder and catalog. Personal reading settings now load
 Added `--full` for all included essays without excerpts, and `--check` for content preparation without printing. `--essays` still selects complete pieces, while `--complete-essays` still means the complete default five-piece proof. `src.catalog --list` gives titles and stable IDs without rewriting any files. Full PDFs have their own filename prefix, accurate front matter, and effective book choices in the build record.
 
 Both full modes report every selected preparation failure and refuse partial output. The current collection has 11 blockers: two required companions and nine wording-preservation failures. These are explicit Phase 5 preparation work, not silent exclusions or evidence of lost original sources; the collection audit still passes all 234 entries. The original manuscript test proves the full-export command with moved sections, private settings and an excluded failed entry. It does not prove the final collection or replace Phase 5's separate reusable-skill exercise. See [progress](progress.md) for exact blockers, commands and output evidence.
+
+## Phase 5 user steering ? 2026-09-09
+
+The user authorised replacing image headings with text when easy, then chose to skip Lisp essays: ?lisp esssays don?t need so much effort - we can skip them?. Applied this to the 10 entries in the approved final Lisp section. No sources are deleted. Both unprepared companion articles are in that section, so their conversion is no longer required for this edition. Other programming essays remain in their approved sections. Five image headings were transcribed after visual inspection; duplicate title images and recognised footer icons are omitted with evidence in each build record.
+
+
+Latest user change (2026-09-09): omit all essay images, including meaningful pictures, while preserving saved originals and text headings. This supersedes earlier image-retention requirements for this edition. Use smaller two-column contents and clickable top titles/page numbers returning to Contents. Trial 13 pt body / 1.35 spacing in a sample before a full rebuild; final approval is pending.
+
+The user approved the 11-page compact sample with ?cool - go ahead and proceed?. Promoted 12 pt / 1.25 / 3.75% bottom to shipped defaults and began the full 224-essay export. Earlier trial settings remain only as historical evidence. Device-specific highlighting, handwriting and performance remain unreported.

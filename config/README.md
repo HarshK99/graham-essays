@@ -49,7 +49,7 @@ if (!(Test-Path -LiteralPath config/book.local.json)) {
 }
 ```
 
-Run `.\.venv\Scripts\python.exe -m src.catalog --list` to see titles with their IDs; this command changes no files. Edit the private copy in a text editor. The top-level `sections` list controls section order; retain each exact section name once. Lisp stays last in the shipped defaults. Within `essays`, find the matching ID key and keep it unchanged:
+Run `.\.venv\Scripts\python.exe -m src.catalog --list` to see titles with their IDs; this command changes no files. Edit the private copy in a text editor. The top-level `sections` list controls section order; retain each exact section name once. The Lisp section stays last in the section list, but its 10 entries are currently excluded at the user?s request. Re-enabling the two introduction-only entries requires companion preparation. Within `essays`, find the matching ID key and keep it unchanged:
 
 - Change `section` to one of the six exact section names to move it.
 - Change `included` to `false` to exclude it, or `true` to restore it.
@@ -66,3 +66,9 @@ if (Test-Path -LiteralPath config/book.local.json) {
 ```
 
 See [Windows commands](../docs/windows-setup.md#saved-choices-and-full-export-phase-4) for selected samples, full export, content checks and agent examples.
+
+`image-text.json` records visually checked title/section graphics by source fingerprint. The builder replaces five section graphics with text headings and omits duplicate title graphics and known footer icons; meaningful pictures remain images.
+
+Current image setting: `include_images: false` omits essay images while keeping transcribed text headings. Set it to true to restore pictures. `contents_size: 10` and `contents_columns: 2` control the compact contents; columns may be 1, 2 or 3. Every numbered page has a clickable header returning to the first Contents page. The personal 13 pt / 1.35 trial is awaiting review.
+
+The 12 pt body / 1.25 line height / 3.75% bottom-space sample is now approved and is the shipped reset preset. The right writing area remains 25%. Personal overrides still take precedence. Earlier 13 pt and 14 pt references above describe previous trials.
