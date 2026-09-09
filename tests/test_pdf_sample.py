@@ -48,7 +48,10 @@ class PdfSampleTests(unittest.TestCase):
         self.assertEqual(before, (self.root / self.record['source']).read_bytes())
         short, _ = excerpt(content, {'max_blocks': 2})
         self.assertIn('This is an original note.', short)
-        self.assertIn('note-return', short)
+        self.assertNotIn('note-return', short)
+        self.assertNotIn('Back to text', short)
+        with_returns, _ = prepare(self.record, self.root, note_returns=True)
+        self.assertIn('note-return', with_returns)
 
     def test_incomplete_companion_rejected(self):
         with self.assertRaisesRegex(ValueError, 'Full-text companion'):
@@ -69,7 +72,7 @@ class PdfSampleTests(unittest.TestCase):
         original = first.read_bytes()
         report = check(first, self.root)
         self.assertEqual(report['issues'], [], report['issues'])
-        self.assertGreaterEqual(report['internal_links'], 4)
+        self.assertGreaterEqual(report['internal_links'], 3)
         from PIL import Image
         Image.new('RGB', (300, 400), '#e9ede7').save(self.root / 'original-cover.png')
         changed = load() | {'body_size': 15, 'right_notes': .2, 'notes_background': 'dots', 'cover': 'original-cover.png'}

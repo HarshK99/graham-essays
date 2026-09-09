@@ -111,7 +111,8 @@ At planning time only Markdown documentation existed. Phase 1 added scripts/setu
 - [x] Record the chosen PDF tool and why it passed the sample checks.
 - [x] Design and inspect a coherent cover, title page, contents, section/essay openings, reading pages, quotations, author notes, and page details. Refine typography and avoid stranded single lines and awkward breaks; judge the sample as a published book with intentional handwriting margins.
 - [x] Begin skills/book-design/SKILL.md using the available skill-creator instructions at execution time. Capture design rules and a configurable preset as the sample evolves; keep trial settings distinct from user-approved choices. Record iteration feedback in docs/sample-review.md and update the draft accordingly.
-- [ ] Ask the user to try reading, highlighting, and handwriting in Preview and Goodnotes on the iPad A16. Record actual feedback and adjust the sample.
+- [x] Receive initial layout feedback and export a revised sample: 25% right, 7.5% bottom, faint bottom separator, top page numbers, justified prose, 12 pt notes, no return labels.
+- [ ] Obtain approval of the revised sample, including reading, highlighting and handwriting in Preview and Goodnotes on the iPad A16; record actual device feedback.
 
 **Pass condition:** Windows sample checks pass and the user finds the layout comfortable on the iPad. If device feedback is pending, label the sample unapproved; independent app work may continue, but do not describe the reading experience as validated.
 
@@ -181,3 +182,6 @@ All Phase 2 checklist outputs are present. The user approved the grouped list on
 - [ ] Receive actual iPad feedback and revise/approve the layout.
 
 The 19-page trial uses labelled excerpts in `config/sample-selection.json`; the 110-page proof checks all five pieces in full. See `docs/sample-review.md` and `docs/progress.md` for exact files and evidence. Execution stayed in this session under the phase request. No Phase 4/5 task is complete. The builder's original-text test fixture does not replace Phase 5's independent reusable-skill exercise.
+
+
+Initial feedback revision: 25% right / 7.5% bottom reserves, top numbering, faint bottom separator, justified prose, 12 pt notes and no return labels. Revised exports are 17 and 94 pages; 19 tests and both PDF audits pass. See sample-review.md for exact files. Revised iPad approval remains pending.

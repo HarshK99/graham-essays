@@ -2,6 +2,8 @@
 html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
 body { margin: 0; font-family: var(--body); font-size: var(--size); line-height: var(--leading); color: var(--ink); background: var(--paper); }
 p { margin: 0 0 var(--paragraph); widows: 3; orphans: 3; }
+.reading p { text-align: var(--alignment); text-align-last: left; hyphens: auto; }
+.reading .author-note, .reading .notes-heading ~ p, .reading .notes-heading ~ blockquote { font-size: var(--note-size); }
 h1, h2, h3 { font-weight: 600; line-height: 1.12; break-after: avoid; }
 h1 { font-size: 32pt; letter-spacing: -.6pt; margin: 0 0 20pt; }
 h2 { font: 600 11pt/1.3 var(--label); color: var(--accent); margin: 0 0 24pt; padding-top: 9pt; border-top: 1pt solid var(--accent); }

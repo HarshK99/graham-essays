@@ -27,9 +27,15 @@ def validate(s, root=ROOT):
     if set(s) != set(defaults):
         raise ValueError('Settings fields do not match the default preset: ' + ', '.join(sorted(set(s) ^ set(defaults))))
     for key, default in defaults.items():
-        if isinstance(default, (int, float)):
+        if type(default) in (int, float):
             if type(s[key]) not in (int, float) or not math.isfinite(s[key]) or s[key] < 0:
                 raise ValueError(f'{key} must be a finite, non-negative number.')
+    if type(s['note_returns']) is not bool:
+        raise ValueError('note_returns must be true or false.')
+    if s['alignment'] not in ('left', 'justify'):
+        raise ValueError('Alignment must be left or justify.')
+    if not 8 <= s['note_size'] <= s['body_size']:
+        raise ValueError('Note size must be at least 8 pt and no larger than body size.')
     for key in ('right_notes', 'bottom_notes'):
         if not 0 <= s[key] < 1:
             raise ValueError(f'{key} must be at least 0 and less than 1 (100%).')

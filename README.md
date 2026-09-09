@@ -2,7 +2,7 @@
 
 A Windows project for turning Paul Graham's essays into a PDF with room to read, highlight, and write handwritten notes. The planned reading trial uses an iPad A16 with Preview or Goodnotes.
 
-Status: the sample PDF builder is available; Phase 3 awaits iPad feedback. Grouping is approved. Generate a local reading trial with a cover, selectable text, navigation and writing margins. The browser app is planned for Phase 4. See [sample review](docs/sample-review.md) and [tested progress](docs/progress.md).
+Status: the sample PDF builder is available; Phase 3 has a revised sample after initial layout feedback; iPad approval remains pending. Grouping is approved. Generate a local reading trial with a cover, selectable text, navigation and writing margins. The browser app is planned for Phase 4. See [sample review](docs/sample-review.md) and [tested progress](docs/progress.md).
 
 ## Windows setup
 

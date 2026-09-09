@@ -34,18 +34,16 @@ def styles(s, root):
     variables = {'body': '"' + s['body_font'] + '"', 'label': '"' + s['label_font'] + '"',
                  'code': '"' + s['code_font'] + '"', 'size': str(s['body_size']) + 'pt',
                  'code-size': str(s['code_size']) + 'pt', 'leading': s['line_height'],
+                 'note-size': str(s['note_size']) + 'pt', 'alignment': s['alignment'],
                  'paragraph': str(s['paragraph_space']) + 'pt', 'ink': s['text_color'],
                  'paper': s['background_color'], 'accent': s['accent_color'],
                  'cover-height': str(s['page_height']) + 'pt'}
     return ''.join(faces) + ':root{' + ''.join(f'--{k}:{v};' for k, v in variables.items()) + '}' + (root / 'templates/book.css').read_text(encoding='utf-8')
 
 
-def render(page, body, css, s, margins, title=''):
+def render(page, body, css, s, margins):
     top, right, bottom, left = margins
-    header = ''
-    if title:
-        header = '@top-left {content:' + json.dumps(title) + ';font:9pt "' + s['label_font'] + '";color:' + s['accent_color'] + ';vertical-align:bottom;padding-bottom:10pt;}'
-    page_css = f'@page {{size:{s["page_width"]}pt {s["page_height"]}pt;margin:{top}pt {right}pt {bottom}pt {left}pt;{header}}}'
+    page_css = f'@page {{size:{s["page_width"]}pt {s["page_height"]}pt;margin:{top}pt {right}pt {bottom}pt {left}pt;}}'
     page.set_content('<!doctype html><html lang="en"><meta charset="utf-8"><style>' + css + page_css + '</style><body>' + body + '</body></html>')
     page.evaluate('document.fonts.ready')
     failures = page.evaluate('''() => [...document.images].filter(i => !i.complete || !i.naturalWidth).map(i => i.alt || 'unnamed image')''')
@@ -73,7 +71,7 @@ def build(selected=None, settings=None, root=ROOT, output=None, excerpts=None):
     if excluded:
         raise ValueError('Selected essays are excluded in book settings: ' + ', '.join(excluded))
     records = [(section, r) for section in book['sections'] for r in ordering.ordered(book, catalog, section) if r['id'] in selected]
-    prepared = [(section, r, *prepare(r, root)) for section, r in records]
+    prepared = [(section, r, *prepare(r, root, s['note_returns'])) for section, r in records]
     for index, (section, r, content, evidence) in enumerate(prepared):
         if r['id'] in excerpts:
             content, evidence['excerpt'] = excerpt(content, excerpts[r['id']])
@@ -116,9 +114,9 @@ def build(selected=None, settings=None, root=ROOT, output=None, excerpts=None):
                 body += '<div class="meta">PAUL GRAHAM' + (' · Publication date unknown' if not record.get('date') else '')
                 if evidence.get('excerpt'):
                     body += '<br>EXCERPT · ' + html.escape(evidence['excerpt'])
-                body += '</div>' + content
+                body += '</div><article class="reading">' + content + '</article>'
                 print('Typesetting: ' + record['title'], flush=True)
-                essay_pdfs.append(render(page, body, css, s, margins, record['title']))
+                essay_pdfs.append(render(page, body, css, s, margins))
                 previous = section
                 evidence.pop('print_text')
                 build_record['essays'].append(dict(id=record['id'], title=record['title'], section=section,
@@ -179,13 +177,18 @@ def build(selected=None, settings=None, root=ROOT, output=None, excerpts=None):
                     parent = writer.add_outline_item(e['section'], e['start_page'] - 1)
                     current = e['section']
                 writer.add_outline_item(e['title'], e['start_page'] - 1, parent=parent)
-            # A separate vector layer places global page numbers outside the writing areas.
+            # Draw title and global page number on one header line, plus the bottom divider.
             layers = []
             reading_start = front_count + toc_count
             for index in range(len(writer.pages)):
                 marks = ''
                 if index:
-                    marks += f'<span style="position:absolute;left:{s["margin_left"]}pt;bottom:{s["margin_bottom"]}pt;font:9pt var(--label);color:var(--accent)">{index + 1}</span>'
+                    entry = next((e for e in build_record['essays'] if e['start_page']-1 <= index < e['start_page']-1+e['page_count']), None)
+                    heading = html.escape(entry['title']) if entry else ''
+                    width = g['text_width'] if entry else g['usable_width']
+                    marks += f'<div style="position:absolute;left:{s["margin_left"]}pt;top:{s["margin_top"]}pt;width:{width}pt;display:flex;align-items:baseline;font:9pt/12pt var(--label);color:var(--accent)"><span style="flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{heading}</span><span style="margin-left:12pt">{index + 1}</span></div>'
+                if index >= reading_start and s['bottom_notes'] > 0:
+                    marks += f'<div style="position:absolute;left:{s["margin_left"]}pt;top:{g["text_top"]+g["text_height"]+5}pt;width:{g["usable_width"]}pt;border-top:.35pt solid #e5e9e5"></div>'
                 if index >= reading_start and s['notes_background'] == 'dots':
                     pattern = 'position:absolute;background-image:radial-gradient(#cdd4ce .55pt,transparent .65pt);background-size:12pt 12pt;'
                     marks += f'<div style="{pattern}left:{s["page_width"]-s["margin_right"]-g["right_width"]}pt;top:{g["text_top"]}pt;width:{g["right_width"]}pt;height:{g["text_height"]}pt"></div>'

@@ -4,13 +4,13 @@ Last updated: 2026-09-09
 
 ## Current state
 
-Phase 3's sample builder is implemented and Windows-checked. The 19-page trial and 110-page complete five-piece proof are saved locally. Phase 3 awaits actual iPad reading, highlighting and handwriting feedback. Phase 2 remains complete with 234 saved entries and approved grouping. The browser app and full collection edition are not built. The complete Roots of Lisp companion still needs conversion before full export.
+Phase 3's sample builder is implemented and Windows-checked. Initial layout feedback is applied in a revised 17-page trial and 94-page complete five-piece proof. Phase 3 awaits approval of the revised layout and actual iPad reading, highlighting and handwriting checks. Phase 2 remains complete with 234 saved entries and approved grouping. The browser app and full collection edition are not built. The complete Roots of Lisp companion still needs conversion before full export.
 
 | Phase | Status | Evidence / remaining work |
 | --- | --- | --- |
 | 1 — Windows foundation | Complete | Fork and upstream history retained; clean Windows setup and repeat-run checks passed |
 | 2 - Collection and sections | Complete | 234 saved entries; grouping approved by user on 2026-09-09; checks passed |
-| 3 — Sample PDF and iPad trial | Awaiting user review | 19-page trial and 110-page proof pass Windows checks; iPad feedback pending |
+| 3 — Sample PDF and iPad trial | Awaiting user review | Revised 17-page trial and 94-page proof pass Windows checks; final iPad approval pending |
 | 4 — Configurable app | Not started | Requires working sample generation |
 | 5 — Full reading edition | Not started | Requires usable app, reviewed content order and approved layout |
 
@@ -29,7 +29,7 @@ Documentation-only inspection and local link checks. No phase code, browser work
 
 ## Next action
 
-Try the actual 19-page PDF named in [sample review](sample-review.md) on the iPad A16 in Preview and Goodnotes. Grouping is already approved. Reading comfort, highlighting, handwriting and app navigation remain pending.
+Try the revised 17-page PDF named in [sample review](sample-review.md) on the iPad A16 in Preview and Goodnotes. Grouping is already approved. Reading comfort, highlighting, handwriting and app navigation remain pending.
 
 To revise, send `Start phase 3` with feedback; read the required project records and `docs/sample-review.md`, adjust personal settings or layout, then export and audit a new file. If the user requests independent app work first, the next command is `Start phase 4`; retain Phase 3's pending review status. Do not start later phases automatically. Resolve full-text companions before the final collection; the current builder rejects introduction-only sources.
 
@@ -146,3 +146,13 @@ Final source checks: collection still reports 234/234 and zero issues; `pip chec
 **Remaining / exact handoff:** Phase 3 is Awaiting user review, not Complete. Try the named trial using `docs/sample-review.md`; resume with `Start phase 3` and feedback to revise. Independent Phase 4 requires a separate request. Keep the skill a draft until Phase 5 approval, packaging and original-manuscript validation. Inherited cover terms remain unresolved; sample cover is original typography. Roots of Lisp still needs full-text preparation before a whole-collection edition. Source/doc commit and push follow existing authorisation; no separate skill release or essay publication is authorised.
 
 **Verified source sharing:** commit `d62c37096b41a488daa1e5a85891dfabdec190d4` was pushed to `origin/ipad-reading-edition`; `git ls-remote origin refs/heads/ipad-reading-edition` matched the local commit and the working tree was clean. All 37 committed files are source, configuration, documentation or permitted fonts/notices. The PDFs and saved essays remain local. This follow-up documentation commit records the verified push; Phase 3 still awaits iPad feedback.
+
+### 2026-09-09 - Phase 3 initial feedback applied
+
+Changed the default right writing area to 25% and bottom to 7.5% (half its former size). The reading column is 391 x 703 pt, right space 135 pt, bottom space 57 pt. Numbers now share the top title line. Added a very faint horizontal separator above bottom writing space; prose is justified with automatic word breaks, notes are 12 pt, and return labels are off. These new text options are configurable. Updated the reusable skill draft and public design/settings guides.
+
+**Outputs:** `output/sample-20260909-151107-0700791e.pdf` (17 pages, 666,949 bytes) and `output/sample-20260909-151222-d72d2864.pdf` (94 pages). Both have matching build and audit records, zero audit issues, all five source-preservation checks passing, embedded fonts and valid destinations. Original PDF files were retained. No annotations or essay files are included in the source changes.
+
+**Checks:** `python -m unittest discover -s tests -v` using the project environment: 19 passed. Both `scripts/check_pdf.py` audits pass. Reviewed all 17 trial pages in overview and enlarged prose, note and code pages on Windows. Updated text checks to recognise print-added line-ending hyphens and measured serif overhang up to 1.51 pt (2 pt tolerance). The skill format validator passed, and both original PDF fingerprints still match. No browser-app or physical iPad test occurred.
+
+**Restart:** Read the required project documents and `docs/sample-review.md`, then open the revised 17-page sample. Await user approval or apply further feedback through `Start phase 3`; export a new file and rerun PDF checks. Phase 3 remains Awaiting user review. Do not begin Phase 4 or 5 automatically.

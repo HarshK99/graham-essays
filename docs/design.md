@@ -38,17 +38,18 @@ These are adjustable starting values, not an iPad-tested final layout.
 | Section labels and page details | Source Sans 3 |
 | Body size | 14 pt at the selected PDF page dimensions |
 | Line height | 1.45 times the body size |
-| Alignment | Left aligned, uneven right edge |
+| Alignment | Justified prose with automatic word breaks; final lines stay left aligned |
 | Text and background | Dark text on white |
-| Right writing area | 30% of usable page width |
-| Bottom writing area | 15% of usable page height |
-| Writing background | Blank |
+| Right writing area | 25% of usable page width |
+| Bottom writing area | 7.5% of usable page height |
+| Writing background | Blank, with a very faint bottom separator only |
 | Essay opening | Start each essay on a new page |
-| Page details | Small essay title and page number |
+| Page details | Small essay title and page number on the same top line |
+| Author notes | 12 pt, with links to notes and no return labels |
 
 Usable page space means the area inside the outer margins, header, and footer. Reserve the bottom writing area first, then split the remaining area between essay text and right-side notes. Leave a small gap between text and handwriting space. This keeps the two writing areas from being counted twice.
 
-The bottom area extends across the usable width. The right margin stays on the right on every page; do not alternate it as a printed book might. Do not place author footnotes in the handwriting areas. Prefer linked author notes at the end of each essay, with links back to their references.
+The bottom area extends across the usable width. The right margin stays on the right on every page; do not alternate it as a printed book might. Do not place author footnotes in the handwriting areas. Keep linked author notes at the end of each essay; the user requested no "Back to text" labels.
 
 Do not shrink text automatically to hit a target page count. Allow the book to become longer. Check long titles, quotations, lists, code, images, and footnotes for clipping or broken page breaks. Use a readable fixed-width font for code, with its exact choice settled during the sample phase.
 
@@ -114,6 +115,6 @@ Use a new, unique filename for every sample and full export. Store a companion b
 
 ## Phase 3 trial implementation
 
-The configurable preset now specifies 612 × 880 pt pages, 36 pt outer margins and 24 pt header/footer bands. Source Code Pro at 11 pt is the trial code family. The specified 14 pt body, 1.45 line height and 30%/15% writing reserves remain trial values. An original typographic cover is the default while inherited image terms remain unresolved. Visible numbering matches PDF page positions; the cover has no visible number.
+The configurable preset now specifies 612 × 880 pt pages, 36 pt outer margins and 24 pt header/footer bands. Source Code Pro at 11 pt is the trial code family. The specified 14 pt body, 1.45 line height and 25%/7.5% writing reserves reflect initial feedback and remain trial values. An original typographic cover is the default while inherited image terms remain unresolved. Visible numbering matches PDF page positions; the cover has no visible number.
 
 Direct Chromium printing with explicit pypdf navigation passed Windows checks. The short trial uses labelled excerpts plus referenced notes; the longer proof contains the five representative pieces in full. Sample cuts do not alter book inclusion. Short notes stay together; prose uses three-line widow/orphan settings, with actual pages inspected. Read `docs/sample-review.md` for iterations and pending iPad acceptance. No final layout approval is implied.

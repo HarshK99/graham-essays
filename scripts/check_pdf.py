@@ -81,9 +81,11 @@ def check(path, root=ROOT):
                     issues.append(f'Page {i+1}: link has no destination.')
             page = doc[i]
             tp = page.get_textpage()
-            body = tp.get_text_bounded(left=g['text_left']-1, right=g['text_left']+g['text_width']+1,
+            body = tp.get_text_bounded(left=g['text_left']-2, right=g['text_left']+g['text_width']+2,
                                        top=s['page_height']-g['text_top']+1, bottom=s['page_height']-g['text_top']-g['text_height']-1)
-            texts.append(body)
+            # Chromium inserts U+2010 for automatic word breaks. Remove only
+            # line-ending discretionary hyphens, retaining source punctuation.
+            texts.append(re.sub('\u2010(?:\r?\n|$)', '', body))
             if i >= first_reading:
                 if len(body.strip()) < 15:
                     issues.append(f'Page {i+1}: empty reading page.')
@@ -98,8 +100,9 @@ def check(path, root=ROOT):
                     # Header and footer have their own bands, outside usable writing space.
                     if y_bottom < g['text_top'] - 1 or y_top > s['page_height'] - s['margin_bottom'] - s['footer_height']:
                         continue
-                    # Serif j/p ink overhangs the left alignment edge by up to 1.2 pt.
-                    if left < g['text_left'] - 2 or right > g['text_left'] + g['text_width'] + 1 or y_bottom > g['text_top'] + g['text_height'] + 1:
+                    # Serif ink overhangs alignment edges: j/p on the left,
+                    # f on the justified right edge (measured up to 1.51 pt).
+                    if left < g['text_left'] - 2 or right > g['text_left'] + g['text_width'] + 2 or y_bottom > g['text_top'] + g['text_height'] + 1:
                         issues.append(f'Page {i+1}: text enters writing space or outer margin.'); break
                 for obj in page.get_objects():
                     if obj.type == 3:
@@ -112,7 +115,7 @@ def check(path, root=ROOT):
     source_records = {r['id']: r for r in cat['essays']}
     preservation = []
     for e in meta['essays']:
-        content, evidence = prepare(source_records[e['id']], root)
+        content, evidence = prepare(source_records[e['id']], root, s.get('note_returns', True))
         if e.get('excerpt_rule'):
             content, _ = excerpt(content, e['excerpt_rule'])
         from bs4 import BeautifulSoup

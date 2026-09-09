@@ -59,7 +59,7 @@ def chapter_html(text):
     return ''.join(blocks)
 
 
-def prepare(record, root):
+def prepare(record, root, note_returns=False):
     if record['status'] != 'success':
         raise ValueError('Source is not ready: ' + record['title'])
     if record.get('content_scope'):
@@ -174,13 +174,13 @@ def prepare(record, root):
     norm = lambda t: re.sub(r'\s+', '', unicodedata.normalize('NFKC', t))
     if norm(source_text) != norm(comparison.get_text(' ', strip=True)):
         raise ValueError('Print preparation changed source wording: ' + record['title'])
-    for p in soup.find_all('p'):
+    for p in soup.find_all(['p', 'h3']):
         children = [n for n in p.contents if not isinstance(n, NavigableString) or str(n).strip()]
         if len(children) == 1 and getattr(children[0], 'name', None) in ('b', 'strong'):
             p.name = 'h3'
         if p.get_text(strip=True) in ('Note', 'Notes'):
             p.name = 'h3'; p['class'] = 'notes-heading'
-    # Source anchors often provide only a one-way jump. Add a return for each reference.
+    # Namespace note targets; return links are optional and disabled in the current trial.
     prefix = record['id'] + '-'
     for tag in soup.find_all(True):
         target = tag.get('id') or tag.get('name')
@@ -195,13 +195,15 @@ def prepare(record, root):
                 raise ValueError('Unresolved author-note target: ' + record['title'] + ' ' + a['href'])
             count += 1
             a['href'] = '#' + target['id']; a['id'] = prefix + 'ref-' + str(count)
-            back = soup.new_tag('a', href='#' + a['id']); back['class'] = 'note-return'; back.string = ' Back to text'
             paragraph = target.find_parent('p')
             if paragraph:
                 paragraph['class'] = list(paragraph.get('class', [])) + ['author-note']
-                paragraph.append(back)
-            else:
-                target.insert_after(back)
+            if note_returns:
+                back = soup.new_tag('a', href='#' + a['id']); back['class'] = 'note-return'; back.string = ' Back to text'
+                if paragraph:
+                    paragraph.append(back)
+                else:
+                    target.insert_after(back)
     # Keep a note marker attached to the preceding word rather than stranded on a line.
     result = re.sub(r'\s*\[(<a href="#[^"]+" id="[^"]+">\d+</a>)\]', r'&nbsp;<sup class="note-reference">[\1]</sup>', str(soup))
     soup = BeautifulSoup(result, 'html.parser')

@@ -11,7 +11,7 @@
 | Organisation | Broad subject sections in one book |
 | Lisp placement | End of the main book |
 | Formatting | Good starting defaults, configurable later in the app |
-| Current work | Phase 3 sample builder Windows-checked; iPad feedback pending; no browser app yet |
+| Current work | Phase 3 sample builder Windows-checked; initial feedback applied; revised iPad approval pending; no browser app yet |
 | New exports | New files, without notes from previous copies |
 | Cover | Required; retain upstream cover for reuse after checking terms |
 | PDF route | Generate directly from essay content, without EPUB as an intermediate |
@@ -24,8 +24,8 @@ Additional confirmed deliverable: a reusable book-design skill, drafted during P
 ## Proposed defaults, not yet approved through use
 
 - Source Serif 4 body text and Source Sans 3 labels.
-- 14 pt body text, line height 1.45, left alignment, white background.
-- Right notes area 30% of usable width; bottom area 15% of usable height.
+- 14 pt body text, line height 1.45, justified prose, white background; 12 pt author notes.
+- Right notes area 25% of usable width; bottom area 7.5% of usable height, with a faint bottom separator. Title and page number share the top line; no note-return labels.
 - Six sections listed in the design specification, with chronological order within each.
 - A local browser app on Windows, with no hosted service.
 
@@ -82,3 +82,6 @@ Bundled unmodified Source Serif 4, Source Sans 3 and Source Code Pro files from 
 Trial dimensions are 612 × 880 pt with 36 pt margins, 24 pt header/footer bands, 14 pt body at 1.45 line height and 11 pt code. The 19-page trial is explicitly excerpted; the 110-page proof contains complete representative pieces. Both remain local. Source originals are unchanged; table structure is repaired without duplicating words, inspected translation/purchase furniture is recorded as removed, and note-return links are added.
 
 Windows automated and rendered-PDF checks pass. Physical iPad highlighting/handwriting and reading-app preference remain pending. The draft book-design skill captures tested mechanics and iterations; standalone packaging and approved settings remain Phase 5 work. Full Roots of Lisp conversion remains unresolved; the builder explicitly rejects its introduction if selected. No app, full collection or separate skill release is claimed.
+
+
+Initial layout feedback applied: choose 25% from the requested 20%/25% right-space options, halve bottom space to 7.5%, use a faint bottom-only separator, share the top line between title and number, justify prose with automatic word breaks, and use 12 pt author notes without return labels. The revised 17-page trial and 94-page five-piece proof pass Windows checks. Revised layout approval and iPad checks remain pending; earlier dimensions and return labels above record the first trial.

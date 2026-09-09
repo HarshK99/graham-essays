@@ -10,3 +10,5 @@ Copy `book.json` to `book.local.json` before personal edits. Each essay has one 
 Original content and images live in `data/sources/`, metadata and failures in `data/catalog.json`, and new PDF exports in `output/`. Setup never clears them.
 
 `sample-selection.json` records the default short-trial excerpt boundaries. Complete selected pieces are available with `--complete-essays`. These sample cuts do not change book inclusion or saved sources.
+
+The revised defaults use `right_notes: 0.25`, `bottom_notes: 0.075`, `alignment: "justify"`, `note_size: 12`, and `note_returns: false`. Alignment also accepts `"left"`; optional return labels can be enabled with `true`. Page numbers share the title's top line, and a faint horizontal rule marks the bottom writing area. These settings reflect initial feedback and await approval of the revised PDF.
