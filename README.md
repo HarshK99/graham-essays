@@ -2,7 +2,7 @@
 
 A Windows project for turning Paul Graham's essays into a PDF with room to read, highlight, and write handwritten notes. The planned reading trial uses an iPad A16 with Preview or Goodnotes.
 
-Status: Phase 2 collection tools implemented; setup verification is recorded in [progress](docs/progress.md). The upstream history and cover are preserved, and [the GitHub fork](https://github.com/HarshK99/graham-essays) exists. The collection can be downloaded locally and its proposed sections reviewed. No browser app or generated PDF exists yet.
+Status: Phase 2 complete; grouping approved; setup verification is recorded in [progress](docs/progress.md). The upstream history and cover are preserved, and [the GitHub fork](https://github.com/HarshK99/graham-essays) exists. The collection can be downloaded locally and its proposed sections reviewed. No browser app or generated PDF exists yet.
 
 ## Windows setup
 
@@ -31,14 +31,14 @@ After setup, run in PowerShell:
 
 The first command saves the article index, original pages, reading content and images in `data/`. It pauses between requests and saves progress after every essay. Run it again to retry failures without downloading successful essays again. Use `--refresh` only when you want to fetch the latest index and sources; older source bytes remain saved.
 
-Read [the proposed essay order](docs/essay-review.md). `config/book.json` holds the shipped proposal; copy it to `config/book.local.json` before making personal changes. The catalog command prefers that local file when present. Changing a section or setting `included` to `false` preserves the downloaded original. All groupings await user review; Lisp is last by default. Missing dates are marked rather than guessed.
+Read [the approved essay order](docs/essay-review.md). `config/book.json` holds the approved grouping; copy it to `config/book.local.json` before making personal changes. The catalog command prefers that local file when present. Changing a section or setting `included` to `false` preserves the downloaded original. The current grouping is user-approved; Lisp is last by default. Missing dates are marked rather than guessed.
 
 ## What is available
 
 | Stage | Status |
 | --- | --- |
 | Windows setup and local storage | Complete |
-| Essay downloads and subject grouping | Available; proposed order awaits review |
+| Essay downloads and subject grouping | Complete; grouping approved |
 | Sample PDF and iPad trial | Planned — Phase 3 |
 | Local browser app with saved choices | Planned — Phase 4 |
 | Full book and reusable book-design guide | Planned — Phase 5 |

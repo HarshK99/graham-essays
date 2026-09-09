@@ -1,6 +1,6 @@
 # Saved configuration
 
-- `book.json`: shipped proposed section order and essay choices, awaiting review.
+- `book.json`: shipped section order and essay choices, approved on 2026-09-09.
 - `book.local.json`: optional private copy of book choices; preferred when present, excluded from Git.
 - `reading-defaults.json`: layout preset to be introduced in Phase 3.
 - `reading-settings.json`: future personal layout choices, excluded from Git.

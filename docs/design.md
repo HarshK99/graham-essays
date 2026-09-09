@@ -56,7 +56,7 @@ A PDF font size has to be judged together with page dimensions and the app's too
 
 ## Section structure
 
-The following labels and ordering are provisional editorial choices. Only Lisp's final position is already confirmed.
+The user approved the following section labels, ordering and current essay assignments on 2026-09-09. See docs/essay-review.md for the approved grouping.
 
 1. Startups & Building Companies
 2. Work, Learning & Ambition

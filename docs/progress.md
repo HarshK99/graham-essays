@@ -4,12 +4,12 @@ Last updated: 2026-09-09
 
 ## Current state
 
-Phase 2 implementation is delivered locally: 234 index entries saved successfully, six proposed sections with Lisp last, and a grouped review list. No sources are intentionally excluded. User review of the proposed grouping is pending. The collection includes 10 author-hosted companion files; the complete Roots of Lisp PostScript document is saved but needs conversion before a full export. No browser app, PDF or iPad check exists yet. Phase 1 remains complete.
+Phase 2 is complete: 234 index entries saved successfully, six approved sections with Lisp last, and a grouped review list. No sources are intentionally excluded. The user approved the grouping on 2026-09-09. The collection includes 10 author-hosted companion files; the complete Roots of Lisp PostScript document is saved but needs conversion before a full export. No browser app, PDF or iPad check exists yet. Phase 1 remains complete.
 
 | Phase | Status | Evidence / remaining work |
 | --- | --- | --- |
 | 1 — Windows foundation | Complete | Fork and upstream history retained; clean Windows setup and repeat-run checks passed |
-| 2 - Collection and sections | Awaiting user review | 234 saved entries; grouped list available; source checks recorded below |
+| 2 - Collection and sections | Complete | 234 saved entries; grouping approved by user on 2026-09-09; checks passed |
 | 3 — Sample PDF and iPad trial | Not started | Requires representative essay content; include cover |
 | 4 — Configurable app | Not started | Requires working sample generation |
 | 5 — Full reading edition | Not started | Requires usable app, reviewed content order and approved layout |
@@ -29,9 +29,9 @@ Documentation-only inspection and local link checks. No phase code, browser work
 
 ## Next action
 
-Review [the proposed essay order](essay-review.md), especially the overlap notes and the ten essays in the last section. User approval has not been received. To revise grouping, provide the essay titles and destination sections; `Start phase 2` resumes collection/review work without recreating saved sources.
+The user approved [the essay grouping](essay-review.md) and requested Phase 2 closure. No further grouping review is required for the current snapshot.
 
-For independent sample work, open a new chat in this project and send `Start phase 3`. Read the required project docs plus `docs/collection-checks.md` and `docs/essay-review.md`. Run `.\.venv\Scripts\python.exe scripts/check_collection.py`. Use `writing44.html` for short prose, `greatwork.html` for long prose and notes, the second ANSI Common Lisp chapter for code, `wtax.html` for tables, and `langdes.html` for image handling. Handle `content_scope` and companion records explicitly: `rootsoflisp.html` is an introduction with the full text in saved PostScript, while `lwba.html` has a saved plain-text companion. Do not call an introductory page the complete essay. Strip identified site promotions from typesetting without changing the originals. Draft the book-design skill in Phase 3. Grouping and iPad/layout approval remain pending; do not start Phase 4 automatically.
+For the next phase, open a new chat in this project and send `Start phase 3`. Read the required project docs plus `docs/collection-checks.md` and `docs/essay-review.md`. Run `.\.venv\Scripts\python.exe scripts/check_collection.py`. Use `writing44.html` for short prose, `greatwork.html` for long prose and notes, the second ANSI Common Lisp chapter for code, `wtax.html` for tables, and `langdes.html` for image handling. Handle `content_scope` and companion records explicitly: `rootsoflisp.html` is an introduction with the full text in saved PostScript, while `lwba.html` has a saved plain-text companion. Do not call an introductory page the complete essay. Strip identified site promotions from typesetting without changing the originals. Draft the book-design skill in Phase 3. Grouping is approved; iPad/layout approval remains pending; do not start Phase 4 automatically.
 
 ## Phase work log
 
@@ -106,3 +106,9 @@ Representative original/fragment comparisons covered short prose, long prose wit
 **Remaining:** Review/approve or revise grouped choices. Phase 3 selects the PDF tool, resolves full-text conversion as needed, removes site furniture from rendered content, creates the sample with cover, and drafts the reusable design skill. No Phase 3 implementation has started. Upstream cover reuse remains unconfirmed; iPad and layout feedback remain pending.
 
 Final checks: the full collection audit returned `234/234` and `0 issues`; all ten tests, the readiness command, `pip check`, local documentation links, original chapter-code comparison and `git diff --check` passed. Commit `7c9eae2e2b86d3d82b306f403378f2fc21b3b19b` was pushed to `origin/ipad-reading-edition`; `git ls-remote origin refs/heads/ipad-reading-edition` matched the local commit, and the working tree was clean. Downloaded data and personal settings were excluded. This follow-up documentation commit records that verified publication; no essay collection or skill release was published.
+
+### 2026-09-09 - Phase 2 closed after user approval
+
+User feedback: "grouping looks right, close this phase". Marked Phase 2 Complete and saved approval for all 234 current assignments in `config/book.json`. Regenerated the review list with approved status and aligned the README, design, decisions, setup and plan. Topic overlap notes, five unknown dates and linked-document conversion flags are retained. Approval applies to grouping only; no PDF design or iPad approval is implied.
+
+Verification: regenerated the catalog review and checked all 234 choices retain their section and inclusion settings; ran the existing ten tests and whitespace checks. These closeout changes are committed and pushed with the authorised project workflow. Next: `Start phase 3` in a new project chat. Phase 3 has not started.

@@ -13,22 +13,22 @@
       "section": "Startups & Building Companies",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "54499be046ee82e917a5": {
       "section": "Society, Wealth & Power",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Wealth creation and its policy implications; overlaps startup building. Proposed; user review pending."
+      "review_required": false,
+      "reason": "Wealth creation and its policy implications; overlaps startup building. Grouping approved by user."
     },
     "f7551fc88f041b7d1a92": {
       "section": "Society, Wealth & Power",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "83c8c48be1a481135d5c": {
       "section": "Society, Wealth & Power",
@@ -36,22 +36,22 @@
       "secondary_topics": [
         "Work, Learning & Ambition"
       ],
-      "review_required": true,
-      "reason": "Status, brands and luxury markets; overlaps company strategy. Proposed; user review pending."
+      "review_required": false,
+      "reason": "Status, brands and luxury markets; overlaps company strategy. Grouping approved by user."
     },
     "e0313564cc30e347bdac": {
       "section": "Thinking, Writing & Creativity",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "9e6d8fb587cf8be7ce17": {
       "section": "Thinking, Writing & Creativity",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "07f22b56c34e74748eae": {
       "section": "Work, Learning & Ambition",
@@ -59,36 +59,36 @@
       "secondary_topics": [
         "Thinking, Writing & Creativity"
       ],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending. Also overlaps Thinking, Writing & Creativity."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user. Also overlaps Thinking, Writing & Creativity."
     },
     "c8474e5c6c4e08ed33df": {
       "section": "Society, Wealth & Power",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "3acbaa4e5acdd0f3971a": {
       "section": "Thinking, Writing & Creativity",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "5aa2b23d51b7ac40c986": {
       "section": "Work, Learning & Ambition",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "1cfccf6ce4e300fb6df5": {
       "section": "Startups & Building Companies",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "d2757f7df40f7bb26a6a": {
       "section": "Work, Learning & Ambition",
@@ -96,8 +96,8 @@
       "secondary_topics": [
         "Thinking, Writing & Creativity"
       ],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending. Also overlaps Thinking, Writing & Creativity."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user. Also overlaps Thinking, Writing & Creativity."
     },
     "01043cd1f92b5e0af8ff": {
       "section": "Startups & Building Companies",
@@ -105,8 +105,8 @@
       "secondary_topics": [
         "Work, Learning & Ambition"
       ],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending. Also overlaps Work, Learning & Ambition."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user. Also overlaps Work, Learning & Ambition."
     },
     "c341ed543a3a061a95c5": {
       "section": "Startups & Building Companies",
@@ -114,64 +114,64 @@
       "secondary_topics": [
         "Programming & Technology"
       ],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending. Also overlaps Programming & Technology."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user. Also overlaps Programming & Technology."
     },
     "5fb18291efdfb9b84549": {
       "section": "Thinking, Writing & Creativity",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "37a6be2bd5eb1734e2a2": {
       "section": "Work, Learning & Ambition",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "c11523703cab29b2850d": {
       "section": "Work, Learning & Ambition",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "bcac424a8c0358ab2b7d": {
       "section": "Thinking, Writing & Creativity",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "4e17965fdc7b112fb3f5": {
       "section": "Thinking, Writing & Creativity",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "b2d2eeeeeb2e1a18ce71": {
       "section": "Work, Learning & Ambition",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "0f4594d2a4c684f7d513": {
       "section": "Thinking, Writing & Creativity",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "198ec7a53d6eebc38c24": {
       "section": "Startups & Building Companies",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "0e5a935e1be98a519284": {
       "section": "Society, Wealth & Power",
@@ -179,99 +179,99 @@
       "secondary_topics": [
         "Work, Learning & Ambition"
       ],
-      "review_required": true,
-      "reason": "Social enforcement of forbidden beliefs; overlaps independent thinking. Proposed; user review pending."
+      "review_required": false,
+      "reason": "Social enforcement of forbidden beliefs; overlaps independent thinking. Grouping approved by user."
     },
     "2c0310287d29c8133e54": {
       "section": "Thinking, Writing & Creativity",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "d52bee2f3744b2c37b59": {
       "section": "Thinking, Writing & Creativity",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "d2411e96cf19e802dfd8": {
       "section": "Thinking, Writing & Creativity",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "b72f15143633be36ec7d": {
       "section": "Programming & Technology",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "5e0653f5a125893bf08d": {
       "section": "Work, Learning & Ambition",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "71a26ffda1ad0ea7fb8d": {
       "section": "Work, Learning & Ambition",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "180c1bc13dee1d61f851": {
       "section": "Work, Learning & Ambition",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Ambition and temperament; overlaps social attitudes to nerds. Proposed; user review pending."
+      "review_required": false,
+      "reason": "Ambition and temperament; overlaps social attitudes to nerds. Grouping approved by user."
     },
     "bba7a67d77683b81fc31": {
       "section": "Thinking, Writing & Creativity",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "59b191103730f1d3ebca": {
       "section": "Society, Wealth & Power",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Charitable funding and lives saved; technology is the fundraising vehicle. Proposed; user review pending."
+      "review_required": false,
+      "reason": "Charitable funding and lives saved; technology is the fundraising vehicle. Grouping approved by user."
     },
     "87f2a90e6659bb3d3998": {
       "section": "Society, Wealth & Power",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Criminal justice and the death penalty. Proposed; user review pending."
+      "review_required": false,
+      "reason": "Criminal justice and the death penalty. Grouping approved by user."
     },
     "6a7b95c5bf78b25c0b81": {
       "section": "Society, Wealth & Power",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Changing sources of wealth; overlaps entrepreneurship. Proposed; user review pending."
+      "review_required": false,
+      "reason": "Changing sources of wealth; overlaps entrepreneurship. Grouping approved by user."
     },
     "5faa60ce01c2e92c16fb": {
       "section": "Thinking, Writing & Creativity",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "34d1ff12d3503bdc1433": {
       "section": "Society, Wealth & Power",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "How charitable funding works. Proposed; user review pending."
+      "review_required": false,
+      "reason": "How charitable funding works. Grouping approved by user."
     },
     "9984e1868a358be02ae3": {
       "section": "Work, Learning & Ambition",
@@ -279,29 +279,29 @@
       "secondary_topics": [
         "Startups & Building Companies"
       ],
-      "review_required": true,
-      "reason": "Career and learning autobiography; Lisp is one part of the story. Proposed; user review pending."
+      "review_required": false,
+      "reason": "Career and learning autobiography; Lisp is one part of the story. Grouping approved by user."
     },
     "42483485f144b5bf5d79": {
       "section": "Work, Learning & Ambition",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Earnestness as a working disposition; startup examples. Proposed; user review pending."
+      "review_required": false,
+      "reason": "Earnestness as a working disposition; startup examples. Grouping approved by user."
     },
     "f33d36d993e3878d92d6": {
       "section": "Society, Wealth & Power",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Wealth and the role of builders; overlaps entrepreneurship. Proposed; user review pending."
+      "review_required": false,
+      "reason": "Wealth and the role of builders; overlaps entrepreneurship. Grouping approved by user."
     },
     "53f42bcb703462cb6829": {
       "section": "Startups & Building Companies",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "da60626723671016f0d3": {
       "section": "Thinking, Writing & Creativity",
@@ -309,22 +309,22 @@
       "secondary_topics": [
         "Startups & Building Companies"
       ],
-      "review_required": true,
-      "reason": "Independent thinking across fields; overlaps work and learning. Proposed; user review pending."
+      "review_required": false,
+      "reason": "Independent thinking across fields; overlaps work and learning. Grouping approved by user."
     },
     "573931d96cd429953d79": {
       "section": "Work, Learning & Ambition",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "b5344f6ddd1c17701bd7": {
       "section": "Society, Wealth & Power",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "ccb94d37806263bc4b4a": {
       "section": "Society, Wealth & Power",
@@ -332,36 +332,36 @@
       "secondary_topics": [
         "Thinking, Writing & Creativity"
       ],
-      "review_required": true,
-      "reason": "Social conformity; overlaps independent thinking. Proposed; user review pending."
+      "review_required": false,
+      "reason": "Social conformity; overlaps independent thinking. Grouping approved by user."
     },
     "279c4b18c7d555c1a95b": {
       "section": "Society, Wealth & Power",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Social pressure and permitted opinions. Proposed; user review pending."
+      "review_required": false,
+      "reason": "Social pressure and permitted opinions. Grouping approved by user."
     },
     "99252485ad82f6288f03": {
       "section": "Society, Wealth & Power",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Public credibility and pandemic statements. Proposed; user review pending."
+      "review_required": false,
+      "reason": "Public credibility and pandemic statements. Grouping approved by user."
     },
     "a58a20036e736ee2b60f": {
       "section": "Thinking, Writing & Creativity",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "7e28cd081dddbdcc33fd": {
       "section": "Work, Learning & Ambition",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "f5290723c2b08ba60770": {
       "section": "Work, Learning & Ambition",
@@ -369,29 +369,29 @@
       "secondary_topics": [
         "Thinking, Writing & Creativity"
       ],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending. Also overlaps Thinking, Writing & Creativity."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user. Also overlaps Thinking, Writing & Creativity."
     },
     "28247b8fd4649d1d49ea": {
       "section": "Society, Wealth & Power",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Political moderation and how beliefs are formed. Proposed; user review pending."
+      "review_required": false,
+      "reason": "Political moderation and how beliefs are formed. Grouping approved by user."
     },
     "0e6193f7cb0d352721c1": {
       "section": "Thinking, Writing & Creativity",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Choosing overlooked problems; overlaps ambition. Proposed; user review pending."
+      "review_required": false,
+      "reason": "Choosing overlooked problems; overlaps ambition. Grouping approved by user."
     },
     "fbd050972d6ece746148": {
       "section": "Work, Learning & Ambition",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "d89301fd5c56c1800cca": {
       "section": "Work, Learning & Ambition",
@@ -399,148 +399,148 @@
       "secondary_topics": [
         "Startups & Building Companies"
       ],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending. Also overlaps Startups & Building Companies."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user. Also overlaps Startups & Building Companies."
     },
     "d5babc5d05f1a3a79eaa": {
       "section": "Thinking, Writing & Creativity",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "ed909c1abf957f7109b9": {
       "section": "Work, Learning & Ambition",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "2386535d8dba0483cedd": {
       "section": "Thinking, Writing & Creativity",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "cd2314ea1ec3b12df820": {
       "section": "Society, Wealth & Power",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "05cf283ba4d94156f441": {
       "section": "Thinking, Writing & Creativity",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "e2a21d4afba3ad1b3cc2": {
       "section": "Startups & Building Companies",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "8e3078ff59a82b2ca94a": {
       "section": "Work, Learning & Ambition",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "f164ee150a183e6b797f": {
       "section": "Society, Wealth & Power",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "d34d0ffc42ff92b486e3": {
       "section": "Society, Wealth & Power",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Economic and social fragmentation; startups are one example. Proposed; user review pending."
+      "review_required": false,
+      "reason": "Economic and social fragmentation; startups are one example. Grouping approved by user."
     },
     "bc4e8cf577d77c0698f8": {
       "section": "Startups & Building Companies",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "f503da72b0af170562ad": {
       "section": "Society, Wealth & Power",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Detecting selection bias; venture funding is the example. Proposed; user review pending."
+      "review_required": false,
+      "reason": "Detecting selection bias; venture funding is the example. Grouping approved by user."
     },
     "afd18f256d3cd9a2ea12": {
       "section": "Thinking, Writing & Creativity",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Writing in spoken language, not programming languages. Proposed; user review pending."
+      "review_required": false,
+      "reason": "Writing in spoken language, not programming languages. Grouping approved by user."
     },
     "f9a979d1b853f6edbe5a": {
       "section": "Startups & Building Companies",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "0aa894d2e35be2008d96": {
       "section": "Startups & Building Companies",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "3ee2a6863f8bcb9ce27d": {
       "section": "Startups & Building Companies",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "e2cad0e6a09e7ceea5ff": {
       "section": "Startups & Building Companies",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "bb4df5aff1c69fc56770": {
       "section": "Startups & Building Companies",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "75c020ed2da7abcbfe39": {
       "section": "Work, Learning & Ambition",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "5b2d25359ea37ec7213b": {
       "section": "Startups & Building Companies",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "d818da4540a98e9a68c5": {
       "section": "Society, Wealth & Power",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Immigration policy for programmers; overlaps technology. Proposed; user review pending."
+      "review_required": false,
+      "reason": "Immigration policy for programmers; overlaps technology. Grouping approved by user."
     },
     "def8cea2252bfb272063": {
       "section": "Work, Learning & Ambition",
@@ -548,22 +548,22 @@
       "secondary_topics": [
         "Thinking, Writing & Creativity"
       ],
-      "review_required": true,
-      "reason": "Learning and updating expertise in a changing world. Proposed; user review pending."
+      "review_required": false,
+      "reason": "Learning and updating expertise in a changing world. Grouping approved by user."
     },
     "e6d391fc218c1f9baa0a": {
       "section": "Work, Learning & Ambition",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "9cce8c70c15f388eece1": {
       "section": "Startups & Building Companies",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "2416554bd9ba1c3a8b60": {
       "section": "Startups & Building Companies",
@@ -572,8 +572,8 @@
         "Work, Learning & Ambition",
         "Thinking, Writing & Creativity"
       ],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending. Also overlaps Work, Learning & Ambition, Thinking, Writing & Creativity."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user. Also overlaps Work, Learning & Ambition, Thinking, Writing & Creativity."
     },
     "81754a5a3fa867310630": {
       "section": "Startups & Building Companies",
@@ -581,43 +581,43 @@
       "secondary_topics": [
         "Work, Learning & Ambition"
       ],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending. Also overlaps Work, Learning & Ambition."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user. Also overlaps Work, Learning & Ambition."
     },
     "1592292f418b308f3f46": {
       "section": "Startups & Building Companies",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "d1b46f0f83ddc046e59c": {
       "section": "Startups & Building Companies",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "2f1ac1296db3ab19b29e": {
       "section": "Startups & Building Companies",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "7030ae9cff7dc62076a2": {
       "section": "Startups & Building Companies",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "0a0188182b100987d851": {
       "section": "Startups & Building Companies",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "d0e5f41f97bd9c67e37c": {
       "section": "Startups & Building Companies",
@@ -625,57 +625,57 @@
       "secondary_topics": [
         "Thinking, Writing & Creativity"
       ],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending. Also overlaps Thinking, Writing & Creativity."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user. Also overlaps Thinking, Writing & Creativity."
     },
     "c64f8cd576efd87393df": {
       "section": "Startups & Building Companies",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "f0cf8b988319e4353ad0": {
       "section": "Startups & Building Companies",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "a53f3fe230cd6832ec83": {
       "section": "Startups & Building Companies",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "01b9b49e6295a6b467fb": {
       "section": "Work, Learning & Ambition",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "12f6635ee46fcfa317e0": {
       "section": "Thinking, Writing & Creativity",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "944ec42c1b1de2677668": {
       "section": "Startups & Building Companies",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "90d37b92d70aaa86ec3d": {
       "section": "Society, Wealth & Power",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Property rights and changing economic value. Proposed; user review pending."
+      "review_required": false,
+      "reason": "Property rights and changing economic value. Grouping approved by user."
     },
     "662ef3e857fa6be21df5": {
       "section": "Startups & Building Companies",
@@ -683,22 +683,22 @@
       "secondary_topics": [
         "Thinking, Writing & Creativity"
       ],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending. Also overlaps Thinking, Writing & Creativity."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user. Also overlaps Thinking, Writing & Creativity."
     },
     "85bc89ee1bdb30f95694": {
       "section": "Startups & Building Companies",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "ebbb30fa4021a67964c8": {
       "section": "Startups & Building Companies",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "5a0832e867cc71b8313c": {
       "section": "Startups & Building Companies",
@@ -706,71 +706,71 @@
       "secondary_topics": [
         "Programming & Technology"
       ],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending. Also overlaps Programming & Technology."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user. Also overlaps Programming & Technology."
     },
     "832a4cc7acf7fe9ab38d": {
       "section": "Startups & Building Companies",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "ed012e5dd2ae83fbaa45": {
       "section": "Programming & Technology",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Software patent practices; overlaps policy and startups. Proposed; user review pending."
+      "review_required": false,
+      "reason": "Software patent practices; overlaps policy and startups. Grouping approved by user."
     },
     "7f359ae9bf1a736dc6dd": {
       "section": "Startups & Building Companies",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "af9b93b738bc4812ed1c": {
       "section": "Startups & Building Companies",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "0e8b879a8417f5b4e8e0": {
       "section": "Programming & Technology",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "824ae5b71696444100fa": {
       "section": "Startups & Building Companies",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "2dac2667d3db8f23e4f8": {
       "section": "Startups & Building Companies",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "8562501757a953d99d16": {
       "section": "Startups & Building Companies",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "3916b3635771811d1a7c": {
       "section": "Startups & Building Companies",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "f20ad115ce3954fe814a": {
       "section": "Startups & Building Companies",
@@ -778,22 +778,22 @@
       "secondary_topics": [
         "Programming & Technology"
       ],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending. Also overlaps Programming & Technology."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user. Also overlaps Programming & Technology."
     },
     "27b6645241bd86e3f29c": {
       "section": "Startups & Building Companies",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "d6962f2ddac2beefc1c1": {
       "section": "Work, Learning & Ambition",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "7a7a9f2dbb5f5d2aa35d": {
       "section": "Thinking, Writing & Creativity",
@@ -802,8 +802,8 @@
         "Work, Learning & Ambition",
         "Startups & Building Companies"
       ],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending. Also overlaps Work, Learning & Ambition, Startups & Building Companies."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user. Also overlaps Work, Learning & Ambition, Startups & Building Companies."
     },
     "97a577da573cd695fadb": {
       "section": "Work, Learning & Ambition",
@@ -811,8 +811,8 @@
       "secondary_topics": [
         "Society, Wealth & Power"
       ],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending. Also overlaps Society, Wealth & Power."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user. Also overlaps Society, Wealth & Power."
     },
     "e0c58800282f2e4c8330": {
       "section": "Startups & Building Companies",
@@ -820,29 +820,29 @@
       "secondary_topics": [
         "Thinking, Writing & Creativity"
       ],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending. Also overlaps Thinking, Writing & Creativity."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user. Also overlaps Thinking, Writing & Creativity."
     },
     "706a0c845c88f9356548": {
       "section": "Programming & Technology",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "d9be1ebd1126f6e4d18e": {
       "section": "Startups & Building Companies",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "f686ca2975cb2aebf709": {
       "section": "Thinking, Writing & Creativity",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "44d10fa4bc24b37791a7": {
       "section": "Thinking, Writing & Creativity",
@@ -850,92 +850,92 @@
       "secondary_topics": [
         "Programming & Technology"
       ],
-      "review_required": true,
-      "reason": "Publishing economics and changing media; overlaps business. Proposed; user review pending."
+      "review_required": false,
+      "reason": "Publishing economics and changing media; overlaps business. Grouping approved by user."
     },
     "e9e34fa6067e8a534cb7": {
       "section": "Thinking, Writing & Creativity",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "3c2d1cc104d96db8b302": {
       "section": "Work, Learning & Ambition",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "81b6dc66a59a20b804be": {
       "section": "Startups & Building Companies",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "af17df0f9b5ebcda1de3": {
       "section": "Startups & Building Companies",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "32d772750e31271dddad": {
       "section": "Startups & Building Companies",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "3a1b1c09395f954b1d4d": {
       "section": "Work, Learning & Ambition",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Protecting time for focused work; startup examples. Proposed; user review pending."
+      "review_required": false,
+      "reason": "Protecting time for focused work; startup examples. Grouping approved by user."
     },
     "cbcb338aca63bb5b5e14": {
       "section": "Society, Wealth & Power",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Startups as an economic shift; overlaps entrepreneurship. Proposed; user review pending."
+      "review_required": false,
+      "reason": "Startups as an economic shift; overlaps entrepreneurship. Grouping approved by user."
     },
     "0a00535fda679d8dc262": {
       "section": "Programming & Technology",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "A new messaging protocol and its uses. Proposed; user review pending."
+      "review_required": false,
+      "reason": "A new messaging protocol and its uses. Grouping approved by user."
     },
     "13bccc66a8130d0c864d": {
       "section": "Society, Wealth & Power",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Immigration policy for founders; overlaps startups. Proposed; user review pending."
+      "review_required": false,
+      "reason": "Immigration policy for founders; overlaps startups. Grouping approved by user."
     },
     "318b3c713116ae18e89c": {
       "section": "Startups & Building Companies",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "d19892f7c7e31afd4ba6": {
       "section": "Startups & Building Companies",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "90a5b5ec5d861a9d08a8": {
       "section": "Startups & Building Companies",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "6a7b1d71724779a130dc": {
       "section": "Programming & Technology",
@@ -943,15 +943,15 @@
       "secondary_topics": [
         "Startups & Building Companies"
       ],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending. Also overlaps Startups & Building Companies."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user. Also overlaps Startups & Building Companies."
     },
     "13fcd2973c746e6b0d21": {
       "section": "Startups & Building Companies",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "a222d9403da280685292": {
       "section": "Programming & Technology",
@@ -959,15 +959,15 @@
       "secondary_topics": [
         "Startups & Building Companies"
       ],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending. Also overlaps Startups & Building Companies."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user. Also overlaps Startups & Building Companies."
     },
     "a793ee66900e9415fe44": {
       "section": "Startups & Building Companies",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "6b3a52091fb3bc885ec2": {
       "section": "Thinking, Writing & Creativity",
@@ -975,8 +975,8 @@
       "secondary_topics": [
         "Programming & Technology"
       ],
-      "review_required": true,
-      "reason": "Identity as a barrier to clear argument; political examples. Proposed; user review pending."
+      "review_required": false,
+      "reason": "Identity as a barrier to clear argument; political examples. Grouping approved by user."
     },
     "da0584eee0e15a3fb4da": {
       "section": "Work, Learning & Ambition",
@@ -985,15 +985,15 @@
         "Society, Wealth & Power",
         "Startups & Building Companies"
       ],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending. Also overlaps Society, Wealth & Power, Startups & Building Companies."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user. Also overlaps Society, Wealth & Power, Startups & Building Companies."
     },
     "89cc526d76f5b2638e45": {
       "section": "Startups & Building Companies",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "c97ad1741a622d3e3871": {
       "section": "Society, Wealth & Power",
@@ -1001,8 +1001,8 @@
       "secondary_topics": [
         "Work, Learning & Ambition"
       ],
-      "review_required": true,
-      "reason": "A shift from large organisations toward smaller units; startup overlap. Proposed; user review pending."
+      "review_required": false,
+      "reason": "A shift from large organisations toward smaller units; startup overlap. Grouping approved by user."
     },
     "1d5ff1332374dc06feb6": {
       "section": "Startups & Building Companies",
@@ -1010,29 +1010,29 @@
       "secondary_topics": [
         "Programming & Technology"
       ],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending. Also overlaps Programming & Technology."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user. Also overlaps Programming & Technology."
     },
     "cd242273b221e3858fe5": {
       "section": "Startups & Building Companies",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "57d1f9852f9de5d8e4e3": {
       "section": "Startups & Building Companies",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "04b9180a9b4f1e0fb330": {
       "section": "Startups & Building Companies",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "a1ed7366500e2e03bea3": {
       "section": "Work, Learning & Ambition",
@@ -1040,8 +1040,8 @@
       "secondary_topics": [
         "Society, Wealth & Power"
       ],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending. Also overlaps Society, Wealth & Power."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user. Also overlaps Society, Wealth & Power."
     },
     "34479ea0bc24644deac3": {
       "section": "Work, Learning & Ambition",
@@ -1049,29 +1049,29 @@
       "secondary_topics": [
         "Programming & Technology"
       ],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending. Also overlaps Programming & Technology."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user. Also overlaps Programming & Technology."
     },
     "ec3288ea5aee340a15e7": {
       "section": "Work, Learning & Ambition",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "df223d0ace01963f7d84": {
       "section": "Startups & Building Companies",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "de1b3d89e896e5a43e0e": {
       "section": "Startups & Building Companies",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "14b8ef81a6d5886c030d": {
       "section": "Work, Learning & Ambition",
@@ -1079,15 +1079,15 @@
       "secondary_topics": [
         "Thinking, Writing & Creativity"
       ],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending. Also overlaps Thinking, Writing & Creativity."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user. Also overlaps Thinking, Writing & Creativity."
     },
     "fc4c03e052da300e1547": {
       "section": "Thinking, Writing & Creativity",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "22a8830dd699831c771e": {
       "section": "Startups & Building Companies",
@@ -1095,15 +1095,15 @@
       "secondary_topics": [
         "Work, Learning & Ambition"
       ],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending. Also overlaps Work, Learning & Ambition."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user. Also overlaps Work, Learning & Ambition."
     },
     "c9a602ff9877c6366d57": {
       "section": "Startups & Building Companies",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "84e25e40be4a4be40528": {
       "section": "Programming & Technology",
@@ -1112,8 +1112,8 @@
         "Startups & Building Companies",
         "Thinking, Writing & Creativity"
       ],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending. Also overlaps Startups & Building Companies, Thinking, Writing & Creativity."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user. Also overlaps Startups & Building Companies, Thinking, Writing & Creativity."
     },
     "edae09d49097f57fc9c4": {
       "section": "Thinking, Writing & Creativity",
@@ -1122,29 +1122,29 @@
         "Startups & Building Companies",
         "Work, Learning & Ambition"
       ],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending. Also overlaps Startups & Building Companies, Work, Learning & Ambition."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user. Also overlaps Startups & Building Companies, Work, Learning & Ambition."
     },
     "a216adadb530143ea8e2": {
       "section": "Startups & Building Companies",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "752445fd3a7084f53e87": {
       "section": "Startups & Building Companies",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "5cee6c1da969e7e45544": {
       "section": "Thinking, Writing & Creativity",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "How to make philosophical inquiry useful. Proposed; user review pending."
+      "review_required": false,
+      "reason": "How to make philosophical inquiry useful. Grouping approved by user."
     },
     "ddce815e83f22028fe71": {
       "section": "Work, Learning & Ambition",
@@ -1152,57 +1152,57 @@
       "secondary_topics": [
         "Startups & Building Companies"
       ],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending. Also overlaps Startups & Building Companies."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user. Also overlaps Startups & Building Companies."
     },
     "a3625017d95a62238207": {
       "section": "Startups & Building Companies",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "da58ce2a2335fb4dd19a": {
       "section": "Programming & Technology",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "c22a0cfcd476f0cd8b1e": {
       "section": "Work, Learning & Ambition",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "5a3b833e3a0b8008d25d": {
       "section": "Startups & Building Companies",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "f5d470df895597d3ad12": {
       "section": "Society, Wealth & Power",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Labour, wages and economic power. Proposed; user review pending."
+      "review_required": false,
+      "reason": "Labour, wages and economic power. Grouping approved by user."
     },
     "a326bdac5cffff5aa586": {
       "section": "Startups & Building Companies",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "3578cf8902ba7921dd70": {
       "section": "Work, Learning & Ambition",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "c170c24b65556ee28050": {
       "section": "Programming & Technology",
@@ -1210,43 +1210,43 @@
       "secondary_topics": [
         "Startups & Building Companies"
       ],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending. Also overlaps Startups & Building Companies."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user. Also overlaps Startups & Building Companies."
     },
     "c823139e31ee00ffc778": {
       "section": "Startups & Building Companies",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "99e8f7d74839cdf0916a": {
       "section": "Work, Learning & Ambition",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "e02805c993ff8be5c00d": {
       "section": "Startups & Building Companies",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "de6cca710fe9dbeeb965": {
       "section": "Thinking, Writing & Creativity",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "d921d0e1c9334fbd7113": {
       "section": "Startups & Building Companies",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "b3befd60e255bf03f64f": {
       "section": "Startups & Building Companies",
@@ -1254,29 +1254,29 @@
       "secondary_topics": [
         "Work, Learning & Ambition"
       ],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending. Also overlaps Work, Learning & Ambition."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user. Also overlaps Work, Learning & Ambition."
     },
     "d01d8eb14e9ea636a279": {
       "section": "Startups & Building Companies",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "b920a1dff725e46fd5b1": {
       "section": "Thinking, Writing & Creativity",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Learning to write through imitation. Proposed; user review pending."
+      "review_required": false,
+      "reason": "Learning to write through imitation. Grouping approved by user."
     },
     "810ab86d133e7d72d36f": {
       "section": "Work, Learning & Ambition",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "A practical test for personal addictions. Proposed; user review pending."
+      "review_required": false,
+      "reason": "A practical test for personal addictions. Grouping approved by user."
     },
     "91686403d877f7836f4e": {
       "section": "Work, Learning & Ambition",
@@ -1285,92 +1285,92 @@
         "Startups & Building Companies",
         "Thinking, Writing & Creativity"
       ],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending. Also overlaps Startups & Building Companies, Thinking, Writing & Creativity."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user. Also overlaps Startups & Building Companies, Thinking, Writing & Creativity."
     },
     "46256b8f480e8b863be1": {
       "section": "Startups & Building Companies",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "a5c9a570ce73d1dc8c5d": {
       "section": "Startups & Building Companies",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "d7aea7acf55170b18163": {
       "section": "Startups & Building Companies",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "2ea90a93b0f1a9c8c7c4": {
       "section": "Thinking, Writing & Creativity",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Recognising chance and mistaken explanations. Proposed; user review pending."
+      "review_required": false,
+      "reason": "Recognising chance and mistaken explanations. Grouping approved by user."
     },
     "3f5d2b6d68bd3ae332b3": {
       "section": "Programming & Technology",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Software patents and innovation; overlaps policy. Proposed; user review pending."
+      "review_required": false,
+      "reason": "Software patents and innovation; overlaps policy. Grouping approved by user."
     },
     "bb578d4b9e4543995478": {
       "section": "Programming & Technology",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "A software patent example; overlaps policy. Proposed; user review pending."
+      "review_required": false,
+      "reason": "A software patent example; overlaps policy. Grouping approved by user."
     },
     "53bf558751f9f8193622": {
       "section": "Startups & Building Companies",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "e82e5f0b33d12c9f20b9": {
       "section": "Work, Learning & Ambition",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "aab21056a1392deffee4": {
       "section": "Work, Learning & Ambition",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "a4c4f49d2f9001218775": {
       "section": "Programming & Technology",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Web technology and the meaning of Web 2.0; business overlap. Proposed; user review pending."
+      "review_required": false,
+      "reason": "Web technology and the meaning of Web 2.0; business overlap. Grouping approved by user."
     },
     "93db1a4860d6cf9e21d2": {
       "section": "Startups & Building Companies",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "01fb940a8c55afa9150d": {
       "section": "Startups & Building Companies",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "333025e3aa91e8cfdbf2": {
       "section": "Startups & Building Companies",
@@ -1379,15 +1379,15 @@
         "Thinking, Writing & Creativity",
         "Work, Learning & Ambition"
       ],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending. Also overlaps Thinking, Writing & Creativity, Work, Learning & Ambition."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user. Also overlaps Thinking, Writing & Creativity, Work, Learning & Ambition."
     },
     "0db46db70b690411e266": {
       "section": "Startups & Building Companies",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "022b957292ee57606aa1": {
       "section": "Society, Wealth & Power",
@@ -1395,15 +1395,15 @@
       "secondary_topics": [
         "Startups & Building Companies"
       ],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending. Also overlaps Startups & Building Companies."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user. Also overlaps Startups & Building Companies."
     },
     "7d6ba4f23e40b5d99f57": {
       "section": "Work, Learning & Ambition",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Changing careers and employment; entrepreneurship overlap. Proposed; user review pending."
+      "review_required": false,
+      "reason": "Changing careers and employment; entrepreneurship overlap. Grouping approved by user."
     },
     "e0baeaec22348cf5f6df": {
       "section": "Startups & Building Companies",
@@ -1411,15 +1411,15 @@
       "secondary_topics": [
         "Work, Learning & Ambition"
       ],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending. Also overlaps Work, Learning & Ambition."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user. Also overlaps Work, Learning & Ambition."
     },
     "00c77763deecc258e024": {
       "section": "Startups & Building Companies",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "84088ced87b67ddc9647": {
       "section": "Society, Wealth & Power",
@@ -1428,8 +1428,8 @@
         "Startups & Building Companies",
         "Work, Learning & Ambition"
       ],
-      "review_required": true,
-      "reason": "Public relations and media influence; writing overlap. Proposed; user review pending."
+      "review_required": false,
+      "reason": "Public relations and media influence; writing overlap. Grouping approved by user."
     },
     "a1b4ab8740eaccf6754c": {
       "section": "Startups & Building Companies",
@@ -1437,50 +1437,50 @@
       "secondary_topics": [
         "Thinking, Writing & Creativity"
       ],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending. Also overlaps Thinking, Writing & Creativity."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user. Also overlaps Thinking, Writing & Creativity."
     },
     "e05c99e0a68eb701b6e8": {
       "section": "Programming & Technology",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "3855b9d49700d8423e1e": {
       "section": "Thinking, Writing & Creativity",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "6963718107a5c8bd586d": {
       "section": "Work, Learning & Ambition",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "d9dca537ac9abad8db81": {
       "section": "Startups & Building Companies",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "99e1a48069bc397446ff": {
       "section": "Startups & Building Companies",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "6073fa552043c29cf9c1": {
       "section": "Work, Learning & Ambition",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "694dcf8463925d716f15": {
       "section": "Society, Wealth & Power",
@@ -1488,64 +1488,64 @@
       "secondary_topics": [
         "Startups & Building Companies"
       ],
-      "review_required": true,
-      "reason": "National culture and what countries make well; design overlap. Proposed; user review pending."
+      "review_required": false,
+      "reason": "National culture and what countries make well; design overlap. Grouping approved by user."
     },
     "ea64e19f58d00fbd26c4": {
       "section": "Society, Wealth & Power",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "30bb8cba88be10ad867a": {
       "section": "Society, Wealth & Power",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Election polling and hidden voting preferences. Proposed; user review pending."
+      "review_required": false,
+      "reason": "Election polling and hidden voting preferences. Grouping approved by user."
     },
     "cd742442ab2fc34782cb": {
       "section": "Thinking, Writing & Creativity",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "7fcbd95215511aeb6e5c": {
       "section": "Startups & Building Companies",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "80d024fbd3e21866caff": {
       "section": "Thinking, Writing & Creativity",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "32ad28ef92e033ee32de": {
       "section": "Programming & Technology",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "136f5ad4c0631e448e08": {
       "section": "Programming & Technology",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "b514bc652a4f3bb76245": {
       "section": "Society, Wealth & Power",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "f5f2fa128480fe643df8": {
       "section": "Society, Wealth & Power",
@@ -1553,15 +1553,15 @@
       "secondary_topics": [
         "Work, Learning & Ambition"
       ],
-      "review_required": true,
-      "reason": "Creating wealth; startups are the central practical example. Proposed; user review pending."
+      "review_required": false,
+      "reason": "Creating wealth; startups are the central practical example. Grouping approved by user."
     },
     "d5eaf3b10ad8a51f7cbe": {
       "section": "Programming & Technology",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "e9360dfd32029dff2b5c": {
       "section": "Thinking, Writing & Creativity",
@@ -1569,15 +1569,15 @@
       "secondary_topics": [
         "Work, Learning & Ambition"
       ],
-      "review_required": true,
-      "reason": "Recognising taboos and thinking independently; society overlap. Proposed; user review pending."
+      "review_required": false,
+      "reason": "Recognising taboos and thinking independently; society overlap. Grouping approved by user."
     },
     "6d187da76518f397c2c4": {
       "section": "Programming & Technology",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "ebd53fdb105b369c2d98": {
       "section": "Thinking, Writing & Creativity",
@@ -1585,8 +1585,8 @@
       "secondary_topics": [
         "Work, Learning & Ambition"
       ],
-      "review_required": true,
-      "reason": "Programming and painting as creative work; technology overlap. Proposed; user review pending."
+      "review_required": false,
+      "reason": "Programming and painting as creative work; technology overlap. Grouping approved by user."
     },
     "873c35645f64ce2d8032": {
       "section": "Lisp & Technical Deep Dives",
@@ -1594,29 +1594,29 @@
       "secondary_topics": [
         "Programming & Technology"
       ],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending. Also overlaps Programming & Technology."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user. Also overlaps Programming & Technology."
     },
     "9641c9d7a158bb67d136": {
       "section": "Programming & Technology",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "d0f4118d8b1a26426f8f": {
       "section": "Work, Learning & Ambition",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "e1c0dbc9deb9ab1b0c92": {
       "section": "Programming & Technology",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "7b26eb95393b4f8b4cef": {
       "section": "Thinking, Writing & Creativity",
@@ -1624,15 +1624,15 @@
       "secondary_topics": [
         "Startups & Building Companies"
       ],
-      "review_required": true,
-      "reason": "Design versus research, with programming examples. Proposed; user review pending."
+      "review_required": false,
+      "reason": "Design versus research, with programming examples. Grouping approved by user."
     },
     "f30fd7c5b278754bf92c": {
       "section": "Programming & Technology",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "4c8e08e8bd00f258c08f": {
       "section": "Lisp & Technical Deep Dives",
@@ -1640,22 +1640,22 @@
       "secondary_topics": [
         "Programming & Technology"
       ],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending. Also overlaps Programming & Technology."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user. Also overlaps Programming & Technology."
     },
     "b4434856f6918768e576": {
       "section": "Programming & Technology",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "3343bdad592c2da6c710": {
       "section": "Programming & Technology",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "6f4d09308b9f6c26a061": {
       "section": "Thinking, Writing & Creativity",
@@ -1663,15 +1663,15 @@
       "secondary_topics": [
         "Work, Learning & Ambition"
       ],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending. Also overlaps Work, Learning & Ambition."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user. Also overlaps Work, Learning & Ambition."
     },
     "3d8f2b3c9161e2614455": {
       "section": "Lisp & Technical Deep Dives",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Arc design and object orientation; Lisp-family technical discussion. Proposed; user review pending."
+      "review_required": false,
+      "reason": "Arc design and object orientation; Lisp-family technical discussion. Grouping approved by user."
     },
     "8d92b4136ece285e13df": {
       "section": "Lisp & Technical Deep Dives",
@@ -1679,8 +1679,8 @@
       "secondary_topics": [
         "Programming & Technology"
       ],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending. Also overlaps Programming & Technology."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user. Also overlaps Programming & Technology."
     },
     "fde46314dc93038c40b3": {
       "section": "Programming & Technology",
@@ -1688,8 +1688,8 @@
       "secondary_topics": [
         "Startups & Building Companies"
       ],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending. Also overlaps Startups & Building Companies."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user. Also overlaps Startups & Building Companies."
     },
     "bd06b77c3ca90aff1c4b": {
       "section": "Lisp & Technical Deep Dives",
@@ -1697,29 +1697,29 @@
       "secondary_topics": [
         "Programming & Technology"
       ],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending. Also overlaps Programming & Technology."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user. Also overlaps Programming & Technology."
     },
     "ed31db79cd9ddc04671b": {
       "section": "Programming & Technology",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "7311535b8938746855ad": {
       "section": "Programming & Technology",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Programming-language adoption and design; overlaps Lisp/Arc. Proposed; user review pending."
+      "review_required": false,
+      "reason": "Programming-language adoption and design; overlaps Lisp/Arc. Grouping approved by user."
     },
     "5f2e59ff72db8c76853e": {
       "section": "Programming & Technology",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "ae1b2e08aa01ded23ee6": {
       "section": "Lisp & Technical Deep Dives",
@@ -1728,15 +1728,15 @@
         "Programming & Technology",
         "Startups & Building Companies"
       ],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending. Also overlaps Programming & Technology, Startups & Building Companies."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user. Also overlaps Programming & Technology, Startups & Building Companies."
     },
     "e34d340bf9b9003f5a85": {
       "section": "Lisp & Technical Deep Dives",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user."
     },
     "dc3f452dc7e415ffee7d": {
       "section": "Lisp & Technical Deep Dives",
@@ -1744,15 +1744,15 @@
       "secondary_topics": [
         "Programming & Technology"
       ],
-      "review_required": true,
-      "reason": "Common Lisp textbook chapter; publication date not printed in saved text. Proposed; user review pending."
+      "review_required": false,
+      "reason": "Common Lisp textbook chapter; publication date not printed in saved text. Grouping approved by user."
     },
     "d650febe466d594d32b3": {
       "section": "Lisp & Technical Deep Dives",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "Common Lisp textbook chapter with code; publication date not printed in saved text. Proposed; user review pending."
+      "review_required": false,
+      "reason": "Common Lisp textbook chapter with code; publication date not printed in saved text. Grouping approved by user."
     },
     "b36dbde123e593a59fe2": {
       "section": "Lisp & Technical Deep Dives",
@@ -1760,15 +1760,20 @@
       "secondary_topics": [
         "Programming & Technology"
       ],
-      "review_required": true,
-      "reason": "Provisional content-term match; editorial review pending. Also overlaps Programming & Technology."
+      "review_required": false,
+      "reason": "Content-based grouping approved by user. Also overlaps Programming & Technology."
     },
     "9a35bcce0aa72dfbb138": {
       "section": "Society, Wealth & Power",
       "included": true,
       "secondary_topics": [],
-      "review_required": true,
-      "reason": "California death penalty proposition. Proposed; user review pending."
+      "review_required": false,
+      "reason": "California death penalty proposition. Grouping approved by user."
     }
+  },
+  "grouping_approval": {
+    "date": "2026-09-09",
+    "scope": "Current 234 essay assignments and six-section grouping",
+    "user_feedback": "grouping looks right, close this phase"
   }
 }

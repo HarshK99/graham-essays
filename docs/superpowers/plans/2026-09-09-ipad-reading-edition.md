@@ -8,7 +8,7 @@
 
 **Spec:** [Design specification](../../design.md). Read it together with [decisions and evidence](../../decisions.md).
 
-This plan was saved during documentation-only planning. The user authorised Phase 1 on 2026-09-09; its completed work and exact setup commands are recorded in docs/progress.md and docs/windows-setup.md. Phase 2 implementation is now delivered with grouping awaiting user review; Phases 3-5 remain unstarted. The writing-plans skill informed the file map, task checklists, and acceptance checks. No additional skills or subagents are required to read this document.
+This plan was saved during documentation-only planning. The user authorised Phase 1 on 2026-09-09; its completed work and exact setup commands are recorded in docs/progress.md and docs/windows-setup.md. Phase 2 is complete with user-approved grouping; Phases 3-5 remain unstarted. The writing-plans skill informed the file map, task checklists, and acceptance checks. No additional skills or subagents are required to read this document.
 
 ## Global constraints
 
@@ -169,4 +169,4 @@ The full project is complete when all five phase pass conditions are met. Do not
 
 Delivered 2026-09-09. Added `src/__init__.py` for module commands and `scripts/check_collection.py` for offline collection checks; `config/book.local.json` holds ignored personal overrides. `docs/collection-checks.md` records preservation evidence and companion-document limitations. Original sources, reading fragments, images, companion files and the catalog remain local under `data/`. No extra conversion library was needed.
 
-All Phase 2 checklist outputs are present. The grouped list is proposed and awaits user review. Ten tests pass. The complete Roots of Lisp PostScript companion is preserved but needs conversion before full export; its introduction is not the full article. Read the current progress and collection-check documents before Phase 3. No later-phase checklist is marked complete.
+All Phase 2 checklist outputs are present. The user approved the grouped list on 2026-09-09; Phase 2 is complete. Ten tests pass. The complete Roots of Lisp PostScript companion is preserved but needs conversion before full export; its introduction is not the full article. Read the current progress and collection-check documents before Phase 3. No later-phase checklist is marked complete.

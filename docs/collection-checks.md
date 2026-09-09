@@ -1,6 +1,6 @@
 # Collection checks
 
-Checked on native Windows, 2026-09-09. Phase 2 source work is implemented; the proposed grouping awaits user review. No PDF, browser rendering or iPad behaviour has been tested.
+Checked on native Windows, 2026-09-09. Phase 2 source work is implemented; the user approved the grouping on 2026-09-09. No PDF, browser rendering or iPad behaviour has been tested.
 
 ## Snapshot and coverage
 
@@ -8,7 +8,7 @@ The saved [article index](https://paulgraham.com/articles.html) contains 234 uni
 
 Five entries have no explicit publication date: What Languages Fix; Why Arc Isn't Especially Object-Oriented; Lisp for Web-Based Applications; and both ANSI Common Lisp chapters. Programming Bottom-Up prints 1993, which remains a year-only date. The April 2001 talk mentioned inside Lisp for Web-Based Applications is not labelled as its publication date.
 
-Every included source appears once in the proposed list. Sections contain 83, 43, 38, 33, 27 and 10 entries respectively, with Lisp last. Initial full-content term matching was followed by a review of titles/openings and ambiguous cases. This is a proposed editorial organisation, not a line-by-line reading or user-approved table of contents. See [the complete list](essay-review.md).
+Every included source appears once in the proposed list. Sections contain 83, 43, 38, 33, 27 and 10 entries respectively, with Lisp last. Initial full-content term matching was followed by a review of titles/openings and ambiguous cases. The user approved this organisation on 2026-09-09. The editorial pass was not a line-by-line reading. See [the complete list](essay-review.md).
 
 ## Preservation checks
 

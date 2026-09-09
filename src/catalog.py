@@ -58,9 +58,10 @@ def review_text(book, catalog):
     validate(book, catalog)
     counts = Counter(r['status'] for r in catalog['essays'])
     excluded = sum(not c['included'] for c in book['essays'].values())
-    lines = ['# Proposed essay order', '', 'Status: Awaiting user review. This file contains titles and source links, not essay text.', '',
+    status = 'Awaiting user review' if any(c.get('review_required', True) for c in book['essays'].values()) else 'Grouping approved by the user'
+    lines = ['# Essay order', '', f'Status: {status}. This file contains titles and source links, not essay text.', '',
              f"Sources: {len(catalog['essays'])}; successful: {counts['success']}; failed/pending: {len(catalog['essays']) - counts['success']}; intentionally excluded: {excluded}.", '',
-             'Dates keep only the precision printed in the opening. Unknown dates appear last in source order. All initial assignments are proposals; overlaps are marked. Moving or excluding an essay changes book choices only.', '',
+             'Dates keep only the precision printed in the opening. Unknown dates appear last in source order. Topic overlaps are marked; grouping approval does not resolve unknown dates or conversion work. Moving or excluding an essay changes book choices only.', '',
              'Edit `config/book.json`, then run `.\\.venv\\Scripts\\python.exe -m src.catalog` to rebuild this list. Set `included` to false to exclude; optional numeric `order` overrides chronology within a section.', '']
     for section in book['sections']:
         records = ordered(book, catalog, section)
