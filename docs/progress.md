@@ -29,7 +29,7 @@ Documentation-only inspection and local link checks. No phase code, browser work
 
 ## Next action
 
-The reader-intention page, lower-half credits and lighter disclaimer are implemented and checked in `output/sample-20260909-183140-26c6d24b.pdf`. To include them in the full book, run `.\.venv\Scripts\python.exe -m src.pdf_builder --full`; the new filename is printed under `output/`. The existing full PDF predates this update. All five phases are complete; no repeat device review or broad audit is needed for this change. Keep annotated copies separate.
+The reader-intention page, lower-half credits and lighter disclaimer are implemented and checked in `output/sample-20260909-183304-83ec026b.pdf`. To include them in the full book, run `.\.venv\Scripts\python.exe -m src.pdf_builder --full`; the new filename is printed under `output/`. The existing full PDF predates this update. All five phases are complete; no repeat device review or broad audit is needed for this change. Keep annotated copies separate.
 
 ## Phase work log
 
@@ -298,3 +298,6 @@ Checked `output/sample-20260909-182821-af5c8295.pdf`: 11 pages; page 2 visually 
 Page 2 now begins with the selection introduction. Added About the format: right-side space for notes beside passages, bottom space for reflections/sketches/ideas, framed around active reading rather than any device. Moved compiler credit, edition details and links into the lower half; made the ownership disclaimer a lighter readable grey. Compilation date is 10 September 2026; version remains 1.0 and essay coverage August 2026.
 
 Preview: `output/sample-20260909-183140-26c6d24b.pdf` (UTC filename), 11 pages. Visually inspected page 2, verified text order and both external link destinations. Refreshed the reusable renderer/template. No full rebuild or broad test suite. To create the complete updated book, run `.\.venv\Scripts\python.exe -m src.pdf_builder --full`. Existing full PDFs remain unchanged.
+
+
+2026-09-10: Replaced the format explanation with How to use this book: writing margins, clickable Contents, top title/page-number return links, highlighting/handwriting and preserving annotated copies. Preview `output/sample-20260909-183304-83ec026b.pdf` remains 11 pages; page 2 text and rendered fit checked. Reusable renderer refreshed; no full rebuild. Generate the complete updated edition with `.\.venv\Scripts\python.exe -m src.pdf_builder --full`.

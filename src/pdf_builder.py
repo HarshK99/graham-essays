@@ -177,7 +177,7 @@ def build(selected=None, settings=None, root=ROOT, output=None, excerpts=None,
                      + ' pieces, with space to think in the margins.</p>'
                      + '<p>' + html.escape(source_credit) + '</p>')
             if book.get('format_note'):
-                title += '<h2>About the format</h2><p>' + html.escape(book['format_note']) + '</p>'
+                title += '<h2>How to use this book</h2><p>' + html.escape(book['format_note']) + '</p>'
             title += ('<p class="edition-scope">Prepared for personal reading. ' + edition_note
                       + '</p></div><div class="compiler-details">')
             if book.get('compiled_by'):
