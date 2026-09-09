@@ -2,7 +2,7 @@
 
 A Windows project for turning Paul Graham's essays into a PDF with room to read, highlight, and write handwritten notes. The planned reading trial uses an iPad A16 with Preview or Goodnotes.
 
-Status: the sample PDF builder is available; Phase 3 is complete with the revised sample approved by the user. Grouping is approved. Generate a local reading trial with a cover, selectable text, navigation and writing margins. The browser app is planned for Phase 4. See [sample review](docs/sample-review.md) and [tested progress](docs/progress.md).
+Status: the sample PDF builder is available; Phase 3 is complete with the revised sample approved by the user. Grouping is approved. Generate a local reading trial with a cover, selectable text, navigation and writing margins. Phase 4 will finish the command-line workflow for saved choices and exports; no app is planned. See [sample review](docs/sample-review.md) and [tested progress](docs/progress.md).
 
 ## Windows setup
 
@@ -58,16 +58,16 @@ Fonts, page dimensions, spacing, writing margins, colours and cover selection ar
 | Windows setup and local storage | Complete |
 | Essay downloads and subject grouping | Complete; grouping approved |
 | Sample PDF and iPad trial | Complete; revised sample approved |
-| Local browser app with saved choices | Planned — Phase 4 |
+| Saved settings and command-line export workflow | Existing commands available; finish in Phase 4 |
 | Full book and reusable book-design guide | Planned — Phase 5 |
 
-This is an early development version. Samples are generated locally; a complete book and browser app are not delivered yet. The book-design skill is a draft, to be finalised and independently validated in Phase 5.
+This is an early development version. Samples are generated locally; the full collection PDF is still to come. The book-design skill is a draft, to be finalised and independently validated in Phase 5.
 
 ## Project documents
 
 - [Start a phase](docs/commands/phase.md): use `/phase N` in a new project chat, or `Start phase N` if the app intercepts the slash form.
 - [Progress and handoff](docs/progress.md): what is complete and what the next chat should do.
-- [Design specification](docs/design.md): agreed requirements, initial page settings, essay sections, and the proposed app experience.
+- [Design specification](docs/design.md): agreed requirements, initial page settings, essay sections, and the command-line and agent workflow.
 - [Phased plan](docs/superpowers/plans/2026-09-09-ipad-reading-edition.md): delivery order, planned files, and checks for each phase.
 - [Decisions and evidence](docs/decisions.md): confirmed choices, proposals, source links, and what has not been tested.
 - [Documentation guide](docs/README.md): where to find setup, design, and development details.
@@ -80,7 +80,7 @@ This is an early development version. Samples are generated locally; a complete 
 - A wide writing margin on the right and a smaller writing area at the bottom of every reading page.
 - No extra blank notes page after each essay.
 - Selectable text for highlighting, clickable contents, and section/essay bookmarks.
-- A Windows app with adjustable fonts, spacing, margins, section order, and essay selection.
+- Windows commands and saved configuration files for fonts, spacing, margins, section order, and essay selection; an agent can make changes on request.
 - A short sample export for checking the layout on the iPad before building the whole book.
 - Published-book design quality and a reusable book-design skill, refined during sample design and finalised with the finished book.
 

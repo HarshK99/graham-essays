@@ -1,6 +1,6 @@
 # Documentation guide
 
-New here? Start with the [project README](../README.md), then [Windows setup](windows-setup.md). Windows setup, collection tools and sample PDF export are available; the browser app is still ahead.
+New here? Start with the [project README](../README.md), then [Windows setup](windows-setup.md). Windows setup, collection tools and sample PDF export are available; the remaining work is command-line workflow completion and the full book.
 
 | Document | What it answers |
 | --- | --- |
@@ -8,7 +8,7 @@ New here? Start with the [project README](../README.md), then [Windows setup](wi
 | [Essay order](essay-review.md) | Which section is proposed for each essay, and what needs review? |
 | [Sample review](sample-review.md) | Which PDF should I try, and what has been checked? |
 | [Progress](progress.md) | What was actually built and tested, and what comes next? |
-| [Design](design.md) | What should the book and app eventually do? |
+| [Design](design.md) | What should the book and command-line workflow do? |
 | [Decisions](decisions.md) | Which choices are confirmed, provisional, or unresolved? |
 | [Delivery plan](superpowers/plans/2026-09-09-ipad-reading-edition.md) | What belongs to each phase? |
 | [Source review](upstream/PROVENANCE.md) | Where did the code and cover come from, and what terms were found? |

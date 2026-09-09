@@ -10,8 +10,8 @@
 | Extra notes pages | None after essays |
 | Organisation | Broad subject sections in one book |
 | Lisp placement | End of the main book |
-| Formatting | Good starting defaults, configurable later in the app |
-| Current work | Phase 3 complete; revised sample approved; Phase 4 app next |
+| Formatting | Approved defaults, configurable through saved files, commands or agent requests |
+| Current work | Phase 3 complete; revised sample approved; Phase 4 command-line workflow next |
 | New exports | New files, without notes from previous copies |
 | Cover | Required; retain upstream cover for reuse after checking terms |
 | PDF route | Generate directly from essay content, without EPUB as an intermediate |
@@ -21,13 +21,13 @@
 
 Additional confirmed deliverable: a reusable book-design skill, drafted during Phase 3 and finalised in Phase 5 from the iterated, approved PDF design. It must include the required supporting settings/templates, be tested on a separate original sample, and be prepared for others to use. Public publication is not part of this documentation update.
 
-## Approved sample defaults and planned app
+## Approved sample defaults and workflow
 
 - Source Serif 4 body text and Source Sans 3 labels.
 - 14 pt body text, line height 1.45, justified prose, white background; 12 pt author notes.
 - Right notes area 25% of usable width; bottom area 7.5% of usable height, with a faint bottom separator. Title and page number share the top line; no note-return labels.
 - Six sections listed in the design specification, with chronological order within each.
-- A local browser app on Windows, with no hosted service.
+- Windows command-line tools with saved configuration files; an agent can edit choices and run exports. No browser or desktop app is required.
 
 ## Evidence already inspected
 
@@ -88,3 +88,6 @@ Initial layout feedback applied: choose 25% from the requested 20%/25% right-spa
 
 
 Phase 3 closeout: the user explicitly approved the revised sample and requested closure on 2026-09-09. Carry its current settings into Phase 4 as the reset defaults. Individual device interactions and app preference were not reported; full-book iPad review and skill validation/packaging remain Phase 5 work. No later phase was started.
+
+
+Scope change, 2026-09-09: the user removed the app requirement. Command-line generation and agent-driven configuration changes are sufficient. Phase 4 now finishes that workflow using existing tools; Phase 5 requires usable command-line exports, not an app. Earlier app references in implementation records are historical.

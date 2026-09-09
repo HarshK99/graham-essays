@@ -4,15 +4,15 @@ Last updated: 2026-09-09
 
 ## Current state
 
-Phase 3's sample builder is implemented and Windows-checked. Initial layout feedback is applied in a revised 17-page trial and 94-page complete five-piece proof. The user approved the revised sample and requested Phase 3 closure on 2026-09-09. Phase 3 is Complete; individual iPad interaction results were not reported. Phase 2 remains complete with 234 saved entries and approved grouping. The browser app and full collection edition are not built. The complete Roots of Lisp companion still needs conversion before full export.
+Phase 3's sample builder is implemented and Windows-checked. Initial layout feedback is applied in a revised 17-page trial and 94-page complete five-piece proof. The user approved the revised sample and requested Phase 3 closure on 2026-09-09. Phase 3 is Complete; individual iPad interaction results were not reported. Phase 2 remains complete with 234 saved entries and approved grouping. The user removed the app scope; the full collection edition is not built. The complete Roots of Lisp companion still needs conversion before full export.
 
 | Phase | Status | Evidence / remaining work |
 | --- | --- | --- |
 | 1 — Windows foundation | Complete | Fork and upstream history retained; clean Windows setup and repeat-run checks passed |
 | 2 - Collection and sections | Complete | 234 saved entries; grouping approved by user on 2026-09-09; checks passed |
 | 3 — Sample PDF and iPad trial | Complete | Revised sample approved on 2026-09-09; 19 tests and both PDF audits pass |
-| 4 — Configurable app | Not started | Requires working sample generation |
-| 5 — Full reading edition | Not started | Requires usable app, reviewed content order and approved layout |
+| 4 — Command-line workflow | Not started | Reuse existing commands; finish saved-settings and full-export workflow |
+| 5 — Full reading edition | Not started | Requires usable command-line exports, reviewed content order and approved layout |
 
 ## Latest confirmed additions
 
@@ -29,7 +29,7 @@ Documentation-only inspection and local link checks. No phase code, browser work
 
 ## Next action
 
-Open a new chat in this project and send `Start phase 4`. Read the required project records plus `docs/sample-review.md` and `docs/windows-setup.md`; reuse the existing collection, settings and PDF builder. Build the local Windows app for section/essay selection, formatting controls, saved settings, reset, export progress and new PDF files. Phase 4 has not started.
+Open a new chat in this project and send `Start phase 4`. Read the required project records plus `docs/sample-review.md` and `docs/windows-setup.md`; reuse the existing collection, settings and PDF builder. Audit and finish saved configuration and command-line sample/full exports. Document direct commands and agent-driven changes; reuse the existing settings, catalog and PDF builder. No app is required. Phase 4 has not started.
 
 Keep the approved 25% right / 7.5% bottom preset, justified prose, 12 pt notes, top numbering and faint bottom separator as the reset defaults. Resolve the complete Roots of Lisp companion before full-book export; do not treat its introduction as the complete article. Phase 5 builds and checks the full collection, records actual full-book device feedback, and finalises/tests/packages the draft book-design skill. Do not start later phases automatically.
 
@@ -164,3 +164,13 @@ User feedback: "approved. close this phase and tell me next steps". Recorded app
 Updated public status, sample review, design decisions, configuration notes, draft-skill approval wording and plan checkboxes. Existing evidence remains 19 passing tests and two passing PDF audits (17-page sample and 94-page five-piece proof). Closeout verification passed: both PDF fingerprints and saved clean audits match; both build settings match the approved defaults; local links in all nine changed documents resolve; Phase 3 checkboxes are complete and later-phase checkboxes remain untouched; `git diff --check` passes. Documentation-only changes required no PDF rebuild or repeat browser/device test. Commit and push the closeout under existing source-sharing authorisation.
 
 **Next command:** `Start phase 4` in a new chat in this project. Build the local app with saved content/layout choices and export controls using the approved sample builder. Phase 4 and Phase 5 remain Not started. Keep essay data, PDFs and annotations local; skill packaging and its independent example validation remain Phase 5 work.
+
+### 2026-09-09 - App scope removed
+
+The user confirmed that command-line PDF generation and asking an agent for changes are sufficient. Removed the browser/desktop app from the active specification, Phase 4 checklist, Phase 5 prerequisites, phase command and public guides; saved this preference in AGENTS.md. Earlier app references in the dated work log describe the superseded plan.
+
+Phase 3 remains Complete. Phase 4 is now a smaller command-line workflow phase: inspect existing commands and saved settings first, then close actual gaps such as convenient full-collection selection, reset guidance and agent usage instructions. Do not rebuild features already delivered or start implementation from this documentation request. Phase 5 still produces and checks the full book and finalises/tests/packages the reusable skill. Full Roots of Lisp conversion remains outstanding.
+
+Next: `Start phase 4` in a new project chat. This scope update changes documentation only; PDFs, source code and personal settings remain unchanged.
+
+Verification for this scope update: inspected the existing builder/settings code and confirmed `python -m src.pdf_builder --help` exposes settings, essay selection, output folder and complete-selected-piece options. All 11 changed files are Markdown; local documentation links and `git diff --check` pass. Later-phase checkboxes remain unchecked. No implementation or PDF rebuild was performed. Source/document sharing follows existing authorisation.

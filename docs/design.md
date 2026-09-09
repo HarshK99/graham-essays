@@ -4,9 +4,9 @@ Date: 2026-09-09
 
 ## Purpose and scope
 
-Build a personal Windows app that prepares a readable, annotatable collection of Paul Graham's essays for an iPad A16. Reading and handwriting happen in Preview or Goodnotes on the iPad; this app prepares the PDF on Windows.
+Prepare a readable, annotatable collection of Paul Graham's essays on Windows using commands and saved settings, with optional agent assistance. Reading and handwriting happen in Preview or Goodnotes on the iPad A16.
 
-The first release is a local app, opened in a browser on the same Windows computer. This is a proposed delivery approach, not a requirement to host a website or create an account. A packaged desktop installer is outside the first release.
+The user removed the app requirement on 2026-09-09. Run the Python commands directly or ask an agent to change configuration and generate a PDF. Chromium remains an internal PDF printing dependency; no browser interface or desktop app is needed.
 
 ## Confirmed requirements
 
@@ -74,20 +74,20 @@ Before the full build, review a grouped essay list containing title, source URL,
 
 Show the hierarchy in both the book's clickable contents and PDF bookmarks: section, then essay. Start sections on a new page with the first essay beneath the section heading; dedicated decorative section pages are unnecessary for the first version.
 
-## Proposed app experience
+## Command-line and agent workflow
 
-1. Open the app locally on Windows.
-2. Load the saved essay collection, or explicitly fetch updates.
-3. Review sections, move essays, and choose what to include.
-4. Adjust reading and writing-space settings.
-5. Export a short sample using selected essays.
-6. Export the full book with those settings.
+1. Open PowerShell in the project folder, or ask an agent to work in this project.
+2. Use the saved essay collection; fetch updates only when explicitly requested.
+3. Edit saved book choices to reorder sections, move essays and choose what to include.
+4. Edit personal reading settings to adjust fonts, spacing, margins and other page choices.
+5. Generate and check a short sample using selected essays.
+6. Generate the full book with the same saved settings once full export is ready.
 
-Provide a saved default preset so the user can return to the original design after experimenting. Save changes across app restarts. Offer font family, text size, line height, paragraph spacing, page size, outer margins, right and bottom writing space, colours, and blank/faint-dot writing backgrounds. The default background is blank.
+Keep the approved default preset separate from personal settings. Settings files persist across command runs; provide documented reset instructions that preserve other user files. Support font family, text size, line height, paragraph spacing, page size, outer margins, right and bottom writing space, colours and blank/faint-dot writing backgrounds. The default writing background is blank with the approved bottom divider.
 
-Treat the generated sample PDF as the accurate preview. A browser approximation alone cannot prove how page breaks or iPad highlighting will work.
+An agent request such as "make the right writing space 20% and export a sample" should update the personal settings, run the existing builder, check the output and report its new filename. Defaults change only when requested. The generated PDF is the accurate preview; there is no separate on-screen layout editor to build.
 
-Keep the first version focused: no accounts, cloud hosting, in-app handwriting tools, annotation import, automatic daily publishing, or EPUB export. A future EPUB would serve a different reading layout and is not required for this project.
+Keep the workflow local, without accounts, cloud hosting, annotation import, automatic publishing or EPUB export.
 
 ## Published-book quality and reusable skill
 

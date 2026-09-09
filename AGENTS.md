@@ -23,6 +23,7 @@ Preserve these instructions and project docs when bringing in upstream source. R
 ## Product essentials
 
 - Native Windows setup; reading on iPad A16 in Preview or Goodnotes.
+- Generate and configure PDFs through command-line tools or agent requests. Do not build a browser or desktop app; the user removed that scope on 2026-09-09.
 - Include a cover. Preserve the upstream cover for reuse after checking its terms.
 - Generate PDF directly from essay content; EPUB is not a required intermediate or deliverable.
 - Right-side and bottom writing space on reading pages; no blank notes pages after essays.

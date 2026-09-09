@@ -1,6 +1,6 @@
 # Windows setup
 
-Setup prepares Python, local folders, the collection tools and the direct PDF builder. A browser app is planned for Phase 4.
+Setup prepares Python, local folders, the collection tools and the direct PDF builder. Use commands or ask an agent to update saved choices and generate PDFs. Phase 4 will finish this workflow; no app is planned.
 
 ## Requirements
 
@@ -19,7 +19,7 @@ python scripts/setup_windows.py
 
 If you already have the project, open its folder and skip the clone command. If `python` selects a different version, use `py -3.14 scripts/setup_windows.py`. The setup command locates the project from its own file path, creates `.venv`, installs the locked dependencies, and runs the readiness check. It can also be invoked from another folder with a quoted full path. No PowerShell execution-policy change is needed.
 
-Success ends with `Windows foundation ready.` The check imports the collection libraries, parses a small in-memory HTML example, checks the original cover fingerprint, and checks that the storage folders are writable. It makes no network requests. This is a command-line foundation check, not the future browser app.
+Success ends with `Windows foundation ready.` The check imports the collection libraries, parses a small in-memory HTML example, checks the original cover fingerprint, and checks that the storage folders are writable. It makes no network requests. This command checks setup; use the PDF builder command below to export.
 
 Rerun the setup command after dependency changes or an interrupted install. It preserves data and settings. If `.venv` belongs to a different Python version, rename it before rerunning setup. If you move the project, recreate `.venv` at the new location; Python environments should not be copied between folders.
 
@@ -78,7 +78,7 @@ Rerun setup after updating to this phase. It installs the pinned PDF libraries a
 .\.venv\Scripts\python.exe -m src.pdf_builder
 ```
 
-The builder prints the exact new filename. A `.json` file beside it records settings, font versions, source fingerprints, order, excerpts, removals and excluded/outside-sample entries. The normal sample is a short trial of five pieces: complete Writing, Briefly and Modeling a Wealth Tax; opening excerpts of How to Do Great Work, Five Questions about Language Design and the second ANSI Common Lisp chapter. Referenced author notes accompany excerpts, with return links. The complete chapter attribution stays in the code sample.
+The builder prints the exact new filename. A `.json` file beside it records settings, font versions, source fingerprints, order, excerpts, removals and excluded/outside-sample entries. The normal sample is a short trial of five pieces: complete Writing, Briefly and Modeling a Wealth Tax; opening excerpts of How to Do Great Work, Five Questions about Language Design and the second ANSI Common Lisp chapter. Referenced author notes accompany excerpts; return labels are disabled in the approved preset. The complete chapter attribution stays in the code sample.
 
 For the longer proof containing all five complete pieces:
 
@@ -93,7 +93,7 @@ Copy-Item config/reading-defaults.json config/reading-settings.json
 .\.venv\Scripts\python.exe -m src.pdf_builder --settings config/reading-settings.json
 ```
 
-Copy the preset only the first time, so you retain your changes. Settings files can contain only the fields you want to override. Sizes are PDF points, with 72 points per inch; writing-space fractions use `0.30` for 30%. Available font families are the three bundled Source families. Keep their font files and licence notices in `assets/fonts/`. Invalid geometry, missing fonts and unknown settings produce a visible error.
+Copy the preset only the first time, so you retain your changes. Settings files can contain only the fields you want to override. Sizes are PDF points, with 72 points per inch; writing-space fractions use `0.25` for the approved 25% right space and `0.075` for 7.5% bottom space. Available font families are the three bundled Source families. Keep their font files and licence notices in `assets/fonts/`. Invalid geometry, missing fonts and unknown settings produce a visible error.
 
 Set `notes_background` to `blank` or `dots`. Set `cover` to `typographic` or the path of a local image you are entitled to use. Relative cover paths are resolved from the project folder. `--essays` accepts saved catalog IDs and exports complete selected pieces in the current book order; it rejects excluded, unknown and repeated IDs. `--output` changes the export folder. Every export has a unique filename and contains no personal annotations.
 
@@ -105,4 +105,4 @@ To audit the actual PDF, use its filename from the export message:
 
 Replace the angle-bracket filename with the real filename; it is not a literal command argument. The audit writes `.checks.json` beside the PDF and exits with an error if it finds a problem. It checks text against prepared sources, font embedding, text/image bounds, internal links, bookmarks and empty reading pages. It does not replace visual inspection or the iPad trial.
 
-Transfer the trial to Files on the iPad using your usual file-transfer method, then open/import the same file in Preview and Goodnotes. Use [the sample review guide](sample-review.md) for the trial. Keep any annotated copy under its own name; generating a new PDF never brings across your previous highlights or handwriting. No browser app or full-collection export is delivered in this phase. Sources with unresolved full-text companions are rejected rather than exported as complete articles.
+Transfer the trial to Files on the iPad using your usual file-transfer method, then open/import the same file in Preview and Goodnotes. Use [the sample review guide](sample-review.md) for the trial. Keep any annotated copy under its own name; generating a new PDF never brings across your previous highlights or handwriting. The full-collection export workflow remains to be finished. Sources with unresolved full-text companions are rejected rather than exported as complete articles.

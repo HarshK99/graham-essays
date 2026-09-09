@@ -50,4 +50,4 @@ The user approved the revised sample and requested Phase 3 closure on 2026-09-09
 
 Report which app feels better and whether text or writing space should change. Initial feedback received: use 20% or 25% right space, halve bottom space, add a faint bottom divider, move numbers beside the top title, try justified text, reduce note size, and remove return labels. Implemented 25%, 7.5% and 12 pt notes. Revised layout: approved on 2026-09-09. Individual device checks: not reported. Keep annotated copies independently from new exports.
 
-Next: `Start phase 4` in a new project chat to build the configurable Windows app; do not start automatically. The complete Roots of Lisp companion still needs preparation before full-collection export; the builder refuses to label its introduction a complete essay.
+Next: `Start phase 4` in a new project chat to finish the saved-settings and command-line export workflow; do not start automatically. The complete Roots of Lisp companion still needs preparation before full-collection export; the builder refuses to label its introduction a complete essay.

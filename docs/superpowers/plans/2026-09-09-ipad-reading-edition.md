@@ -1,10 +1,10 @@
 # iPad Reading Edition Implementation Plan
 
-**Goal:** Create a Windows app that exports a configurable Paul Graham essay book with broad subject sections and handwriting space for an iPad A16.
+**Goal:** Create a Windows command-line workflow that exports a configurable Paul Graham essay book with broad subject sections and handwriting space for an iPad A16.
 
-**Architecture:** Keep source essays, editorial choices, page settings, and generated PDFs separate. A local browser interface will select content and settings and call a local PDF builder. Reuse upstream components where they preserve content and work on Windows.
+**Architecture:** Keep source essays, editorial choices, page settings, and generated PDFs separate. Saved configuration files and command-line options select content and settings for the local PDF builder; an agent can edit these files and run commands. Reuse upstream components where they preserve content and work on Windows.
 
-**Tech stack:** Proposed Python foundation, a local browser interface, and a PDF generation tool selected by the sample checks in Phase 3. No framework or PDF library is committed before those checks.
+**Tech stack:** Native Windows Python tools; Playwright/Chromium prints PDF, pypdf assembles navigation, and PDFium checks output. Phase 3 selected these tools. No app framework is needed.
 
 **Spec:** [Design specification](../../design.md). Read it together with [decisions and evidence](../../decisions.md).
 
@@ -45,8 +45,6 @@ At planning time only Markdown documentation existed. Phase 1 added scripts/setu
 | src/catalog.py | Stable essay records and editorial ordering |
 | src/settings.py | Reading settings, validation, and saved presets |
 | src/pdf_builder.py | Sample/full PDF generation and export records |
-| src/app.py | Local application launch and requests from the interface |
-| src/ui/ | Content selection, formatting controls, and export progress |
 | templates/ | Page layout and print styles for the selected PDF tool |
 | assets/fonts/ | Permitted font files and their licence notices |
 | data/sources/ | Saved source essays, excluded from routine source commits |
@@ -114,27 +112,27 @@ At planning time only Markdown documentation existed. Phase 1 added scripts/setu
 - [x] Receive initial layout feedback and export a revised sample: 25% right, 7.5% bottom, faint bottom separator, top page numbers, justified prose, 12 pt notes, no return labels.
 - [x] Obtain approval of the revised sample and record feedback: the user approved it and requested phase closure on 2026-09-09. No app choice or individual device-check results were reported; retain full-book device checks in Phase 5.
 
-**Pass condition:** Windows sample checks pass and the user finds the layout comfortable on the iPad. If device feedback is pending, label the sample unapproved; independent app work may continue, but do not describe the reading experience as validated.
+**Pass condition:** Windows sample checks pass and the user finds the layout comfortable on the iPad. If device feedback is pending, label the sample unapproved; independent command-line workflow work may continue, but do not describe the reading experience as validated.
 
 **Closeout decision (2026-09-09):** The user explicitly approved the revised sample and requested closure. Phase 3 is Complete on that acceptance. No individual device interactions were reported, so none are marked tested; retain the explicit full-book device checks in Phase 5.
 
-## Phase 4 — Make content and formatting configurable in the app
+## Phase 4 - Finish saved settings and command-line exports
 
-**Deliverable:** A local Windows app that saves choices and exports new samples without code edits.
+**Deliverable:** A documented Windows command-line workflow for saved book/layout choices and new PDF exports, usable directly or through an agent. The user removed the app scope on 2026-09-09.
 
-**Files:** src/app.py; src/ui/; src/settings.py; src/catalog.py; config/reading-settings.json; config/book.json; tests/test_saved_settings.py; tests/test_book_selection.py; docs/windows-setup.md.
+**Files:** Existing src/settings.py, src/catalog.py, src/pdf_builder.py; config/reading-settings.json; config/book.local.json; docs/windows-setup.md; config/README.md; focused tests only for missing behaviour.
 
-**Inputs:** The catalog, default settings, and saved user choices. **Outputs:** Validated saved settings and ordered essay selections consumed by the same sample/full PDF builder.
+**Inputs:** The catalog, approved defaults and saved personal choices. **Outputs:** Validated settings and ordered selections consumed by the same sample/full PDF builder.
 
-- [ ] Provide a local launch action and show a useful error if required dependencies or fonts are missing.
-- [ ] Present section ordering, essay inclusion, and moves between sections with Lisp last in the default book.
-- [ ] Add font, size, line/paragraph spacing, page dimensions, margins, colours, and blank/faint-dot background controls.
-- [ ] Save user settings across restarts and offer an explicit reset to the original preset.
-- [ ] Provide selected-essay sample export and full-book export using the same layout settings.
-- [ ] Show progress, the output location, and specific download or conversion failures.
-- [ ] Check that changed settings survive restart, reset restores defaults, exclusions affect the PDF, and sample/full exports use the same settings.
+- [ ] Audit existing commands, file overrides and checks; retain working features and implement only remaining gaps.
+- [ ] Document changing and resetting personal formatting without changing the approved defaults; verify choices persist between command runs.
+- [ ] Document section order, essay inclusion and moves through saved book choices; retain Lisp last in defaults.
+- [ ] Provide clear commands for selected-essay samples and all-included-essay export using the same settings. The current `--complete-essays` means complete selected pieces, not the whole collection.
+- [ ] Report progress, output filenames and specific failures. Resolve or explicitly block incomplete full-text sources before a complete collection can be claimed.
+- [ ] Document agent requests for changes and exports, using the same files and commands rather than a separate interface.
+- [ ] Verify changed settings, reset, inclusion/exclusion and separate outputs; reuse existing checks where they already cover the behaviour.
 
-**Pass condition:** The user can change the book layout and section choices through the app, restart it, and generate a new sample with those choices intact.
+**Pass condition:** The user or agent can change saved book/layout choices and generate new PDFs through documented commands. Full-export selection is explicit, settings carry across runs, and failed/incomplete content is reported. Do not build a browser or desktop app.
 
 ## Phase 5 — Finish the reading edition and reusable book-design skill
 
@@ -151,7 +149,7 @@ At planning time only Markdown documentation existed. Phase 1 added scripts/setu
 - [ ] Inspect the first and last pages, section boundaries, long essays, author notes, code, and any pages identified by layout checks.
 - [ ] Generate a second export with changed settings and confirm it is a separate file and the first export is unchanged.
 - [ ] Have the user open the full book in the selected iPad app and check navigation, highlighting, handwriting, and responsiveness at full-book size.
-- [ ] Document launch, settings changes, sample/full export, importing into the reading app, and keeping annotated copies.
+- [ ] Document commands, settings changes, sample/full export, importing into the reading app, and keeping annotated copies.
 - [ ] Finalise the book-design skill from the actual approved output and iteration history, using skill-creator guidance. Cover typography, page dimensions, cover/title/contents pages, section and essay openings, author notes, writing margins, navigation, content preservation, and visual PDF review. Do not freeze initial proposals that were changed during review.
 - [ ] Separate general book-design guidance from this book's configurable preset. Keep note-taking margins optional for other users; do not hard-code Paul Graham content, Lisp ordering, local machine paths, or iPad A16 as universal requirements.
 - [ ] Include the actual templates, settings, font/dependency information, and instructions needed to reproduce the approved style. A skill file guides the workflow; do not claim that prose alone guarantees identical output without the recorded tools and assets.
