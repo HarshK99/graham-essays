@@ -69,6 +69,13 @@ See [Windows commands](../docs/windows-setup.md#saved-choices-and-full-export-ph
 
 `image-text.json` records visually checked title/section graphics by source fingerprint. The builder replaces five section graphics with text headings and omits duplicate title graphics and known footer icons; meaningful pictures remain images.
 
-Current image setting: `include_images: false` omits essay images while keeping transcribed text headings. Set it to true to restore pictures. `contents_size: 10` and `contents_columns: 2` control the compact contents; columns may be 1, 2 or 3. Every numbered page has a clickable header returning to the first Contents page. The personal 13 pt / 1.35 trial is awaiting review.
+Current image setting: `include_images: false` omits essay images while keeping transcribed text headings. Set it to true to restore pictures. `contents_size: 10` and `contents_columns: 2` control the compact contents; columns may be 1, 2 or 3. Every numbered page has a clickable header returning to the first Contents page.
 
 The 12 pt body / 1.25 line height / 3.75% bottom-space sample is now approved and is the shipped reset preset. The right writing area remains 25%. Personal overrides still take precedence. Earlier 13 pt and 14 pt references above describe previous trials.
+
+
+## Approved illustrated cover and orange palette
+
+The shipped book uses `cover_artwork: "assets/covers/makers-workbench.png"` with `cover: "typographic"`: artwork plus selectable author/title lettering. Set `cover_artwork` to an empty string for a text-only cover. For a complete supplied cover image, clear `cover_artwork` and set `cover` to that local image path.
+
+`accent_color: "#944018"` controls burnt-orange headings/links, `rule_color: "#EAD5C4"` controls apricot dividers, and `cover_color: "#ED7024"` controls the cover background. These do not alter the image's own colours. Body text stays charcoal on white. The cover is independent of `include_images`, which controls essay pictures.

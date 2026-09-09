@@ -136,7 +136,7 @@ Use `--settings config/reading-defaults.json` and/or `--book config/book.json` t
 
 Full exports use `full-<time>-<unique suffix>.pdf`; samples use `sample-<time>-<unique suffix>.pdf`. A matching JSON record stores effective formatting and book choices, essay order, source fingerprints, excerpts if any, intentional exclusions and entries outside the selection. A full export means all **included** entries from the saved catalog; it does not claim to include excluded entries or essays absent from that catalog. Every export starts without personal highlights or handwriting.
 
-The current selection is 224 essays, with all 10 entries in the final Lisp section excluded at the user?s request. Their originals remain saved. The two introduction-only entries still require companion preparation if re-enabled. See [progress](progress.md) for actual full-book checks. Phase 5 remains open until full-book iPad review.
+The current selection is 224 essays, with all 10 entries in the final Lisp section excluded at the user?s request. Their originals remain saved. The two introduction-only entries still require companion preparation if re-enabled. See [progress](progress.md) for actual full-book checks. The user confirmed full-book iPad testing complete.
 
 ## Asking an agent for changes
 
@@ -153,6 +153,8 @@ The agent should edit the same private files described above, preserve other fie
 
 The current defaults use 12 pt essay text, 1.25 line spacing, 25% side and 3.75% bottom writing space, no essay pictures, and 10 pt two-column contents. Tap the title or page number at the top of any numbered page to return to Contents. Text headings previously transcribed from images are retained.
 
-Export with `.\.venv\Scripts\python.exe -m src.pdf_builder --full`, then transfer the newly named PDF to Files on the iPad and open it in Preview or import it into Goodnotes. Keep the older annotated copy under its existing name. A new export contains no old handwriting or highlights. Try a contents entry and the top return link, highlight a sentence, write in both margins and check scrolling at full-book size. Device results are still pending.
+Export with `.\.venv\Scripts\python.exe -m src.pdf_builder --full`, then transfer the newly named PDF to Files on the iPad and open it in Preview or import it into Goodnotes. Keep the older annotated copy under its existing name. A new export contains no old handwriting or highlights. Try a contents entry and the top return link, highlight a sentence, write in both margins and check scrolling at full-book size. The user confirmed iPad testing complete on 2026-09-09; those checks are guidance for new readers.
 
 For the focused final-edition check, run `.\.venv\Scripts\python.exe scripts/check_navigation.py output/<actual-new-filename>.pdf` with the real filename. This checks selected essays, opening titles, contents/bookmarks/header destinations, embedded fonts and omitted images. It does not compare every word or establish iPad behaviour. The older comprehensive audit may flag generated list numbering and Type 3 glyph fonts; those historical checker limitations do not justify repeated full rebuilds.
+
+The approved default now includes an original illustrated orange cover, with separately selectable lettering. Cover and palette overrides are documented in [configuration](../config/README.md#approved-illustrated-cover-and-orange-palette).

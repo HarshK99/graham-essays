@@ -77,3 +77,15 @@ Output: `output/sample-20260909-173419-b81f54d6.pdf`, 11 pages, 216,531 bytes, v
 The user approved the 12 pt / 1.25 / 3.75% bottom sample and requested the full build. Latest file: `output/full-20260909-173907-6e051f73.pdf`, 1,348 pages, 13,603,725 bytes, with 224 included essays and 10 explicit Lisp-section exclusions. Contents occupies pages 3-6; the first essay starts on page 7. Every numbered page has a top return link to Contents. No essay images are included; source originals remain local and intact.
 
 Rendered Windows review covered all front matter, every section boundary, long prose, notes, tables, code, the formerly pictured essay and the last page. Device interactions remain pending. Try Contents, the top return links, highlighting, handwriting and scrolling in your preferred iPad app. Keep annotated copies independently from future exports.
+
+
+## Orange illustrated preview - 2026-09-09
+
+The user confirmed iPad testing is done. New preview: `output/sample-20260909-175902-8d07e568.pdf` (11 pages, 3,031,766 bytes). Original workbench illustration, selectable cover lettering, burnt-orange accents and apricot rules. Reading geometry and typography unchanged. Rendered cover, contents and essay opening inspected; cover text, image exclusion and top return destinations passed focused checks. Awaiting cover/theme approval only; no repeat device review requested.
+
+
+## Final approved orange edition - 2026-09-09
+
+User feedback: "perfect - move ahead" approved the cover/theme preview. Final export: `output/full-20260909-180513-3c502f76.pdf`, 224 essays, 1,348 pages, 16,420,926 bytes. The cover adds 2,817,201 bytes compared with the previous full edition; page count is unchanged. Cover, contents and opening essay visually inspected. Cover lettering is selectable and the original illustration occurs once on the cover. The earlier full PDF's SHA-256 still matches its build record. User-reported iPad testing is complete; no additional device check is claimed for the colour-only finish.
+
+Final focused check passed: 224 essays, four contents pages, 1,347 header returns, embedded fonts and no reading images. Phase 5 is complete.

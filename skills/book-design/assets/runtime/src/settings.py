@@ -54,7 +54,7 @@ def validate(s, root=ROOT):
     g = geometry(s)
     if g['text_width'] < max(144, 12 * s['body_size']) or g['text_height'] < 12 * s['body_size'] * s['line_height']:
         raise ValueError('Page dimensions, outer margins, writing areas and text size leave too little room for reading. Reduce margins/writing areas or increase page dimensions.')
-    for key in ('text_color', 'background_color', 'accent_color'):
+    for key in ('text_color', 'background_color', 'accent_color', 'rule_color', 'cover_color'):
         if not isinstance(s[key], str) or not re.fullmatch(r'#[0-9a-fA-F]{6}', s[key]):
             raise ValueError(f'{key} must be a six-digit colour such as #252622.')
     for key in ('body_font', 'label_font', 'code_font'):
@@ -69,6 +69,12 @@ def validate(s, root=ROOT):
         raise ValueError('Cover must be typographic or a local image path.')
     if s['cover'] != 'typographic' and not (root / s['cover']).is_file():
         raise ValueError('The selected cover image does not exist: ' + s['cover'])
+    if not isinstance(s['cover_artwork'], str):
+        raise ValueError('Cover artwork must be an empty string or a local image path.')
+    if s['cover_artwork'] and not (root / s['cover_artwork']).is_file():
+        raise ValueError('The selected cover artwork does not exist: ' + s['cover_artwork'])
+    if s['cover_artwork'] and s['cover'] != 'typographic':
+        raise ValueError('Cover artwork adds lettering to the typographic cover; choose that cover mode.')
     return s
 
 

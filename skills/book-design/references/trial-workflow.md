@@ -24,3 +24,10 @@ Review [the checklist](review-checklist.md) after every design change. The audit
 Final sample approval (2026-09-09): after the earlier 14 pt trial, the user approved 12 pt body text, 1.25 line height and 3.75% bottom space, retaining 25% right space. Essay images are omitted at this user?s request, while transcribed headings remain. The configurable preset uses 10 pt, two-column contents. The top title/number area on every numbered page links to the first Contents page. These choices describe this preset, not universal manuscript rules. Restore images with `include_images: true` when the manuscript needs them. Whole-book physical-device checks remain pending.
 
 Validation record: the refreshed package produced its original five-page manuscript in a separate clean folder after the final preset/header-link changes, and its PDF audit passed. The collection?s final 224-entry export has 1,348 pages; focused selection, navigation, opening-title, font and image checks passed. Whole-book device interaction remains untested. No generated collection is included in this package.
+
+
+## Approved orange finish
+
+On 2026-09-09 the reader confirmed iPad testing complete and approved an original illustrated orange cover. The project defaults now use burnt-orange accents and apricot rules. The reusable runtime keeps the same palette and configurable illustration support, with an empty `cover_artwork` so a new manuscript does not inherit book-specific artwork. Live typeset lettering stays selectable over a supplied illustration.
+
+The refreshed package was exercised in a new independent workspace, `book-design-orange-final-20260909`: original Morgan Vale manuscript, five pages, no audit issues. The cover and first chapter were visually inspected. This is a package exercise, not a claim of device testing for that manuscript.

@@ -20,10 +20,15 @@ pre { font: var(--code-size)/1.45 var(--code); white-space: pre-wrap; overflow-w
 blockquote { margin: 14pt 0 18pt 18pt; padding-left: 12pt; border-left: 1pt solid var(--accent); }
 img { display: block; max-width: 100%; height: auto; margin: 12pt 0; break-inside: avoid; break-after: avoid; }
 table { border-collapse: collapse; width: 100%; font: 11pt/1.45 var(--label); margin: 14pt 0 20pt; break-inside: avoid; }
-td, th { padding: 5pt 8pt; text-align: right; border-bottom: .4pt solid #d9dfda; }
+td, th { padding: 5pt 8pt; text-align: right; border-bottom: .4pt solid var(--rule); }
 tr:first-child { color: var(--accent); font-weight: 600; border-top: 1pt solid var(--accent); }
 li { widows: 3; orphans: 3; margin-bottom: 5pt; }
-.cover { min-height: var(--cover-height); position: relative; background: #e9ede7; padding: 48pt; border-left: 12pt solid var(--accent); }
+.cover { min-height: var(--cover-height); position: relative; background: var(--cover-color); padding: 48pt; border-left: 12pt solid var(--accent); }
+.illustrated-cover { height: var(--cover-height); position: relative; overflow: hidden; background: var(--cover-color); }
+.cover-art { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; margin: 0; }
+.cover-lettering { position: absolute; top: 40pt; left: 42pt; right: 42pt; color: var(--ink); }
+.cover-author { font: 600 25pt/1.2 var(--label); letter-spacing: -.4pt; }
+.cover-lettering h1 { font: 400 88pt/.98 var(--body); letter-spacing: -3pt; margin: 6pt 0 0; }
 .cover h1 { font-weight: 400; font-size: 76pt; line-height: .94; margin: 95pt 0 30pt; letter-spacing: -2pt; }
 .cover .author { font-size: 27pt; }
 .cover .edition { position: absolute; bottom: 48pt; left: 48pt; font: 11pt/1.6 var(--label); letter-spacing: 1pt; }
@@ -34,5 +39,5 @@ li { widows: 3; orphans: 3; margin-bottom: 5pt; }
 .toc-columns { column-count: var(--contents-columns); column-gap: 24pt; }
 .toc-section { margin-bottom: 16pt; }
 .toc-section h2 { font-size: 9pt; margin-bottom: 6pt; }
-.toc-entry { display: flex; justify-content: space-between; align-items: baseline; gap: 8pt; font-size: var(--contents-size); line-height: 1.3; text-decoration: none; border-bottom: .4pt solid #d9dfda; padding: 4pt 0; break-inside: avoid; }
+.toc-entry { display: flex; justify-content: space-between; align-items: baseline; gap: 8pt; font-size: var(--contents-size); line-height: 1.3; text-decoration: none; border-bottom: .4pt solid var(--rule); padding: 4pt 0; break-inside: avoid; }
 .toc-entry span:last-child { flex-shrink: 0; font: 9pt/1.3 var(--label); }

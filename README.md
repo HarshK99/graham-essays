@@ -1,8 +1,8 @@
 # Paul Graham — iPad Reading Edition
 
-A Windows project for turning Paul Graham's essays into a PDF with room to read, highlight, and write handwritten notes. The planned reading trial uses an iPad A16 with Preview or Goodnotes.
+A Windows project for turning Paul Graham's essays into a PDF with room to read, highlight, and write handwritten notes. Designed for reading on iPad A16 in Preview or Goodnotes.
 
-Status: The approved compact book contains 224 essays across 1,348 pages (13.6 MB). The user approved the sample design and chose to skip the 10 essays in the final Lisp section. Full-book iPad review remains pending. See [sample review](docs/sample-review.md), [Windows commands](docs/windows-setup.md#saved-choices-and-full-export-phase-4) and [tested progress](docs/progress.md). No app is required.
+Status: The approved compact book contains 224 essays across 1,348 pages (16.4 MB). The user approved the sample design and chose to skip the 10 essays in the final Lisp section. The user confirmed iPad testing complete and approved the original illustrated orange cover. See [sample review](docs/sample-review.md), [Windows commands](docs/windows-setup.md#saved-choices-and-full-export-phase-4) and [tested progress](docs/progress.md). No app is required.
 
 ## Windows setup
 
@@ -17,7 +17,7 @@ python scripts/setup_windows.py
 
 This installs the collection/PDF tools and Chromium, the browser used to print the PDF, and checks local storage. It does not download essays or open an app. See [Windows setup](docs/windows-setup.md) for details.
 
-Expected result: `Windows foundation ready.` Setup has been checked on Windows with Python 3.14.7, including a fresh folder with spaces in its name. PDF checks are recorded in the sample review; sample layout approval is recorded, while detailed device checks remain for the full-book review.
+Expected result: `Windows foundation ready.` Setup has been checked on Windows with Python 3.14.7, including a fresh folder with spaces in its name. PDF checks are recorded in the sample review; sample approval and user-reported iPad completion are recorded.
 
 ## Download and organise essays
 
@@ -49,7 +49,7 @@ Create `config/reading-settings.json` for personal formatting; it is reused auto
 .\.venv\Scripts\python.exe -m src.pdf_builder --settings config/reading-settings.json
 ```
 
-Fonts, page dimensions, spacing, writing margins, colours and cover selection are configurable. The default is an original typographic cover; the inherited image remains preserved with unresolved reuse terms. Read [Windows setup](docs/windows-setup.md) for all options and [the iPad trial guide](docs/sample-review.md) for what to check. Keep annotated copies separately: new exports contain no notes from older copies.
+Fonts, page dimensions, spacing, writing margins, colours and cover selection are configurable. The default is an original illustrated orange cover with selectable title lettering; the inherited image remains preserved with unresolved reuse terms. Read [Windows setup](docs/windows-setup.md) for all options and [the iPad trial guide](docs/sample-review.md) for what to check. Keep annotated copies separately: new exports contain no notes from older copies.
 
 ## Selected essays and full export
 
@@ -71,10 +71,10 @@ You can ask an agent: “Make the right writing space 20% and export a sample.�
 | Windows setup and local storage | Complete |
 | Essay downloads and subject grouping | Complete; grouping approved |
 | Sample PDF and iPad trial | Complete; revised sample approved |
-| Saved settings and command-line export workflow | Complete; full export reports remaining content blockers |
-| Full book and reusable book-design guide | Planned — Phase 5 |
+| Saved settings and command-line export workflow | Complete; all 224 selected essays export |
+| Full book and reusable book-design guide | Complete |
 
-PDFs are generated locally and excluded from this repository. The [book-design package](skills/book-design/README.md) includes the renderer, fonts, approved preset and an original example; it is prepared for sharing, not separately released. See the progress record for actual output checks and pending device review.
+PDFs are generated locally and excluded from this repository. The [book-design package](skills/book-design/README.md) includes the renderer, fonts, approved preset and an original example; it is prepared for sharing, not separately released. See the progress record for actual output checks and user-reported device review.
 
 ## Project documents
 

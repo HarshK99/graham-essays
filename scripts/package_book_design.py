@@ -1,5 +1,6 @@
 """Refresh the shareable design runtime from the tested project files (no essays)."""
 from pathlib import Path
+import json
 import shutil
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -31,6 +32,11 @@ def main():
     (RUNTIME / "src/catalog.py").write_text(text.rstrip() + "\n", encoding="utf-8")
     shutil.copy2(ROOT / "scripts/check_pdf.py", RUNTIME / "scripts/check_pdf.py")
     shutil.copy2(ROOT / "config/reading-defaults.json", RUNTIME / "config/reading-defaults.json")
+    preset_path = RUNTIME / "config/reading-defaults.json"
+    preset = json.loads(preset_path.read_text(encoding="utf-8"))
+    # Artwork belongs to this book; other manuscripts supply their own cover.
+    preset["cover_artwork"] = ""
+    preset_path.write_text(json.dumps(preset, indent=2) + "\n", encoding="utf-8")
     shutil.copy2(ROOT / "requirements.txt", RUNTIME / "requirements.txt")
     print("Prepared runtime:", RUNTIME)
 

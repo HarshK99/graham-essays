@@ -159,7 +159,7 @@ Execute in this session under the phase request. Retain the existing builder and
 - [x] Check section order (Lisp excluded by user), contents links, bookmarks, font embedding, and selectable opening titles.
 - [x] Inspect the first and last pages, section boundaries, long essays, author notes and code; use focused review under the user?s reduced-testing instruction.
 - [x] Generate a second export with changed settings and confirm it is a separate file and the first export is unchanged.
-- [ ] Have the user open the full book in the selected iPad app and check navigation, highlighting, handwriting, and responsiveness at full-book size.
+- [x] Receive full-book iPad feedback: user stated testing is done on 2026-09-09; individual interaction details were not supplied.
 - [x] Document commands, settings changes, sample/full export, importing into the reading app, and keeping annotated copies.
 - [x] Finalise the book-design skill from the actual approved output and iteration history, using skill-creator guidance. Cover typography, page dimensions, cover/title/contents pages, section and essay openings, author notes, writing margins, navigation, content preservation, and visual PDF review. Do not freeze initial proposals that were changed during review.
 - [x] Separate general book-design guidance from this book's configurable preset. Keep note-taking margins optional for other users; do not hard-code Paul Graham content, Lisp ordering, local machine paths, or iPad A16 as universal requirements.
@@ -206,18 +206,27 @@ Completed the checklist above without adding an app or new dependencies. Twenty-
 
 Execute in this session under the phase request. Retain the current approved compact defaults and the user-approved 224 included / 10 excluded choices.
 
-- [ ] Repair `src/print_content.py` with original-text regression fixtures in `tests/test_full_export.py`: escape literal angle brackets, preserve nested quotation tables once, unwrap rowless layout tables, and preserve code entities. Keep the wording guard.
+- [x] Repair `src/print_content.py` with original-text regression fixtures in `tests/test_full_export.py`: escape literal angle brackets, preserve nested quotation tables once, unwrap rowless layout tables, and preserve code entities. Keep the wording guard.
 - [x] Superseded by user direction: skip the final Lisp section, including both unprepared companions. Preserve originals; keep explicit rejection if those entries are later re-enabled.
-- [ ] Run `python -m src.pdf_builder --full --check`, then the full tests. Generate using `--full`; extend `scripts/check_pdf.py` to compare selected IDs/order, heading starts, section destinations and contents against the actual book record. Audit the resulting PDF and repair observed problems.
-- [ ] Render first/last pages, all section boundaries, notes, code, images/tables and flagged pages into local review images; inspect them. Export again with an explicit changed-settings file and verify the first fingerprint stays unchanged.
-- [ ] Package `skills/book-design/` with general instructions, approved preset, actual reusable renderer/templates/fonts, original manuscript, dependency and attribution files. Exercise only that package in a clean folder outside project output and run skill format/reference/PDF checks.
-- [ ] Update README, setup, sample review, decisions and progress with exact outputs/checks/restart instructions. Keep full-book iPad feedback pending until supplied. Review sharing scope, commit and push source/docs only under existing authorisation.
+- [x] Completed with user-approved reduced scope: full content preparation and export; `scripts/check_navigation.py` verifies selected IDs/order, opening titles, destinations, fonts and omitted images. Earlier test and inspection evidence is recorded in progress; no repeat broad audit required.
+- [x] Inspected 27 representative full-book pages and earlier changed-settings samples; old export fingerprints preserved. See progress for evidence.
+- [x] Package `skills/book-design/` with general instructions, approved preset, actual reusable renderer/templates/fonts, original manuscript, dependency and attribution files. Exercise only that package in a clean folder outside project output and run skill format/reference/PDF checks.
+- [x] Update README, setup, sample review, decisions and progress with exact outputs/checks/restart instructions. User supplied iPad completion; source sharing follows existing authorisation.
 
 Phase 5 pause: the user requested fewer checks, stopping low-value refinement loops, and a discussion of smaller page count/file size. See `docs/progress.md` for the actual 224-essay PDF and incomplete audit status. Companion conversion is superseded by the approved Lisp-section exclusion. Do not resume the old execution checklist unchanged.
 
 - [x] Produce a compact 13 pt / 1.35 sample with essay images omitted, 10 pt two-column contents, and header return links; run only focused checks.
 - [x] Receive compact-sample approval before rebuilding the full selection. See latest progress entry for actual filenames.
 
-- [x] Supply an additional 12 pt / 1.25 sample with 3.75% bottom writing space; verify the saved choices, inspect representative pages and preserve the earlier PDF. Approval remains pending.
+- [x] Supply an additional 12 pt / 1.25 sample with 3.75% bottom writing space; verify the saved choices, inspect representative pages and preserve the earlier PDF. The user approved this sample.
 
 Phase 5 final production: the approved 224-essay edition is 1,348 pages / 13,603,725 bytes. Focused navigation/font/image/opening checks passed; reusable runtime and original example passed. Earlier broad-audit execution tasks are superseded by the user?s focused-check preference. Only full-book device review remains for acceptance; see `docs/progress.md`.
+
+
+### Additional approved scope: original cover and orange theme
+
+- [x] Generate original artwork and an orange sample, preserving the approved reading layout.
+- [x] Inspect cover/contents/opening and check selectable cover text, image exclusion and return destinations (11-page sample, 3,031,766 bytes).
+- [x] Receive preview approval, export the full book once, refresh the reusable skill and finish source/documentation sharing. The earlier iPad review is complete by user report.
+
+Final closeout: all phases complete. Approved orange edition `full-20260909-180513-3c502f76.pdf`: 1,348 pages, 16,420,926 bytes, 224 essays. Focused checks passed, refreshed original package example passed, user-reported iPad review complete. No remaining phase.

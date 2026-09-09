@@ -4,7 +4,7 @@ Last updated: 2026-09-09
 
 ## Current state
 
-The user approved the compact sample and authorised the full build. Current output: `output/full-20260909-173907-6e051f73.pdf`, 224 essays, 1,348 pages, 13,603,725 bytes. That is 618 fewer pages than the previous 1,966-page edition. Settings: 12 pt body / 1.25 spacing / 25% right / 3.75% bottom, no essay pictures, four pages of two-column contents, and top-title/page-number return links. The 10 Lisp-section entries remain explicitly excluded. Full-book device review is pending; Phase 5 is not marked Complete.
+All five phases are complete. Final approved output: `output/full-20260909-180513-3c502f76.pdf`, 224 essays, 1,348 pages, 16,420,926 bytes. Original illustrated orange cover, burnt-orange accents, apricot rules, 12 pt body / 1.25 spacing / 25% right / 3.75% bottom, no essay pictures, four pages of two-column contents and top-title/page-number return links. The 10 Lisp-section entries remain excluded. User confirmed iPad testing complete and approved the final cover/theme. Focused final checks passed; the refreshed reusable package example passed.
 
 | Phase | Status | Evidence / remaining work |
 | --- | --- | --- |
@@ -12,7 +12,7 @@ The user approved the compact sample and authorised the full build. Current outp
 | 2 - Collection and sections | Complete | 234 saved entries; grouping approved by user on 2026-09-09; checks passed |
 | 3 — Sample PDF and iPad trial | Complete | Revised sample approved on 2026-09-09; 19 tests and both PDF audits pass |
 | 4 — Command-line workflow | Complete | Automatic private settings, explicit full selection, content checks, reset guidance and tested separate exports |
-| 5 — Full reading edition | Not started | Resolve 11 reported preparation blockers, produce/check final book, obtain device feedback, finalise skill |
+| 5 - Full reading edition | Complete | Final orange book approved; focused checks and reusable package exercise passed; user reported iPad testing complete |
 
 ## Latest confirmed additions
 
@@ -29,7 +29,7 @@ Documentation-only inspection and local link checks. No phase code, browser work
 
 ## Next action
 
-Open `output/full-20260909-173907-6e051f73.pdf` in the preferred iPad app. Try Contents, a top title/page number return link, text highlighting, handwriting in both margins and scrolling at full-book size. Resume with `Start phase 5` and that feedback to close the remaining device review or make a specific change. Do not restart broad audit/refinement loops; use the focused check and existing evidence below.
+No phase remains. Open `output/full-20260909-180513-3c502f76.pdf` for the final book. Future changes are optional: edit private settings or request a specific change, export a uniquely named file, and use focused checks appropriate to that change. Do not restart the completed phase or repeat device review. Keep annotated copies separate.
 
 ## Phase work log
 
@@ -268,3 +268,19 @@ Refreshed the shareable runtime via `scripts/package_book_design.py`, including 
 Remaining: actual full-book iPad navigation/highlighting/handwriting/responsiveness feedback. Phase 5 is Awaiting user review, not Complete. Resume `Start phase 5` with feedback; if acceptable, close the phase without another rebuild or broad test loop. Source/docs are being committed and pushed under existing authorisation; generated PDFs, local sources, annotations and personal settings remain ignored.
 
 Verified source sharing: delivery commit `99f58498b2d25c22f73f84b9081ea7c178db25d7` was pushed to `origin/ipad-reading-edition`; the remote branch matched local HEAD and the working tree was clean. Source, documentation and the permitted design package were shared; generated books and local data stayed ignored. This final documentation note records the successful push. Phase 5 remains Awaiting user review for the full-book iPad check.
+
+### 2026-09-09 - Original orange cover preview
+
+User confirmed iPad testing complete, requested original illustrated cover and orange palette, then authorised the proposed preview. Generated one original workbench illustration with the built-in image tool; saved it in `assets/covers/makers-workbench.png` with provenance. Author/title remain selectable typeset text. Added configurable cover artwork, cover colour and divider colour, and removed hardcoded green rules/dots from the active renderer/template. Approved 12 pt / 1.25 spacing and writing areas remain unchanged.
+
+Preview: `output/sample-20260909-175902-8d07e568.pdf`, 11 pages, 3,031,766 bytes. Inspected rendered cover, contents and opening essay. Focused checks passed: cover title selectable, exactly one cover image, no reading-page images, and every numbered page has a contents-return destination. No full suite or full-book rebuild. Previous full book retained. The cover adds approximately 2.8 MB compared with the earlier sample.
+
+Remaining: preview approval, one full export, packaged-runtime refresh and final documentation/source sharing. Device completion is user-reported; no claim of agent-operated iPad testing or individual unreported interactions.
+
+### 2026-09-09 - Phase 5 complete: approved illustrated orange edition
+
+User approved the cover/theme with "perfect - move ahead". Promoted the artwork to the shipped default and exported the full book once: `output/full-20260909-180513-3c502f76.pdf`, 1,348 pages, 224 essays, 16,420,926 bytes. No reading-layout changes. The previous full PDF hash still matches its record.
+
+Focused final check passed with no issues: 224 selected essays/order/opening titles, four contents pages, bookmarks/destinations, 1,347 header-return links, embedded fonts and zero reading images. Cover text is selectable with exactly one cover image. Visually inspected cover, first contents and first essay page in `output/review/orange-final/`; earlier full-book inspection remains applicable to unchanged pagination. No broad test suite repeated.
+
+Refreshed reusable runtime and guidance, retaining a generic typographic orange cover and optional artwork support. Independent original manuscript export: `../book-design-orange-final-20260909/output/full-20260909-180443-8619ff11.pdf`, five pages, no audit issues; cover and first chapter visually inspected. Updated README, settings/setup docs, design decisions, review and plan. All phases complete; no next phase or pending user approval. Source/docs/artwork sharing follows existing authorisation; books, essay data, annotations and private settings stay local. Device testing completion is based on user feedback.

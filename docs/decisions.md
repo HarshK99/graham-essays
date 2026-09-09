@@ -108,3 +108,8 @@ The user authorised replacing image headings with text when easy, then chose to 
 Latest user change (2026-09-09): omit all essay images, including meaningful pictures, while preserving saved originals and text headings. This supersedes earlier image-retention requirements for this edition. Use smaller two-column contents and clickable top titles/page numbers returning to Contents. Trial 13 pt body / 1.35 spacing in a sample before a full rebuild; final approval is pending.
 
 The user approved the 11-page compact sample with ?cool - go ahead and proceed?. Promoted 12 pt / 1.25 / 3.75% bottom to shipped defaults and began the full 224-essay export. Earlier trial settings remain only as historical evidence. Device-specific highlighting, handwriting and performance remain unreported.
+
+
+## Final cover approval - 2026-09-09
+
+The user approved the original workbench illustration and orange preview ("perfect - move ahead") and separately confirmed iPad testing done. Use the illustration only on the cover, with selectable typeset author/title. Burnt orange #944018 replaces green accents, pale apricot #EAD5C4 replaces green rules, orange #ED7024 backs the cover, and charcoal prose remains on white. Retain the approved 12 pt / 1.25 spacing / 25% right / 3.75% bottom layout, two-column contents, header return links, no essay pictures and the 224-essay selection. No further phase is planned.

@@ -38,6 +38,7 @@ def styles(s, root):
                  'note-size': str(s['note_size']) + 'pt', 'alignment': s['alignment'],
                  'paragraph': str(s['paragraph_space']) + 'pt', 'ink': s['text_color'],
                  'paper': s['background_color'], 'accent': s['accent_color'],
+                 'rule': s['rule_color'], 'cover-color': s['cover_color'],
                  'cover-height': str(s['page_height']) + 'pt',
                  'contents-size': str(s['contents_size']) + 'pt', 'contents-columns': s['contents_columns']}
     return ''.join(faces) + ':root{' + ''.join(f'--{k}:{v};' for k, v in variables.items()) + '}' + (root / 'templates/book.css').read_text(encoding='utf-8')
@@ -158,6 +159,15 @@ def build(selected=None, settings=None, root=ROOT, output=None, excerpts=None,
                 cover = '<img style="margin:0;width:100%;height:' + str(s['page_height']) + 'pt;object-fit:contain" src="' + data_url(cover_path, mime) + '">'
                 build_record['cover_sha256'] = hashlib.sha256(cover_path.read_bytes()).hexdigest()
             cover = cover.replace('Paul<br>Graham<br><i>Essays</i>', html.escape(author).replace(' ', '<br>', 1) + '<br><i>' + html.escape(title_text) + '</i>')
+            if s['cover_artwork']:
+                from PIL import Image
+                artwork = root / s['cover_artwork']
+                with Image.open(artwork) as im:
+                    mime = Image.MIME[im.format]
+                cover = ('<div class="illustrated-cover"><img class="cover-art" src="' + data_url(artwork, mime)
+                         + '"><div class="cover-lettering"><div class="cover-author">' + html.escape(author)
+                         + '</div><h1>' + html.escape(title_text) + '</h1></div></div>')
+                build_record['cover_sha256'] = hashlib.sha256(artwork.read_bytes()).hexdigest()
             cover_pdf = render(page, cover, css, s, (0, 0, 0, 0))
             title = '<div class="title-page"><div class="eyebrow">PAUL GRAHAM</div><h1>Essays</h1><p>A reading edition</p><div class="colophon">A selection of ' + str(len(records)) + ' pieces, with space to think in the margins.<br><br>Writing by Paul Graham. Original chapter attribution is retained in the text. Sources: paulgraham.com.<br><br>Prepared for personal reading. This sample is not the complete collection.<br><br>' + html.escape(' · '.join(s[k] for k in ('body_font', 'label_font', 'code_font'))) + '<br>Trial typography — device review pending.</div></div>'
             title = title.replace('PAUL GRAHAM', html.escape(author.upper())).replace('<h1>Essays</h1>', '<h1>' + html.escape(title_text) + '</h1>')
@@ -223,9 +233,9 @@ def build(selected=None, settings=None, root=ROOT, output=None, excerpts=None,
                     width = g['text_width'] if entry else g['usable_width']
                     marks += f'<div style="position:absolute;left:{s["margin_left"]}pt;top:{s["margin_top"]}pt;width:{width}pt;display:flex;align-items:baseline;font:9pt/12pt var(--label);color:var(--accent)"><span style="flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{heading}</span><span style="margin-left:12pt">{index + 1}</span></div>'
                 if index >= reading_start and s['bottom_notes'] > 0:
-                    marks += f'<div style="position:absolute;left:{s["margin_left"]}pt;top:{g["text_top"]+g["text_height"]+5}pt;width:{g["usable_width"]}pt;border-top:.35pt solid #e5e9e5"></div>'
+                    marks += f'<div style="position:absolute;left:{s["margin_left"]}pt;top:{g["text_top"]+g["text_height"]+5}pt;width:{g["usable_width"]}pt;border-top:.35pt solid var(--rule)"></div>'
                 if index >= reading_start and s['notes_background'] == 'dots':
-                    pattern = 'position:absolute;background-image:radial-gradient(#cdd4ce .55pt,transparent .65pt);background-size:12pt 12pt;'
+                    pattern = 'position:absolute;background-image:radial-gradient(var(--rule) .55pt,transparent .65pt);background-size:12pt 12pt;'
                     marks += f'<div style="{pattern}left:{s["page_width"]-s["margin_right"]-g["right_width"]}pt;top:{g["text_top"]}pt;width:{g["right_width"]}pt;height:{g["text_height"]}pt"></div>'
                     marks += f'<div style="{pattern}left:{s["margin_left"]}pt;top:{g["text_top"]+g["text_height"]}pt;width:{g["usable_width"]}pt;height:{g["bottom_height"]}pt"></div>'
                 layers.append(f'<div style="position:relative;height:{s["page_height"]}pt;break-after:page">{marks}</div>')
