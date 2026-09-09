@@ -108,6 +108,11 @@ def build(selected=None, settings=None, root=ROOT, output=None, excerpts=None,
     output.mkdir(parents=True, exist_ok=True)
     kind = 'full' if full else 'sample'
     stem = kind + '-' + datetime.now(timezone.utc).strftime('%Y%m%d-%H%M%S') + '-' + uuid.uuid4().hex[:8]
+    if full and book.get('output_name'):
+        name = book['output_name']
+        if not isinstance(name, str) or Path(name).name != name or not name.endswith('.pdf') or any(c in name for c in '/\\:'):
+            raise ValueError('Output name must be a PDF filename without folders.')
+        stem = Path(name).stem
     pdf_path = output / (stem + '.pdf')
     build_record = dict(schema_version=1, kind=kind, created_at=datetime.now(timezone.utc).isoformat(),
                         approval='Export does not establish layout approval or device testing; see docs/sample-review.md.', settings=s, geometry=g,
@@ -168,17 +173,19 @@ def build(selected=None, settings=None, root=ROOT, output=None, excerpts=None,
                          + '</div><h1>' + html.escape(title_text) + '</h1></div></div>')
                 build_record['cover_sha256'] = hashlib.sha256(artwork.read_bytes()).hexdigest()
             cover_pdf = render(page, cover, css, s, (0, 0, 0, 0))
-            edition_note = (f"All {len(records)} included pieces from the saved catalog; "
-                            f"{len(build_record['intentionally_excluded'])} intentionally excluded."
-                            if full else 'This sample is not the complete collection.')
+            summary = (str(len(records)) + ' essays by ' + author if full
+                       else str(len(records)) + '-essay preview of the reading edition')
             title = ('<div class="title-page"><div class="edition-introduction">'
-                     + '<p class="edition-lead">A selection of ' + str(len(records))
-                     + ' pieces, with space to think in the margins.</p>'
-                     + '<p>' + html.escape(source_credit) + '</p>')
-            if book.get('format_note'):
+                     + '<div class="eyebrow">THE READING EDITION</div>'
+                     + '<h1 class="edition-lead">About this edition</h1>'
+                     + '<p class="edition-summary">' + html.escape(summary) + '</p>')
+            if book.get('reading_tips'):
+                title += '<h2>How to use this book</h2><ul class="reading-tips">'
+                title += ''.join('<li>' + html.escape(tip) + '</li>' for tip in book['reading_tips'])
+                title += '</ul>'
+            elif book.get('format_note'):
                 title += '<h2>How to use this book</h2><p>' + html.escape(book['format_note']) + '</p>'
-            title += ('<p class="edition-scope">Prepared for personal reading. ' + edition_note
-                      + '</p></div><div class="compiler-details">')
+            title += '</div><div class="compiler-details">'
             if book.get('compiled_by'):
                 title += '<p class="compiler">Compiled by ' + html.escape(book['compiled_by']) + '</p>'
             edition_details = []
@@ -288,7 +295,14 @@ def build(selected=None, settings=None, root=ROOT, output=None, excerpts=None,
             writer.add_metadata({'/Title': author + ' — ' + title_text + ': ' + ('Reading Edition' if full else 'Reading Sample'), '/Author': author, '/Creator': 'Reading Edition'})
             build_record['page_count'] = len(writer.pages)
             writer.compress_identical_objects()
-            # Exclusive creation protects existing exports even under concurrent requests.
+            # Preserve any prior named edition and its records before publishing the replacement.
+            if pdf_path.exists():
+                archive = output / 'archive' / (datetime.now(timezone.utc).strftime('%Y%m%d-%H%M%S') + '-' + uuid.uuid4().hex[:8])
+                archive.mkdir(parents=True)
+                for prior in output.glob(pdf_path.stem + '.*'):
+                    if prior.is_file():
+                        prior.rename(archive / prior.name)
+            # Exclusive creation also guards against concurrent exports.
             with pdf_path.open('xb') as stream:
                 writer.write(stream)
         finally:

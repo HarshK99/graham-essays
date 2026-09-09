@@ -34,7 +34,10 @@ li { widows: 3; orphans: 3; margin-bottom: 5pt; }
 .cover .edition { position: absolute; bottom: 48pt; left: 48pt; font: 11pt/1.6 var(--label); letter-spacing: 1pt; }
 .title-page { padding-top: 34pt; font: 11pt/1.55 var(--label); }
 .title-page .edition-introduction { min-height: 370pt; max-width: 410pt; }
-.title-page .edition-lead { font: 400 25pt/1.25 var(--body); margin-bottom: 24pt; }
+.title-page .edition-lead { font: 400 32pt/1.2 var(--body); margin: 14pt 0 14pt; }
+.title-page .edition-summary { color: var(--accent); font-size: 12pt; }
+.title-page .reading-tips { padding-left: 16pt; margin: 0; }
+.title-page .reading-tips li { padding-left: 4pt; margin-bottom: 14pt; }
 .title-page .edition-introduction h2 { margin: 30pt 0 12pt; }
 .title-page .edition-scope { color: var(--accent); font-size: 10pt; margin-top: 22pt; }
 .title-page .compiler-details { max-width: 410pt; }

@@ -1778,9 +1778,15 @@
   },
   "compiled_by": "Harsh Kankaria",
   "project_url": "https://github.com/HarshK99/graham-essays",
-  "disclaimer": "The essays are the work of Paul Graham. I claim no ownership of the essay content; my contribution is its compilation and reading layout. All rights in the original writing remain with their respective rights holders. This independent edition is not affiliated with or endorsed by Paul Graham.",
+  "disclaimer": "Essays by Paul Graham. I claim no ownership of the original writing; all rights remain with their respective holders. This independent compilation is not affiliated with or endorsed by Paul Graham.",
   "linkedin_url": "https://linkedin.com/in/harshkankaria9",
   "edition_version": "1.0",
   "edition_updated": "2026-09-10",
-  "format_note": "Use the wide right margin for notes beside a passage, and the space at the bottom for reflections, sketches, or ideas to revisit. In the PDF, click or tap an essay title in the Contents to jump to it. Click or tap the title or page number at the top of any numbered page to return to the Contents. You can also highlight passages and add handwritten notes in a PDF reader that supports annotations. Keep your annotated copy: a newly generated edition will not carry your notes forward."
+  "format_note": "Use the wide right margin for notes beside a passage, and the space at the bottom for reflections, sketches, or ideas to revisit. In the PDF, click or tap an essay title in the Contents to jump to it. Click or tap the title or page number at the top of any numbered page to return to the Contents. You can also highlight passages and add handwritten notes in a PDF reader that supports annotations. Keep your annotated copy: a newly generated edition will not carry your notes forward.",
+  "output_name": "paul-graham-essays.pdf",
+  "reading_tips": [
+    "Use the right margin for notes beside a passage; use the bottom space for reflections or sketches.",
+    "Click or tap an essay in the Contents to open it.",
+    "Click or tap the title or page number at the top of a page to return to the Contents."
+  ]
 }

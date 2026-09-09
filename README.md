@@ -114,3 +114,5 @@ Downloaded essays, generated PDFs, personal settings, and local Python environme
 Current defaults: **12 pt text, 1.25 line spacing, 25% right writing space and 3.75% bottom space**. Essay images are omitted; contents use 10 pt text in two columns. Tap the top title or page number to return to Contents. See [progress](docs/progress.md) for the current full-book filename and checks.
 
 Title page: compiler credit, project/LinkedIn links, ownership disclaimer and version 1.0. Compilation updated 10 September 2026; latest dated included essay August 2026. Run the full-export command above to generate a new PDF with these credits. See [settings](config/README.md#title-page-credits-and-edition-details).
+
+Full exports now write `output/paul-graham-essays.pdf`; an existing copy is preserved under `output/archive/` before replacement. Samples keep unique names. The revised About this edition page uses a clear essay count and short reading tips.

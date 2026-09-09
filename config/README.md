@@ -88,3 +88,5 @@ The shipped book uses `cover_artwork: "assets/covers/makers-workbench.png"` with
 Build the complete PDF from the project folder with `.\.venv\Scripts\python.exe -m src.pdf_builder --full`. The command prints a new PDF path under `output/`; previous exports stay unchanged.
 
 `format_note` supplies the How to use this book section on page 2: note-taking space, clickable Contents and top return links, highlighting, and keeping annotated copies. The page begins with the selection introduction; compiler credits and links sit in its lower half, followed by a lighter ownership note. Compilation date updated to 2026-09-10; latest dated included essay remains August 2026.
+
+`reading_tips` is an optional list of bullets for How to use this book. `output_name` sets the full PDF filename; this book uses `paul-graham-essays.pdf`. Previous named editions and their records are preserved under `output/archive/` before replacement. Samples retain unique filenames.

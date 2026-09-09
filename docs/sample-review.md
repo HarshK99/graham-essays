@@ -106,3 +106,10 @@ Preview: `output/sample-20260909-183140-26c6d24b.pdf` (UTC filename), 11 pages. 
 
 
 2026-09-10: Replaced the format explanation with How to use this book: writing margins, clickable Contents, top title/page-number return links, highlighting/handwriting and preserving annotated copies. Preview `output/sample-20260909-183304-83ec026b.pdf` remains 11 pages; page 2 text and rendered fit checked. Reusable renderer refreshed; no full rebuild. Generate the complete updated edition with `.\.venv\Scripts\python.exe -m src.pdf_builder --full`.
+
+
+2026-09-10: Simplified page 2 to About this edition, an explicit essay/preview count, three bulleted reading tips, lower-half compiler credits and a short lighter disclaimer. Harsh Kankaria appears only in credits. Checked the rendered page in `output/sample-20260909-184202-5476b1b4.pdf` (11 pages). Awaiting this preview's approval before a full rebuild, as agreed.
+
+Full exports now use `output_name` from book settings, shipped as `paul-graham-essays.pdf`. Existing named editions and companion records are moved to a uniquely named output/archive subfolder immediately before writing their replacement. Other books without this setting and samples keep unique filenames. The named full-export path has not been exercised with a new full build yet. The existing `output/paul-graham-essays.pdf` was already present (the user-renamed prior full edition) and is retained.
+
+Requested stale-output deletion was rejected by automatic approval review with "blocked by policy" before the command ran. No cleanup was performed; stale outputs remain. Resume with preview approval for the full build; cleanup remains blocked by tool policy. The title-page changes are implemented and the reusable runtime refreshed.
