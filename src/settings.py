@@ -52,7 +52,7 @@ def validate(s, root=ROOT):
         if not isinstance(s[key], str) or not re.fullmatch(r'#[0-9a-fA-F]{6}', s[key]):
             raise ValueError(f'{key} must be a six-digit colour such as #252622.')
     for key in ('body_font', 'label_font', 'code_font'):
-        if s[key] not in FONTS:
+        if not isinstance(s[key], str) or s[key] not in FONTS:
             raise ValueError(f'{key} must name one of the bundled font families: ' + ', '.join(FONTS))
         for name in FONTS[s[key]]:
             if name and not (root / 'assets/fonts' / name).is_file():
@@ -68,7 +68,11 @@ def validate(s, root=ROOT):
 
 def load(path=None, root=ROOT):
     s = json.loads((root / 'config/reading-defaults.json').read_text(encoding='utf-8'))
-    if path:
-        overrides = json.loads(Path(path).read_text(encoding='utf-8'))
+    local = root / 'config/reading-settings.json'
+    path = Path(path) if path is not None else local if local.exists() else None
+    if path is not None:
+        overrides = json.loads(path.read_text(encoding='utf-8-sig'))
+        if not isinstance(overrides, dict):
+            raise ValueError(f'Settings must be a JSON object of named fields: {path}')
         s.update(overrides)
     return validate(s, root)

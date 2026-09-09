@@ -1,8 +1,32 @@
 import unittest
+import json
+from pathlib import Path
+import shutil
+import tempfile
 from src.settings import load, validate, geometry, ROOT
 
 
 class SettingsTests(unittest.TestCase):
+    def test_personal_settings_persist_and_explicit_defaults_reset(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            shutil.copytree(ROOT / 'config', root / 'config')
+            shutil.copytree(ROOT / 'assets/fonts', root / 'assets/fonts')
+            defaults = root / 'config/reading-defaults.json'
+            before = defaults.read_bytes()
+            local = root / 'config/reading-settings.json'
+            local.write_text(json.dumps({'right_notes': .2}), encoding='utf-8-sig')
+            for _ in range(2):
+                self.assertEqual(load(root=root)['right_notes'], .2)
+            self.assertEqual(load(defaults, root)['right_notes'], .25)
+            local.rename(root / 'config/reading-settings.backup.json')
+            self.assertEqual(load(root=root)['right_notes'], .25)
+            self.assertEqual(defaults.read_bytes(), before)
+            for value in ([], None, 'bad'):
+                local.write_text(json.dumps(value), encoding='utf-8')
+                with self.assertRaisesRegex(ValueError, 'JSON object'):
+                    load(root=root)
+
     def test_default_writing_spaces_do_not_overlap(self):
         g = geometry(load())
         self.assertAlmostEqual(g['text_width'], 391)

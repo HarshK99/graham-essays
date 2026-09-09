@@ -8,7 +8,7 @@
 
 **Spec:** [Design specification](../../design.md). Read it together with [decisions and evidence](../../decisions.md).
 
-This plan was saved during documentation-only planning. The user authorised Phase 1 on 2026-09-09; its completed work and exact setup commands are recorded in docs/progress.md and docs/windows-setup.md. Phase 2 is complete with user-approved grouping; Phase 3 is complete with user approval of the revised sample; Phases 4-5 remain unstarted. The writing-plans skill informed the file map, task checklists, and acceptance checks. No additional skills or subagents are required to read this document.
+This plan was saved during documentation-only planning. The user authorised Phase 1 on 2026-09-09; its completed work and exact setup commands are recorded in docs/progress.md and docs/windows-setup.md. Phase 2 is complete with user-approved grouping; Phase 3 is complete with user approval of the revised sample; Phase 4 is complete; Phase 5 remains unstarted. The writing-plans skill informed the file map, task checklists, and acceptance checks. No additional skills or subagents are required to read this document.
 
 ## Global constraints
 
@@ -124,15 +124,26 @@ At planning time only Markdown documentation existed. Phase 1 added scripts/setu
 
 **Inputs:** The catalog, approved defaults and saved personal choices. **Outputs:** Validated settings and ordered selections consumed by the same sample/full PDF builder.
 
-- [ ] Audit existing commands, file overrides and checks; retain working features and implement only remaining gaps.
-- [ ] Document changing and resetting personal formatting without changing the approved defaults; verify choices persist between command runs.
-- [ ] Document section order, essay inclusion and moves through saved book choices; retain Lisp last in defaults.
-- [ ] Provide clear commands for selected-essay samples and all-included-essay export using the same settings. The current `--complete-essays` means complete selected pieces, not the whole collection.
-- [ ] Report progress, output filenames and specific failures. Resolve or explicitly block incomplete full-text sources before a complete collection can be claimed.
-- [ ] Document agent requests for changes and exports, using the same files and commands rather than a separate interface.
-- [ ] Verify changed settings, reset, inclusion/exclusion and separate outputs; reuse existing checks where they already cover the behaviour.
+- [x] Audit existing commands, file overrides and checks; retain working features and implement only remaining gaps.
+- [x] Document changing and resetting personal formatting without changing the approved defaults; verify choices persist between command runs.
+- [x] Document section order, essay inclusion and moves through saved book choices; retain Lisp last in defaults.
+- [x] Provide clear commands for selected-essay samples and all-included-essay export using the same settings. The current `--complete-essays` means complete selected pieces, not the whole collection.
+- [x] Report progress, output filenames and specific failures. Resolve or explicitly block incomplete full-text sources before a complete collection can be claimed.
+- [x] Document agent requests for changes and exports, using the same files and commands rather than a separate interface.
+- [x] Verify changed settings, reset, inclusion/exclusion and separate outputs; reuse existing checks where they already cover the behaviour.
 
 **Pass condition:** The user or agent can change saved book/layout choices and generate new PDFs through documented commands. Full-export selection is explicit, settings carry across runs, and failed/incomplete content is reported. Do not build a browser or desktop app.
+
+### Phase 4 execution checklist — 2026-09-09
+
+Execute in this session under the phase request. Retain the existing builder and PDF audit; full collection production remains Phase 5.
+
+- [x] In `src/settings.py`, prefer `config/reading-settings.json` when no explicit settings path is supplied; explicit paths override that choice. Reject non-object JSON with a useful message and accept Windows UTF-8 files with a byte-order mark. Extend `tests/test_settings.py` with repeated loads, explicit defaults/reset and malformed-file checks in a temporary folder.
+- [x] In `src/catalog.py`, add a read-only `--list` command for titles/IDs and validate optional essay `order` as a finite number and direct private edits to `book.local.json`. Extend the catalog test for invalid numeric order; retain existing move/exclude/source-preservation checks.
+- [x] In `src/pdf_builder.py`, add `full=False`, `book_path=None`, `check_only=False` to `build`; select all included essays for full export, refuse conflicting selections/excerpts, prepare every selection and report all failures before printing. Add matching `--full`, `--book`, `--check` commands. Record full/sample scope, effective book choices and output kind; use accurate full-book front matter.
+- [x] Extend `tests/test_pdf_sample.py` using its original manuscript fixture: render a full selection with saved section moves/order and an excluded failed record, audit it, verify separate names and settings, reject incomplete sources before output. Run `.\.venv\Scripts\python.exe -m unittest discover -s tests -v`.
+- [x] Run the actual saved collection through `--full --check` and `--full` to prove incomplete content is blocked without producing a partial PDF. Generate a new real sample and run `scripts/check_pdf.py` on its actual filename. Record remaining preparation failures individually; do not change approved inclusion to hide them.
+- [x] Document settings precedence, safe backup/reset commands, private book changes, selected/full/check commands and agent examples in `config/README.md`, `docs/windows-setup.md` and `README.md`. Update progress, decisions and phase checkboxes; check whitespace and sharing scope, then commit and push source/docs under existing authorisation.
 
 ## Phase 5 — Finish the reading edition and reusable book-design skill
 
@@ -181,7 +192,11 @@ All Phase 2 checklist outputs are present. The user approved the grouped list on
 - [x] Draft the reusable book-design skill and update public setup/review/handoff records.
 - [x] Receive layout feedback, revise the sample, and record explicit user approval and Phase 3 closure on 2026-09-09; do not infer unreported iPad interactions.
 
-The 19-page trial uses labelled excerpts in `config/sample-selection.json`; the 110-page proof checks all five pieces in full. See `docs/sample-review.md` and `docs/progress.md` for exact files and evidence. Execution stayed in this session under the phase request. No Phase 4/5 task is complete. The builder's original-text test fixture does not replace Phase 5's independent reusable-skill exercise.
+The 19-page trial uses labelled excerpts in `config/sample-selection.json`; the 110-page proof checks all five pieces in full. See `docs/sample-review.md` and `docs/progress.md` for exact files and evidence. Execution stayed in this session under the phase request. At Phase 3 closeout, no Phase 4/5 task was complete; Phase 4 delivery is recorded below. The builder's original-text test fixture does not replace Phase 5's independent reusable-skill exercise.
 
 
 Initial feedback revision: 25% right / 7.5% bottom reserves, top numbering, faint bottom separator, justified prose, 12 pt notes and no return labels. Revised exports are 17 and 94 pages; 19 tests and both PDF audits pass. See sample-review.md for exact files. The user approved the revised sample and closed Phase 3 on 2026-09-09. Full-book iPad checks remain in Phase 5.
+
+## Phase 4 execution record
+
+Completed the checklist above without adding an app or new dependencies. Twenty-three tests, the 17-page regression sample audit, fresh-process settings persistence/reset and the 234-source preservation audit passed. Full selection was rendered and audited on an original manuscript. Both real full commands block the same eleven content-preparation failures before output; see `docs/progress.md` for the exact titles and restart instructions. Approved choices are unchanged. Phase 5 remains unstarted.

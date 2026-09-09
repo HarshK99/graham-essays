@@ -11,7 +11,7 @@
 | Organisation | Broad subject sections in one book |
 | Lisp placement | End of the main book |
 | Formatting | Approved defaults, configurable through saved files, commands or agent requests |
-| Current work | Phase 3 complete; revised sample approved; Phase 4 command-line workflow next |
+| Current work | Phase 4 command-line workflow complete; Phase 5 full book and reusable skill next |
 | New exports | New files, without notes from previous copies |
 | Cover | Required; retain upstream cover for reuse after checking terms |
 | PDF route | Generate directly from essay content, without EPUB as an intermediate |
@@ -91,3 +91,11 @@ Phase 3 closeout: the user explicitly approved the revised sample and requested 
 
 
 Scope change, 2026-09-09: the user removed the app requirement. Command-line generation and agent-driven configuration changes are sufficient. Phase 4 now finishes that workflow using existing tools; Phase 5 requires usable command-line exports, not an app. Earlier app references in implementation records are historical.
+
+## Phase 4 implementation — 2026-09-09
+
+Retained the working PDF builder and catalog. Personal reading settings now load automatically; explicit `--settings` files override that choice while inheriting omitted shipped defaults. Personal book files already took precedence; `--book` adds an explicit per-export choice. UTF-8 files with a Windows encoding marker are accepted. Reset instructions move only the named private file into an ignored, uniquely named backup.
+
+Added `--full` for all included essays without excerpts, and `--check` for content preparation without printing. `--essays` still selects complete pieces, while `--complete-essays` still means the complete default five-piece proof. `src.catalog --list` gives titles and stable IDs without rewriting any files. Full PDFs have their own filename prefix, accurate front matter, and effective book choices in the build record.
+
+Both full modes report every selected preparation failure and refuse partial output. The current collection has 11 blockers: two required companions and nine wording-preservation failures. These are explicit Phase 5 preparation work, not silent exclusions or evidence of lost original sources; the collection audit still passes all 234 entries. The original manuscript test proves the full-export command with moved sections, private settings and an excluded failed entry. It does not prove the final collection or replace Phase 5's separate reusable-skill exercise. See [progress](progress.md) for exact blockers, commands and output evidence.

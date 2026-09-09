@@ -1,6 +1,6 @@
 # Windows setup
 
-Setup prepares Python, local folders, the collection tools and the direct PDF builder. Use commands or ask an agent to update saved choices and generate PDFs. Phase 4 will finish this workflow; no app is planned.
+Setup prepares Python, local folders, the collection tools and the direct PDF builder. Use commands or ask an agent to update saved choices and generate PDFs. Saved choices and sample/full export commands are available; no app is required.
 
 ## Requirements
 
@@ -30,7 +30,7 @@ Rerun the setup command after dependency changes or an interrupted install. It p
 | `.venv/` | This project's Python and packages; excluded from Git |
 | `data/sources/` | Original essay downloads in Phase 2; excluded from Git |
 | `data/catalog.json` | Source metadata and download status in Phase 2; excluded from Git |
-| `config/` | Shipped defaults and book ordering introduced in later phases |
+| `config/` | Shipped layout defaults, approved book ordering and optional personal choices |
 | `config/reading-settings.json` | Personal saved settings; excluded from Git |
 | `output/` | New PDFs and companion records; excluded from Git |
 | `cover.png` | Unchanged original cover; reuse permission unresolved |
@@ -89,7 +89,9 @@ For the longer proof containing all five complete pieces:
 For personal page settings:
 
 ```powershell
-Copy-Item config/reading-defaults.json config/reading-settings.json
+if (!(Test-Path -LiteralPath config/reading-settings.json)) {
+    Copy-Item -LiteralPath config/reading-defaults.json -Destination config/reading-settings.json
+}
 .\.venv\Scripts\python.exe -m src.pdf_builder --settings config/reading-settings.json
 ```
 
@@ -105,4 +107,44 @@ To audit the actual PDF, use its filename from the export message:
 
 Replace the angle-bracket filename with the real filename; it is not a literal command argument. The audit writes `.checks.json` beside the PDF and exits with an error if it finds a problem. It checks text against prepared sources, font embedding, text/image bounds, internal links, bookmarks and empty reading pages. It does not replace visual inspection or the iPad trial.
 
-Transfer the trial to Files on the iPad using your usual file-transfer method, then open/import the same file in Preview and Goodnotes. Use [the sample review guide](sample-review.md) for the trial. Keep any annotated copy under its own name; generating a new PDF never brings across your previous highlights or handwriting. The full-collection export workflow remains to be finished. Sources with unresolved full-text companions are rejected rather than exported as complete articles.
+Transfer the trial to Files on the iPad using your usual file-transfer method, then open/import the same file in Preview and Goodnotes. Use [the sample review guide](sample-review.md) for the trial. Keep any annotated copy under its own name; generating a new PDF never brings across your previous highlights or handwriting. Sources with unresolved full-text companions are rejected rather than exported as complete articles.
+
+## Saved choices and full export (Phase 4)
+
+Every export automatically uses `config/reading-settings.json` when present, with omitted fields taken from `config/reading-defaults.json`. Book choices similarly prefer `config/book.local.json` over `config/book.json`. The command prints the files it uses. Both files persist across runs. See [saved configuration](../config/README.md) for concrete edits and backup/reset commands.
+
+From the project folder, these commands use the same saved settings:
+
+```powershell
+# Short five-piece trial, with labelled excerpts
+.\.venv\Scripts\python.exe -m src.pdf_builder
+# Complete selected essay: Writing, Briefly
+.\.venv\Scripts\python.exe -m src.pdf_builder --essays 3855b9d49700d8423e1e
+# Complete five-piece proof, not the whole collection
+.\.venv\Scripts\python.exe -m src.pdf_builder --complete-essays
+# Check all included content without creating a PDF
+.\.venv\Scripts\python.exe -m src.pdf_builder --full --check
+# Export all included essays in full
+.\.venv\Scripts\python.exe -m src.pdf_builder --full
+```
+
+Run `.\.venv\Scripts\python.exe -m src.catalog --list` to see titles, IDs, inclusion and download status in book order without changing files. Put multiple IDs after `--essays`, separated by spaces; the saved book order determines print order. Unknown, duplicate and excluded IDs are rejected. If a default trial essay is excluded, choose another sample explicitly. `--full` cannot be combined with `--essays`; it always uses complete pieces, without trial cuts. An empty included selection is an error.
+
+Use `--settings config/reading-defaults.json` and/or `--book config/book.json` to use shipped choices for one run without resetting your files. `--output "output/my reading trials"` chooses another output folder. Keep private settings and generated records under ignored locations when sharing source changes.
+
+`--check` validates layout settings, selection, source fingerprints, saved images, author-note targets and print preparation. It reports all selected preparation failures before any browser printing starts. It does not check printed pages, font embedding or device behaviour; export and run `scripts/check_pdf.py` for actual PDF checks. A failed check/export exits with status 1 and gives essay titles/IDs and reasons. Selection command conflicts exit with status 2. No selected essay is silently skipped. Progress shows each piece being typeset, then page assembly; successful exports print the PDF and build-record filenames.
+
+Full exports use `full-<time>-<unique suffix>.pdf`; samples use `sample-<time>-<unique suffix>.pdf`. A matching JSON record stores effective formatting and book choices, essay order, source fingerprints, excerpts if any, intentional exclusions and entries outside the selection. A full export means all **included** entries from the saved catalog; it does not claim to include excluded entries or essays absent from that catalog. Every export starts without personal highlights or handwriting.
+
+The full collection's remaining content blockers are recorded in [progress](progress.md). Keep the approved inclusion choices until the content is prepared, or explicitly choose exclusions for a personal edition. A successful download alone does not establish complete print content. Phase 5 produces and checks the final full collection and handles full-book iPad review.
+
+## Asking an agent for changes
+
+Examples:
+
+- “Make the right writing space 20% and export a sample.”
+- “Move Writing, Briefly to the start of Thinking, Writing & Creativity, then export that essay.”
+- “Reset formatting to the approved defaults, keep a backup of my choices, and export a sample.”
+- “Check whether the full book can export with my saved choices.”
+
+The agent should edit the same private files described above, preserve other fields, run the existing builder, audit the actual new PDF and report its filename and any failures. Changing defaults requires an explicit request. Content checks never substitute for a PDF audit or an iPad check. Sources are reused locally; downloading updates is a separate request.

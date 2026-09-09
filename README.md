@@ -2,7 +2,7 @@
 
 A Windows project for turning Paul Graham's essays into a PDF with room to read, highlight, and write handwritten notes. The planned reading trial uses an iPad A16 with Preview or Goodnotes.
 
-Status: the sample PDF builder is available; Phase 3 is complete with the revised sample approved by the user. Grouping is approved. Generate a local reading trial with a cover, selectable text, navigation and writing margins. Phase 4 will finish the command-line workflow for saved choices and exports; no app is planned. See [sample review](docs/sample-review.md) and [tested progress](docs/progress.md).
+Status: saved settings and sample/full PDF commands are available. Phase 3's revised sample and essay grouping are approved. Full-collection checks currently block 11 entries that need print preparation; the exporter reports them before creating a PDF. See [sample review](docs/sample-review.md), [Windows commands](docs/windows-setup.md#saved-choices-and-full-export-phase-4) and [tested progress](docs/progress.md). No app is required.
 
 ## Windows setup
 
@@ -43,13 +43,26 @@ After downloading the collection, run:
 
 The command prints the new PDF location under `output/` and saves a companion JSON record of its settings and sources. The default trial contains complete short/table essays and labelled excerpts of longer prose and Lisp code, including referenced author notes. Use `--complete-essays` for the longer five-piece proof.
 
-Copy `config/reading-defaults.json` to `config/reading-settings.json` to adjust the trial, then run:
+Create `config/reading-settings.json` for personal formatting; it is reused automatically by every sample/full export. Missing fields inherit approved defaults. See [configuration examples and backup/reset steps](config/README.md). You can also choose a settings file explicitly:
 
 ```powershell
 .\.venv\Scripts\python.exe -m src.pdf_builder --settings config/reading-settings.json
 ```
 
 Fonts, page dimensions, spacing, writing margins, colours and cover selection are configurable. The default is an original typographic cover; the inherited image remains preserved with unresolved reuse terms. Read [Windows setup](docs/windows-setup.md) for all options and [the iPad trial guide](docs/sample-review.md) for what to check. Keep annotated copies separately: new exports contain no notes from older copies.
+
+## Selected essays and full export
+
+```powershell
+.\.venv\Scripts\python.exe -m src.catalog --list
+.\.venv\Scripts\python.exe -m src.pdf_builder --essays 3855b9d49700d8423e1e
+.\.venv\Scripts\python.exe -m src.pdf_builder --full --check
+.\.venv\Scripts\python.exe -m src.pdf_builder --full
+```
+
+The first command lists titles and their stable IDs. The second exports complete Writing, Briefly. `--full --check` checks every included essay without printing; `--full` exports that complete selection using the same saved settings and book order. Unlike `--complete-essays`, `--full` selects all included entries. Both currently report the collection's 11 preparation blockers; no partial book is saved and no entries are silently dropped. Resolving those blockers and verifying the final book belongs to Phase 5.
+
+You can ask an agent: “Make the right writing space 20% and export a sample.” It should update the personal file, run these same commands, check the resulting PDF and report its new filename.
 
 ## What is available
 
@@ -58,10 +71,10 @@ Fonts, page dimensions, spacing, writing margins, colours and cover selection ar
 | Windows setup and local storage | Complete |
 | Essay downloads and subject grouping | Complete; grouping approved |
 | Sample PDF and iPad trial | Complete; revised sample approved |
-| Saved settings and command-line export workflow | Existing commands available; finish in Phase 4 |
+| Saved settings and command-line export workflow | Complete; full export reports remaining content blockers |
 | Full book and reusable book-design guide | Planned — Phase 5 |
 
-This is an early development version. Samples are generated locally; the full collection PDF is still to come. The book-design skill is a draft, to be finalised and independently validated in Phase 5.
+This is an early development version. Samples are generated locally; full-export mechanics are tested on an original manuscript, while the final collection PDF is still to come. The book-design skill is a draft, to be finalised and independently validated in Phase 5.
 
 ## Project documents
 

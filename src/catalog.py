@@ -1,5 +1,7 @@
 """Editorial choices and a review list, independent of downloaded sources."""
 import json
+import argparse
+import math
 import re
 from collections import Counter
 from bs4 import BeautifulSoup
@@ -47,6 +49,8 @@ def validate(book, catalog):
     for key, choice in book['essays'].items():
         if choice['section'] not in sections or type(choice['included']) is not bool:
             raise ValueError(f'Invalid section or inclusion choice for {key}.')
+        if 'order' in choice and (type(choice['order']) not in (int, float) or not math.isfinite(choice['order'])):
+            raise ValueError(f'Essay order must be a finite number for {key}.')
 
 
 def ordered(book, catalog, section):
@@ -62,7 +66,7 @@ def review_text(book, catalog):
     lines = ['# Essay order', '', f'Status: {status}. This file contains titles and source links, not essay text.', '',
              f"Sources: {len(catalog['essays'])}; successful: {counts['success']}; failed/pending: {len(catalog['essays']) - counts['success']}; intentionally excluded: {excluded}.", '',
              'Dates keep only the precision printed in the opening. Unknown dates appear last in source order. Topic overlaps are marked; grouping approval does not resolve unknown dates or conversion work. Moving or excluding an essay changes book choices only.', '',
-             'Edit `config/book.json`, then run `.\\.venv\\Scripts\\python.exe -m src.catalog` to rebuild this list. Set `included` to false to exclude; optional numeric `order` overrides chronology within a section.', '']
+             'Copy `config/book.json` to `config/book.local.json` before personal edits, then run `.\\.venv\\Scripts\\python.exe -m src.catalog` to rebuild this list. Set `included` to false to exclude; optional numeric `order` overrides chronology within a section.', '']
     for section in book['sections']:
         records = ordered(book, catalog, section)
         lines += [f'## {section} ({len(records)})', '', '| Essay | Date | Included | Download | Placement / review |', '| --- | --- | --- | --- | --- |']
@@ -91,7 +95,7 @@ def build(root=ROOT):
     catalog = json.loads((root / 'data/catalog.json').read_text(encoding='utf-8'))
     local = root / 'config/book.local.json'
     path = local if local.exists() else root / 'config/book.json'
-    book = json.loads(path.read_text(encoding='utf-8')) if path.exists() else dict(schema_version=1, sections=SECTIONS.copy(), essays={})
+    book = json.loads(path.read_text(encoding='utf-8-sig')) if path.exists() else dict(schema_version=1, sections=SECTIONS.copy(), essays={})
     for r in catalog['essays']:
         if r['id'] not in book['essays']:
             content = (root / r['content']).read_text(encoding='utf-8') if r.get('content') else ''
@@ -103,5 +107,31 @@ def build(root=ROOT):
     print(f"Review list saved: {root / 'docs/essay-review.md'}")
 
 
+def list_essays(root=ROOT):
+    """Show stable IDs alongside titles without rewriting saved choices or review docs."""
+    catalog = json.loads((root / 'data/catalog.json').read_text(encoding='utf-8'))
+    local = root / 'config/book.local.json'
+    path = local if local.exists() else root / 'config/book.json'
+    book = json.loads(path.read_text(encoding='utf-8-sig'))
+    validate(book, catalog)
+    for section in book['sections']:
+        print(section)
+        for record in ordered(book, catalog, section):
+            included = 'included' if book['essays'][record['id']]['included'] else 'excluded'
+            print(f"  {record['id']}  {included}  {record['status']}  {record['title']}")
+
+
+def main():
+    parser = argparse.ArgumentParser(description='Review saved essay choices.')
+    parser.add_argument('--list', action='store_true', help='List IDs, titles and inclusion in book order without changing files')
+    args = parser.parse_args()
+    try:
+        list_essays() if args.list else build()
+    except (ValueError, OSError, KeyError, TypeError) as error:
+        print(f'Catalog command did not finish: {error}')
+        return 1
+    return 0
+
+
 if __name__ == '__main__':
-    build()
+    raise SystemExit(main())

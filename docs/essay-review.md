@@ -6,7 +6,7 @@ Sources: 234; successful: 234; failed/pending: 0; intentionally excluded: 0.
 
 Dates keep only the precision printed in the opening. Unknown dates appear last in source order. Topic overlaps are marked; grouping approval does not resolve unknown dates or conversion work. Moving or excluding an essay changes book choices only.
 
-Edit `config/book.json`, then run `.\.venv\Scripts\python.exe -m src.catalog` to rebuild this list. Set `included` to false to exclude; optional numeric `order` overrides chronology within a section.
+Copy `config/book.json` to `config/book.local.json` before personal edits, then run `.\.venv\Scripts\python.exe -m src.catalog` to rebuild this list. Set `included` to false to exclude; optional numeric `order` overrides chronology within a section.
 
 ## Startups & Building Companies (83)
 

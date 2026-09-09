@@ -4,6 +4,7 @@ from pathlib import Path
 import shutil
 import tempfile
 import unittest
+from unittest.mock import patch
 
 from bs4 import BeautifulSoup
 from pypdf import PdfReader
@@ -91,3 +92,62 @@ class PdfSampleTests(unittest.TestCase):
         (self.root / 'config/book.json').write_text(json.dumps(book))
         with self.assertRaisesRegex(ValueError, 'excluded'):
             build(['original'], root=self.root)
+
+    def test_full_export_uses_saved_choices_settings_and_complete_text(self):
+        second = self.record | {'id': 'second', 'url': 'https://example.org/second', 'title': 'Another Notebook', 'source_order': 1}
+        excluded = self.record | {'id': 'excluded', 'url': 'https://example.org/excluded', 'title': 'Not Selected', 'status': 'failed', 'source_order': 2}
+        (self.root / 'data/catalog.json').write_text(json.dumps({'essays': [self.record, second, excluded]}))
+        book = {'sections': SECTIONS[1:] + SECTIONS[:1], 'essays': {
+            'original': {'section': SECTIONS[-1], 'included': True},
+            'second': {'section': SECTIONS[1], 'included': True, 'order': 0},
+            'excluded': {'section': SECTIONS[0], 'included': False}}}
+        book_path = self.root / 'config/book.local.json'
+        book_path.write_text(json.dumps(book), encoding='utf-8-sig')
+        (self.root / 'config/reading-settings.json').write_text('{"right_notes": 0.2}')
+        before = (self.root / self.record['source']).read_bytes()
+        with patch('src.pdf_builder.sync_playwright') as browser:
+            self.assertIsNone(build(root=self.root, full=True, check_only=True))
+            browser.assert_not_called()
+        first = build(root=self.root, full=True)
+        meta = json.loads(first.with_suffix('.json').read_text(encoding='utf-8'))
+        self.assertTrue(first.name.startswith('full-'))
+        self.assertEqual(meta['kind'], 'full')
+        self.assertEqual(meta['selection_mode'], 'all_included')
+        self.assertEqual(meta['settings']['right_notes'], .2)
+        self.assertEqual([e['id'] for e in meta['essays']], ['second', 'original'])
+        self.assertEqual(meta['intentionally_excluded'], ['excluded'])
+        self.assertEqual(meta['book_choices'], book)
+        self.assertTrue(all(not e.get('excerpt') for e in meta['essays']))
+        self.assertEqual(check(first, self.root)['issues'], [])
+        self.assertNotIn('This sample', ''.join(p.extract_text() for p in PdfReader(first).pages))
+        fingerprint = hashlib.sha256(first.read_bytes()).hexdigest()
+        # Reset by moving the private settings aside, preserving them for later reuse.
+        (self.root / 'config/reading-settings.json').rename(self.root / 'config/reading-settings.backup.json')
+        repeat = build(root=self.root, full=True, book_path=book_path)
+        self.assertNotEqual(first, repeat)
+        self.assertEqual(json.loads(repeat.with_suffix('.json').read_text(encoding='utf-8'))['settings']['right_notes'], .25)
+        self.assertEqual(hashlib.sha256(first.read_bytes()).hexdigest(), fingerprint)
+        self.assertEqual((self.root / self.record['source']).read_bytes(), before)
+
+    def test_full_reports_every_unready_source_before_creating_output(self):
+        records = [self.record | {'content_scope': 'Introduction only'},
+                   self.record | {'id': 'failed', 'url': 'https://example.org/failed', 'title': 'Failed Download', 'status': 'failed', 'source_order': 1}]
+        (self.root / 'data/catalog.json').write_text(json.dumps({'essays': records}))
+        (self.root / 'config/book.json').write_text(json.dumps({'sections': SECTIONS, 'essays': {
+            r['id']: {'section': SECTIONS[0], 'included': True} for r in records}}))
+        with patch('src.pdf_builder.sync_playwright') as browser:
+            with self.assertRaisesRegex(ValueError, '2 selected essays') as raised:
+                build(root=self.root, full=True)
+            browser.assert_not_called()
+        self.assertIn('Full-text companion', str(raised.exception))
+        self.assertIn('Failed Download', str(raised.exception))
+        self.assertFalse((self.root / 'output').exists())
+        for args in ({'selected': ['original']}, {'excerpts': {'original': {'max_blocks': 1}}}):
+            with self.assertRaisesRegex(ValueError, 'Full export uses all included'):
+                build(root=self.root, full=True, **args)
+        book = json.loads((self.root / 'config/book.json').read_text())
+        for choice in book['essays'].values():
+            choice['included'] = False
+        (self.root / 'config/book.json').write_text(json.dumps(book))
+        with self.assertRaisesRegex(ValueError, 'at least one included'):
+            build(root=self.root, full=True)

@@ -1,10 +1,11 @@
 # Documentation guide
 
-New here? Start with the [project README](../README.md), then [Windows setup](windows-setup.md). Windows setup, collection tools and sample PDF export are available; the remaining work is command-line workflow completion and the full book.
+New here? Start with the [project README](../README.md), then [Windows setup](windows-setup.md). Collection tools, saved choices and sample/full export commands are available. The final collection needs the reported content blockers resolved, full-book checks and completion of the reusable book-design guide.
 
 | Document | What it answers |
 | --- | --- |
 | [Windows setup](windows-setup.md) | How do I install and check the current version? |
+| [Saved configuration](../config/README.md) | How do I change or reset personal formatting, essay choices and order? |
 | [Essay order](essay-review.md) | Which section is proposed for each essay, and what needs review? |
 | [Sample review](sample-review.md) | Which PDF should I try, and what has been checked? |
 | [Progress](progress.md) | What was actually built and tested, and what comes next? |

@@ -4,15 +4,15 @@ Last updated: 2026-09-09
 
 ## Current state
 
-Phase 3's sample builder is implemented and Windows-checked. Initial layout feedback is applied in a revised 17-page trial and 94-page complete five-piece proof. The user approved the revised sample and requested Phase 3 closure on 2026-09-09. Phase 3 is Complete; individual iPad interaction results were not reported. Phase 2 remains complete with 234 saved entries and approved grouping. The user removed the app scope; the full collection edition is not built. The complete Roots of Lisp companion still needs conversion before full export.
+Phase 4's saved-settings and command-line export workflow is complete. Sample/full exports share settings and saved book choices; all-included export is explicit and blocks incomplete content before printing. Phase 3 remains Complete on the user's revised-sample approval; individual iPad interaction results were not reported. All 234 sources remain saved with approved grouping. Full-collection preparation now identifies 11 blockers (listed below); the final collection edition is not built. No app is required.
 
 | Phase | Status | Evidence / remaining work |
 | --- | --- | --- |
 | 1 — Windows foundation | Complete | Fork and upstream history retained; clean Windows setup and repeat-run checks passed |
 | 2 - Collection and sections | Complete | 234 saved entries; grouping approved by user on 2026-09-09; checks passed |
 | 3 — Sample PDF and iPad trial | Complete | Revised sample approved on 2026-09-09; 19 tests and both PDF audits pass |
-| 4 — Command-line workflow | Not started | Reuse existing commands; finish saved-settings and full-export workflow |
-| 5 — Full reading edition | Not started | Requires usable command-line exports, reviewed content order and approved layout |
+| 4 — Command-line workflow | Complete | Automatic private settings, explicit full selection, content checks, reset guidance and tested separate exports |
+| 5 — Full reading edition | Not started | Resolve 11 reported preparation blockers, produce/check final book, obtain device feedback, finalise skill |
 
 ## Latest confirmed additions
 
@@ -29,9 +29,9 @@ Documentation-only inspection and local link checks. No phase code, browser work
 
 ## Next action
 
-Open a new chat in this project and send `Start phase 4`. Read the required project records plus `docs/sample-review.md` and `docs/windows-setup.md`; reuse the existing collection, settings and PDF builder. Audit and finish saved configuration and command-line sample/full exports. Document direct commands and agent-driven changes; reuse the existing settings, catalog and PDF builder. No app is required. Phase 4 has not started.
+Open a new chat in this project and send `Start phase 5`. Read the required records plus `docs/sample-review.md`, `docs/windows-setup.md`, and this phase's blocker list below. Run `.\.venv\Scripts\python.exe -m src.pdf_builder --full --check` to reproduce the content blockers. Repair print preparation against preserved originals and prepare both required companion texts; retain the wording guard and approved inclusion choices. Then use `--full` for the actual book, audit it and inspect rendered pages. The full-export branch has been tested on an original manuscript, not on a successfully printed 234-entry collection.
 
-Keep the approved 25% right / 7.5% bottom preset, justified prose, 12 pt notes, top numbering and faint bottom separator as the reset defaults. Resolve the complete Roots of Lisp companion before full-book export; do not treat its introduction as the complete article. Phase 5 builds and checks the full collection, records actual full-book device feedback, and finalises/tests/packages the draft book-design skill. Do not start later phases automatically.
+Keep the approved 25% right / 7.5% bottom preset, justified prose, 12 pt notes, top numbering and faint bottom separator as reset defaults. Do not treat either introduction-only essay as its complete article. Phase 5 also records actual full-book device feedback and finalises/tests/packages the draft book-design skill. Do not start it automatically.
 
 ## Phase work log
 
@@ -174,3 +174,49 @@ Phase 3 remains Complete. Phase 4 is now a smaller command-line workflow phase: 
 Next: `Start phase 4` in a new project chat. This scope update changes documentation only; PDFs, source code and personal settings remain unchanged.
 
 Verification for this scope update: inspected the existing builder/settings code and confirmed `python -m src.pdf_builder --help` exposes settings, essay selection, output folder and complete-selected-piece options. All 11 changed files are Markdown; local documentation links and `git diff --check` pass. Later-phase checkboxes remain unchecked. No implementation or PDF rebuild was performed. Source/document sharing follows existing authorisation.
+
+### 2026-09-09 — Phase 4 complete
+
+**Outputs:** extended `src/settings.py`, `src/catalog.py` and `src/pdf_builder.py`; four new tests plus expanded catalog coverage (23 total); updated configuration, setup, public README, design, decisions and phase plan. No new dependencies or app. Private configuration remains optional and ignored; no personal file was left in the real project's config folder.
+
+Personal settings now load automatically, explicit settings/book files work per export, Windows UTF-8 encoding markers are accepted, invalid manual ordering is rejected, and `src.catalog --list` provides stable IDs without writing files. Added `--full` and `--check`; full selection always uses complete included essays in saved section/order choices. Content preparation gathers all failures before printing, progress includes counts, full/sample filenames differ, and records capture effective book choices as well as formatting and source versions. Backup/reset and agent-request examples use these same files and commands.
+
+**Actual Windows checks:**
+
+| Command/check | Result |
+| --- | --- |
+| `.\.venv\Scripts\python.exe -m unittest discover -s tests -v` | 23 passed; final exit 0, output saved in `output/phase4-tests.log` |
+| `.\.venv\Scripts\python.exe output/phase4_config_check.py` | Three fresh Python commands in a temporary folder with spaces loaded 20%, 20%, then reset 25%; backup and shipped defaults preserved |
+| `.\.venv\Scripts\python.exe -m src.catalog --list` | Listed all 234 IDs/titles in book order, with inclusion/status; local capture `output/phase4-essay-ids.txt` |
+| `.\.venv\Scripts\python.exe -m src.pdf_builder --help` | Shows sample/full/check/book/settings options and their meanings |
+| `.\.venv\Scripts\python.exe -m src.pdf_builder --full --check` | Exit 1; all 11 preparation blockers reported; no PDF created |
+| `.\.venv\Scripts\python.exe -m src.pdf_builder --full` | Exit 1 with the same blockers before printing; local capture `output/phase4-full-check.log`; no partial full PDF |
+| `.\.venv\Scripts\python.exe -m src.pdf_builder` | New 17-page sample `output/sample-20260909-153709-7413129a.pdf`, with matching JSON record |
+| `.\.venv\Scripts\python.exe scripts/check_pdf.py output/sample-20260909-153709-7413129a.pdf` | Zero issues; all five text-preservation checks passed, embedded fonts, 14 internal link rectangles, 13 outline entries, one image |
+| `.\.venv\Scripts\python.exe scripts/check_collection.py` | 234/234 sources checked; zero issues |
+
+The original-manuscript PDF test exercised the full branch twice with moved sections, a failed-but-explicitly-excluded record, saved 20% formatting, reset 25% formatting and distinct output paths; the first PDF and original source remained unchanged. Its full PDF passed the existing audit. Unknown/duplicate/excluded selections, empty full selection, conflicting full/excerpt selection, and multiple unready sources fail visibly. These temporary test PDFs are not the final collection or Phase 5's independent skill exercise.
+
+**Full-collection preparation blockers:**
+
+| Essay | ID | Current blocker |
+| --- | --- | --- |
+| The Hardware Renaissance | `c64f8cd576efd87393df` | Print preparation fails wording-preservation comparison |
+| Maker's Schedule, Manager's Schedule | `3a1b1c09395f954b1d4d` | Same wording guard |
+| Taste for Makers | `6f4d09308b9f6c26a061` | Same wording guard |
+| The Founder Visa | `13bccc66a8130d0c864d` | Same wording guard |
+| The Four Quadrants of Conformism | `ccb94d37806263bc4b4a` | Same wording guard |
+| Orthodox Privilege | `279c4b18c7d555c1a95b` | Same wording guard |
+| Succinctness is Power | `b4434856f6918768e576` | Same wording guard |
+| A Plan for Spam | `f30fd7c5b278754bf92c` | Same wording guard |
+| Revenge of the Nerds | `4c8e08e8bd00f258c08f` | Same wording guard |
+| The Roots of Lisp | `bd06b77c3ca90aff1c4b` | Main page is an introduction; complete saved PostScript companion needs preparation |
+| Lisp for Web-Based Applications | `e34d340bf9b9003f5a85` | Main page is an introduction; saved text companion needs explicit integration |
+
+Successful source acquisition and failed print preparation are different results. These checks do not establish whether each of the nine wording differences is substantive or a structural conversion issue; inspect before fixing. None of the eleven entries was silently excluded, their saved sources were not edited, and approved grouping/default formatting remains intact. Phase 4 explicitly allows blocking incomplete full content; Phase 5 must repair it before claiming a complete edition. Do not disable the wording guard to make the full command pass.
+
+**Inspection limits:** automated Chromium printing and PDF audit on Windows; no new visual page review, manual Windows-reader interaction or physical iPad test this phase. The user-approved Phase 3 layout remains the reference. No new layout approval is inferred from these exports.
+
+**Restart:** `Start phase 5` in a new project chat. Read the required docs and this blocker list, fix preparation using preserved originals/companions, rerun full content checks, then generate/audit/inspect the final book with `--full`. Obtain full-book iPad feedback and finalise, independently validate and package the draft skill. Phase 5 is Not started. All generated books, logs, original essays and local diagnostics stay ignored; source/documentation sharing follows existing commit/push authorisation.
+
+Final closeout checks: local Markdown links and `git diff --check` passed; both previously approved PDF fingerprints still match their records. The new sample is 666,798 bytes and matches its record. No `full-*.pdf` exists in the main output folder. Phase 4 checkboxes are complete; Phase 5 checkboxes are untouched. Approved book choices and the reading-default preset have no source changes.

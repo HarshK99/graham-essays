@@ -52,18 +52,21 @@ def render(page, body, css, s, margins):
     return page.pdf(print_background=True, prefer_css_page_size=True, tagged=True)
 
 
-def build(selected=None, settings=None, root=ROOT, output=None, excerpts=None):
+def build(selected=None, settings=None, root=ROOT, output=None, excerpts=None,
+          full=False, book_path=None, check_only=False):
     s = validate(dict(settings), root) if settings is not None else load(root=root)
+    if full and (selected is not None or excerpts):
+        raise ValueError('Full export uses all included essays without excerpts; do not combine it with essay selections or excerpt rules.')
     if excerpts is None:
-        excerpts = json.loads((root / 'config/sample-selection.json').read_text()) if selected is None else {}
-    selected = SAMPLE if selected is None else list(selected)
-    if not selected or len(set(selected)) != len(selected):
-        raise ValueError('Choose at least one essay, with no repeated selections.')
+        excerpts = json.loads((root / 'config/sample-selection.json').read_text()) if selected is None and not full else {}
     catalog = json.loads((root / 'data/catalog.json').read_text(encoding='utf-8'))
     local = root / 'config/book.local.json'
-    book_path = local if local.exists() else root / 'config/book.json'
-    book = json.loads(book_path.read_text(encoding='utf-8'))
+    book_path = Path(book_path) if book_path is not None else local if local.exists() else root / 'config/book.json'
+    book = json.loads(book_path.read_text(encoding='utf-8-sig'))
     ordering.validate(book, catalog)
+    selected = [k for k, v in book['essays'].items() if v['included']] if full else list(SAMPLE if selected is None else selected)
+    if not selected or len(set(selected)) != len(selected):
+        raise ValueError('Choose at least one included essay, with no repeated selections.')
     unknown = set(selected) - set(book['essays'])
     if unknown:
         raise ValueError('Unknown essay selection: ' + ', '.join(unknown))
@@ -71,7 +74,17 @@ def build(selected=None, settings=None, root=ROOT, output=None, excerpts=None):
     if excluded:
         raise ValueError('Selected essays are excluded in book settings: ' + ', '.join(excluded))
     records = [(section, r) for section in book['sections'] for r in ordering.ordered(book, catalog, section) if r['id'] in selected]
-    prepared = [(section, r, *prepare(r, root, s['note_returns'])) for section, r in records]
+    print(f"Selected {len(records)} essays; intentionally excluded {sum(not v['included'] for v in book['essays'].values())}. Book choices: {book_path}", flush=True)
+    prepared, failures = [], []
+    for position, (section, r) in enumerate(records, 1):
+        try:
+            prepared.append((section, r, *prepare(r, root, s['note_returns'])))
+        except (ValueError, OSError, KeyError) as error:
+            failures.append(f"{r['title']} [{r['id']}]: {error}")
+        if position % 25 == 0 or position == len(records):
+            print(f'Checked content {position}/{len(records)}; preparation failures: {len(failures)}.', flush=True)
+    if failures:
+        raise ValueError(f'{len(failures)} selected essays could not be prepared; no PDF created.\n' + '\n'.join(failures))
     for index, (section, r, content, evidence) in enumerate(prepared):
         if r['id'] in excerpts:
             content, evidence['excerpt'] = excerpt(content, excerpts[r['id']])
@@ -79,20 +92,28 @@ def build(selected=None, settings=None, root=ROOT, output=None, excerpts=None):
             evidence['source_note_references'] = evidence['note_references']
             evidence['note_references'] = len(BeautifulSoup(content, 'html.parser').select('a[href^="#"]:not(.note-return)'))
             prepared[index] = (section, r, content, evidence)
+    print(f'Content checks passed for {len(prepared)} essays.', flush=True)
+    if check_only:
+        return None
     g = geometry(s)
     css = styles(s, root)
     margins = (g['text_top'], s['page_width'] - g['text_left'] - g['text_width'],
                s['page_height'] - g['text_top'] - g['text_height'], g['text_left'])
     output = Path(output) if output else root / 'output'
     output.mkdir(parents=True, exist_ok=True)
-    stem = 'sample-' + datetime.now(timezone.utc).strftime('%Y%m%d-%H%M%S') + '-' + uuid.uuid4().hex[:8]
+    kind = 'full' if full else 'sample'
+    stem = kind + '-' + datetime.now(timezone.utc).strftime('%Y%m%d-%H%M%S') + '-' + uuid.uuid4().hex[:8]
     pdf_path = output / (stem + '.pdf')
-    build_record = dict(schema_version=1, kind='sample', created_at=datetime.now(timezone.utc).isoformat(),
-                        approval='Trial settings; iPad review pending', settings=s, geometry=g,
+    build_record = dict(schema_version=1, kind=kind, created_at=datetime.now(timezone.utc).isoformat(),
+                        approval='Export does not establish layout approval or device testing; see docs/sample-review.md.', settings=s, geometry=g,
                         tools={name: version(name) for name in ('playwright', 'pypdf', 'pypdfium2')},
                         font_assets=json.loads((root / 'assets/fonts/manifest.json').read_text()),
                         essays=[], intentionally_excluded=[k for k, v in book['essays'].items() if not v['included']],
                         outside_sample=[r['id'] for r in catalog['essays'] if r['id'] not in selected], failures=[])
+    build_record['selection_mode'] = 'all_included' if full else 'selected_sample'
+    build_record['book_choices'] = book
+    build_record['book_choices_file'] = str(book_path)
+    build_record['outside_selection'] = build_record.pop('outside_sample')
     build_record['layout_sha256'] = hashlib.sha256((root / 'templates/book.css').read_bytes()).hexdigest()
     build_record['book_choices_sha256'] = hashlib.sha256(book_path.read_bytes()).hexdigest()
     for asset in build_record['font_assets']:
@@ -115,7 +136,7 @@ def build(selected=None, settings=None, root=ROOT, output=None, excerpts=None):
                 if evidence.get('excerpt'):
                     body += '<br>EXCERPT · ' + html.escape(evidence['excerpt'])
                 body += '</div><article class="reading">' + content + '</article>'
-                print('Typesetting: ' + record['title'], flush=True)
+                print(f"Typesetting {len(essay_pdfs)+1}/{len(prepared)}: " + record['title'], flush=True)
                 essay_pdfs.append(render(page, body, css, s, margins))
                 previous = section
                 evidence.pop('print_text')
@@ -133,11 +154,17 @@ def build(selected=None, settings=None, root=ROOT, output=None, excerpts=None):
                 build_record['cover_sha256'] = hashlib.sha256(cover_path.read_bytes()).hexdigest()
             cover_pdf = render(page, cover, css, s, (0, 0, 0, 0))
             title = '<div class="title-page"><div class="eyebrow">PAUL GRAHAM</div><h1>Essays</h1><p>A reading edition</p><div class="colophon">A selection of ' + str(len(records)) + ' pieces, with space to think in the margins.<br><br>Writing by Paul Graham. Original chapter attribution is retained in the text. Sources: paulgraham.com.<br><br>Prepared for personal reading. This sample is not the complete collection.<br><br>' + html.escape(' · '.join(s[k] for k in ('body_font', 'label_font', 'code_font'))) + '<br>Trial typography — device review pending.</div></div>'
+            if full:
+                title = title.replace('This sample is not the complete collection.',
+                    f"All {len(records)} included pieces from the saved catalog; {len(build_record['intentionally_excluded'])} intentionally excluded.")
+            title = title.replace('Trial typography — device review pending.', 'Generated from saved reading settings.')
             title_pdf = render(page, title, css, s, (48, 48, 48, 48))
             front_count = len(PdfReader(BytesIO(cover_pdf)).pages) + len(PdfReader(BytesIO(title_pdf)).pages)
             toc_count = 1
             for attempt in range(4):
                 offset, toc, current = front_count + toc_count, '<div class="contents"><div class="eyebrow">A READING SAMPLE</div><h1>Contents</h1>', None
+                if full:
+                    toc = toc.replace('A READING SAMPLE', 'THE READING EDITION')
                 for entry, payload in zip(build_record['essays'], essay_pdfs):
                     entry['start_page'] = offset + 1
                     entry['page_count'] = len(PdfReader(BytesIO(payload)).pages)
@@ -199,7 +226,8 @@ def build(selected=None, settings=None, root=ROOT, output=None, excerpts=None):
                 raise ValueError('Page-number layer does not match book length.')
             for index, pdf_page in enumerate(writer.pages):
                 pdf_page.merge_page(overlay.pages[index])
-            writer.add_metadata({'/Title': 'Paul Graham — Essays: Reading Sample', '/Author': 'Paul Graham', '/Creator': 'iPad Reading Edition'})
+            print(f'Assembling {len(writer.pages)} pages and navigation.', flush=True)
+            writer.add_metadata({'/Title': 'Paul Graham — Essays: ' + ('Reading Edition' if full else 'Reading Sample'), '/Author': 'Paul Graham', '/Creator': 'iPad Reading Edition'})
             build_record['page_count'] = len(writer.pages)
             # Exclusive creation protects existing exports even under concurrent requests.
             with pdf_path.open('xb') as stream:
@@ -215,18 +243,31 @@ def build(selected=None, settings=None, root=ROOT, output=None, excerpts=None):
 
 
 def main():
-    parser = argparse.ArgumentParser(description='Create a new sample PDF from saved essays.')
-    parser.add_argument('--settings', type=Path, help='JSON settings overrides')
-    parser.add_argument('--essays', nargs='+', help='Saved essay IDs; defaults to the five-piece trial')
+    parser = argparse.ArgumentParser(description='Create a new sample or full PDF from saved essays, without downloading.')
+    parser.add_argument('--settings', type=Path, help='JSON overrides; otherwise uses reading-settings.json when present, then defaults')
+    selection = parser.add_mutually_exclusive_group()
+    selection.add_argument('--essays', nargs='+', help='Saved essay IDs; defaults to the five-piece trial')
+    selection.add_argument('--full', action='store_true', help='Export every included essay in full, using saved book order')
+    parser.add_argument('--book', type=Path, help='Book choices; otherwise prefers config/book.local.json over config/book.json')
+    parser.add_argument('--check', action='store_true', help='Check settings and prepare selected content; create no PDF (does not check printed layout)')
     parser.add_argument('--output', type=Path, help='Output folder')
     parser.add_argument('--complete-essays', action='store_true', help='Use complete selected pieces instead of the default short trial excerpts')
     args = parser.parse_args()
     try:
-        path = build(args.essays, load(args.settings), output=args.output, excerpts={} if args.complete_essays else None)
+        settings_path = args.settings if args.settings is not None else ROOT / 'config/reading-settings.json'
+        if args.settings is None and not settings_path.exists():
+            settings_path = ROOT / 'config/reading-defaults.json'
+        print('Reading settings: ' + str(settings_path), flush=True)
+        path = build(args.essays, load(args.settings), output=args.output, excerpts={} if args.complete_essays else None,
+                     full=args.full, book_path=args.book, check_only=args.check)
     except Exception as error:
         print(f'Export did not finish: {error}')
         return 1
-    print('Sample saved: ' + str(path))
+    if args.check:
+        print('Checks passed; no PDF created. Printed layout still needs an export and PDF audit.')
+    else:
+        print('PDF saved: ' + str(path))
+        print('Build record: ' + str(path.with_suffix('.json')))
     return 0
 
 

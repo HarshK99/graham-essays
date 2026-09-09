@@ -2,12 +2,21 @@ import json
 from pathlib import Path
 import tempfile
 import unittest
-from src.catalog import build, validate, ordered, SECTIONS
+from contextlib import redirect_stdout
+from io import StringIO
+from src.catalog import build, validate, ordered, list_essays, SECTIONS
 from src.collection import collect, save_json
 from test_collection import Fake
 
 
 class CatalogTests(unittest.TestCase):
+    def test_invalid_manual_order_rejected(self):
+        catalog = {'essays': [{'id': 'one', 'url': 'https://example.org/one'}]}
+        for order in ('first', True, None, float('nan'), float('inf')):
+            book = {'sections': SECTIONS, 'essays': {'one': {'section': SECTIONS[0], 'included': True, 'order': order}}}
+            with self.subTest(order=order), self.assertRaisesRegex(ValueError, 'finite number'):
+                validate(book, catalog)
+
     def test_move_exclude_and_repeat_preserve_source(self):
         with tempfile.TemporaryDirectory() as temp:
             root = Path(temp)
@@ -44,6 +53,15 @@ class CatalogTests(unittest.TestCase):
             save_json(root / 'config/book.local.json', book)
             build(root)
             self.assertEqual((root / 'config/book.json').read_bytes(), shipped)
+            before = (root / 'config/book.local.json').read_bytes()
+            review = (root / 'docs/essay-review.md').read_bytes()
+            output = StringIO()
+            with redirect_stdout(output):
+                list_essays(root)
+            self.assertIn(catalog['essays'][0]['id'], output.getvalue())
+            self.assertIn(catalog['essays'][0]['title'], output.getvalue())
+            self.assertEqual((root / 'config/book.local.json').read_bytes(), before)
+            self.assertEqual((root / 'docs/essay-review.md').read_bytes(), review)
 
 
 if __name__ == '__main__':
