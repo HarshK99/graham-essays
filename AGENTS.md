@@ -1,35 +1,40 @@
-## Cursor Cloud specific instructions
+# Project instructions
 
-This is a Python CLI tool (single script `graham.py`) that scrapes Paul Graham's essays and builds an EPUB ebook. There is no web server, no database, and no test suite.
+## How to talk to the user
 
-### System dependencies
+- Use plain words. Explain a technical term in the same sentence.
+- Ask one question at a time, with concrete choices when needed.
+- Say what you are about to do in one short line before doing it.
+- Explain a skill, command, or subagent in one line the first time you use it.
+- Report what was actually tested. Never imply a browser or iPad check happened when it did not.
+- Avoid condescending language, keep answers proportional to the request, and push back gently when evidence warrants it.
+- If the user says "explain that like I've only used ChatGPT", rewrite the explanation in familiar words.
 
-- **Python 3** (pre-installed)
-- **uv** (`~/.local/bin/uv`) — Python package manager; installed via `curl -LsSf https://astral.sh/uv/install.sh | sh`
-- **pandoc** (`apt install pandoc`) — converts Markdown to EPUB
-- **GNU Make** (pre-installed)
+## Start or resume a phase
 
-Ensure `$HOME/.local/bin` is on `PATH` for `uv` to work.
+When the user sends `/phase N` or `Start phase N`, where N is 1 through 5, treat it as a request to implement that phase, not merely explain its plan. Read and follow [the phase command](docs/commands/phase.md). This is a project instruction convention, not a registered built-in slash menu command.
 
-### Running the pipeline
+Do not start implementation merely because these instructions exist. Requests to discuss, review, or change documentation remain scoped to those actions.
 
-See `Makefile` for all targets. The full build is:
+Before any phase work, read README.md, docs/design.md, docs/decisions.md, docs/progress.md, and docs/superpowers/plans/2026-09-09-ipad-reading-edition.md completely. Inspect actual files and Git state; do not assume previous chat history is available or that a progress label proves completion.
 
-```
-make venv    # create .venv and install Python deps
-make fetch   # download 230+ essays (~25s with network)
-make merge   # combine into graham.md
-make epub    # build graham.epub (requires cover.png in repo root)
-```
+Preserve these instructions and project docs when bringing in upstream source. Reconcile upstream instructions with the user's confirmed requirements rather than overwriting this file.
 
-Or simply `make all` (which also runs `dependencies` and `wordcount`).
+## Product essentials
 
-### Gotchas
+- Native Windows setup; reading on iPad A16 in Preview or Goodnotes.
+- Include a cover. Preserve the upstream cover for reuse after checking its terms.
+- Generate PDF directly from essay content; EPUB is not a required intermediate or deliverable.
+- Right-side and bottom writing space on reading pages; no blank notes pages after essays.
+- Broad sections; Lisp last in the main book.
+- Configurable typography, spacing, page settings, and essay organisation.
+- Every export is a new file without annotations from older copies.
+- Initial fonts and proportions are trial settings, not iPad-tested final values.
+- Aim for published-book design quality, including title page, contents, section openings, careful typography, and clean page breaks.
+- Draft a reusable book-design skill during Phase 3; finalise and validate it in Phase 5 from the approved output. Preserve iteration decisions and package it for sharing without claiming public publication.
 
-- `make fetch` requires internet access to paulgraham.com. It takes ~25 seconds and writes 230 markdown files to `essays/`.
-- `make epub` produces pandoc warnings about duplicate footnote references; this is expected and does not affect the output.
-- `make epub` uses `epub.css` (no fixed text colors) and patches `META-INF/com.apple.ibooks.display-options.xml` so Apple Books dark mode on iOS renders readable text.
-- The `cover.png` file must exist for the EPUB cover image. It is tracked in the repo.
-- `make pdf` requires `calibre` (`ebook-convert`), which is optional and not needed for the standard pipeline.
-- There are no automated tests. Correctness is verified by running the pipeline end-to-end and checking that `graham.epub`, `graham.md`, and `essays.csv` are generated.
-- The `dependencies` Makefile target uses `sudo apt` on Linux, which may prompt for a password; install pandoc and uv manually if needed.
+## Handoff
+
+Before ending phase work, update docs/progress.md and the corresponding plan checkboxes with changes, checks and outcomes, remaining work, and exact restart instructions. Mark iPad/user review as pending until feedback arrives. Do not run subsequent phases automatically.
+
+The user has authorised committing and pushing this project's work to the GitHub fork for sharing. Keep the public README and relevant setup/documentation guides current as phases are delivered, with a final pass at project completion. Exclude local data, generated books, annotations, credentials, and personal settings. This does not authorise publishing the essay collection or a separate skill release.

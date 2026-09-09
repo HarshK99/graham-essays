@@ -143,3 +143,11 @@ Pipfile
 .vscode
 .DS_Store
 essays.csv
+
+# iPad Reading Edition local files
+.phase1-upstream/
+.phase1-checks/
+data/
+output/
+config/reading-settings.json
+*.pdf
