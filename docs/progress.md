@@ -4,13 +4,13 @@ Last updated: 2026-09-09
 
 ## Current state
 
-Phase 3's sample builder is implemented and Windows-checked. Initial layout feedback is applied in a revised 17-page trial and 94-page complete five-piece proof. Phase 3 awaits approval of the revised layout and actual iPad reading, highlighting and handwriting checks. Phase 2 remains complete with 234 saved entries and approved grouping. The browser app and full collection edition are not built. The complete Roots of Lisp companion still needs conversion before full export.
+Phase 3's sample builder is implemented and Windows-checked. Initial layout feedback is applied in a revised 17-page trial and 94-page complete five-piece proof. The user approved the revised sample and requested Phase 3 closure on 2026-09-09. Phase 3 is Complete; individual iPad interaction results were not reported. Phase 2 remains complete with 234 saved entries and approved grouping. The browser app and full collection edition are not built. The complete Roots of Lisp companion still needs conversion before full export.
 
 | Phase | Status | Evidence / remaining work |
 | --- | --- | --- |
 | 1 — Windows foundation | Complete | Fork and upstream history retained; clean Windows setup and repeat-run checks passed |
 | 2 - Collection and sections | Complete | 234 saved entries; grouping approved by user on 2026-09-09; checks passed |
-| 3 — Sample PDF and iPad trial | Awaiting user review | Revised 17-page trial and 94-page proof pass Windows checks; final iPad approval pending |
+| 3 — Sample PDF and iPad trial | Complete | Revised sample approved on 2026-09-09; 19 tests and both PDF audits pass |
 | 4 — Configurable app | Not started | Requires working sample generation |
 | 5 — Full reading edition | Not started | Requires usable app, reviewed content order and approved layout |
 
@@ -29,9 +29,9 @@ Documentation-only inspection and local link checks. No phase code, browser work
 
 ## Next action
 
-Try the revised 17-page PDF named in [sample review](sample-review.md) on the iPad A16 in Preview and Goodnotes. Grouping is already approved. Reading comfort, highlighting, handwriting and app navigation remain pending.
+Open a new chat in this project and send `Start phase 4`. Read the required project records plus `docs/sample-review.md` and `docs/windows-setup.md`; reuse the existing collection, settings and PDF builder. Build the local Windows app for section/essay selection, formatting controls, saved settings, reset, export progress and new PDF files. Phase 4 has not started.
 
-To revise, send `Start phase 3` with feedback; read the required project records and `docs/sample-review.md`, adjust personal settings or layout, then export and audit a new file. If the user requests independent app work first, the next command is `Start phase 4`; retain Phase 3's pending review status. Do not start later phases automatically. Resolve full-text companions before the final collection; the current builder rejects introduction-only sources.
+Keep the approved 25% right / 7.5% bottom preset, justified prose, 12 pt notes, top numbering and faint bottom separator as the reset defaults. Resolve the complete Roots of Lisp companion before full-book export; do not treat its introduction as the complete article. Phase 5 builds and checks the full collection, records actual full-book device feedback, and finalises/tests/packages the draft book-design skill. Do not start later phases automatically.
 
 ## Phase work log
 
@@ -156,3 +156,11 @@ Changed the default right writing area to 25% and bottom to 7.5% (half its forme
 **Checks:** `python -m unittest discover -s tests -v` using the project environment: 19 passed. Both `scripts/check_pdf.py` audits pass. Reviewed all 17 trial pages in overview and enlarged prose, note and code pages on Windows. Updated text checks to recognise print-added line-ending hyphens and measured serif overhang up to 1.51 pt (2 pt tolerance). The skill format validator passed, and both original PDF fingerprints still match. No browser-app or physical iPad test occurred.
 
 **Restart:** Read the required project documents and `docs/sample-review.md`, then open the revised 17-page sample. Await user approval or apply further feedback through `Start phase 3`; export a new file and rerun PDF checks. Phase 3 remains Awaiting user review. Do not begin Phase 4 or 5 automatically.
+
+### 2026-09-09 - Phase 3 closed after user approval
+
+User feedback: "approved. close this phase and tell me next steps". Recorded approval of `output/sample-20260909-151107-0700791e.pdf` and its current settings. Phase 3 is Complete at the user's explicit request. This records sample acceptance, not invented results for Preview, Goodnotes, highlighting or handwriting; no app preference or individual interaction results were supplied. Full-book device review remains a Phase 5 requirement.
+
+Updated public status, sample review, design decisions, configuration notes, draft-skill approval wording and plan checkboxes. Existing evidence remains 19 passing tests and two passing PDF audits (17-page sample and 94-page five-piece proof). Closeout verification passed: both PDF fingerprints and saved clean audits match; both build settings match the approved defaults; local links in all nine changed documents resolve; Phase 3 checkboxes are complete and later-phase checkboxes remain untouched; `git diff --check` passes. Documentation-only changes required no PDF rebuild or repeat browser/device test. Commit and push the closeout under existing source-sharing authorisation.
+
+**Next command:** `Start phase 4` in a new chat in this project. Build the local app with saved content/layout choices and export controls using the approved sample builder. Phase 4 and Phase 5 remain Not started. Keep essay data, PDFs and annotations local; skill packaging and its independent example validation remain Phase 5 work.

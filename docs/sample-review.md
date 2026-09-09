@@ -1,6 +1,6 @@
 # Sample review
 
-Status: Initial layout feedback applied; revised sample awaits approval. Windows checks pass; iPad comfort and app behaviour remain unapproved.
+Status: Phase 3 Complete. The user approved the revised sample on 2026-09-09 and requested phase closure. Windows checks pass. The approval did not specify a reading app or individual device checks.
 
 ## Actual local files
 
@@ -14,7 +14,7 @@ The trial contains cover (1), title page (2), linked contents (3), an opening ex
 
 612 × 880 pt portrait pages; 36 pt outer margins; 24 pt header/footer bands. The 540 × 760 pt usable area yields a 391 × 703 pt reading column, 14 pt gap, 135 pt right writing area, and 57 pt bottom area across the usable width. This implements the revised 25% side / 7.5% bottom reserves without double counting.
 
-Source Serif 4 body at 14 pt, 1.45 line height and 10 pt paragraph spacing; Source Sans 3 labels; Source Code Pro code at 11 pt. Justified prose with automatic word breaks and left-aligned final lines; 12 pt author notes. White reading pages, restrained green details, blank writing areas with a very faint bottom separator only. Page numbers share the essay title's top line. Links to notes remain; "Back to text" labels are removed. Embedded fonts retain their bundled original OFL licences. Page details sit outside writing areas. The original typographic cover uses the same families; the inherited cover remains preserved with reuse terms unresolved. These are trial values, not iPad-approved choices.
+Source Serif 4 body at 14 pt, 1.45 line height and 10 pt paragraph spacing; Source Sans 3 labels; Source Code Pro code at 11 pt. Justified prose with automatic word breaks and left-aligned final lines; 12 pt author notes. White reading pages, restrained green details, blank writing areas with a very faint bottom separator only. Page numbers share the essay title's top line. Links to notes remain; "Back to text" labels are removed. Embedded fonts retain their bundled original OFL licences. Page details sit outside writing areas. The original typographic cover uses the same families; the inherited cover remains preserved with reuse terms unresolved. These are the user-approved sample settings; full-book device review remains separate.
 
 ## Evidence and limitations
 
@@ -40,14 +40,14 @@ These are automated checks and rendered-PDF inspection on Windows. No manual cli
 6. Drafted `skills/book-design/SKILL.md` and its workflow reference; the skill format validator passed. This is a repository draft, not an installed or separately published skill. Phase 5 still requires approved settings, packaging and a separate original-manuscript exercise.
 7. Applied the initial user feedback above. Justification is a design choice, not a requirement for every book; the wider column was inspected for uneven spacing. Original exports `sample-20260909-145000-91927e03.pdf` (19 pages) and `sample-20260909-144810-3895d5e9.pdf` (110 pages) remain unchanged locally.
 
-## iPad trial — pending
+## Sample approval and remaining device checks
 
-Transfer the short trial to the iPad A16 and try the same file in Preview and Goodnotes:
+The user approved the revised sample and requested Phase 3 closure on 2026-09-09. No individual device results or app preference were supplied. Retain the following checks for the Phase 5 full-book review:
 
 1. Read pages 4–6 and 8–9 at your normal page view with toolbars visible.
 2. Highlight a sentence; write a few lines in the right and bottom spaces.
 3. Use Contents (3), note 1 (4), and a section/essay bookmark if exposed. Check tables (11) and code (16–17). There are no return labels at the ends of notes.
 
-Report which app feels better and whether text or writing space should change. Initial feedback received: use 20% or 25% right space, halve bottom space, add a faint bottom divider, move numbers beside the top title, try justified text, reduce note size, and remove return labels. Implemented 25%, 7.5% and 12 pt notes. Approval of the revised layout and actual device checks: pending. Keep annotated copies independently from new exports.
+Report which app feels better and whether text or writing space should change. Initial feedback received: use 20% or 25% right space, halve bottom space, add a faint bottom divider, move numbers beside the top title, try justified text, reduce note size, and remove return labels. Implemented 25%, 7.5% and 12 pt notes. Revised layout: approved on 2026-09-09. Individual device checks: not reported. Keep annotated copies independently from new exports.
 
-Resume with `Start phase 3` and feedback to revise. `Start phase 4` may begin independent app work if requested while Phase 3 awaits review; do not start automatically. The complete Roots of Lisp companion still needs preparation before full-collection export; the builder refuses to label its introduction a complete essay.
+Next: `Start phase 4` in a new project chat to build the configurable Windows app; do not start automatically. The complete Roots of Lisp companion still needs preparation before full-collection export; the builder refuses to label its introduction a complete essay.

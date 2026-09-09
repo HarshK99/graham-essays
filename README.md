@@ -2,7 +2,7 @@
 
 A Windows project for turning Paul Graham's essays into a PDF with room to read, highlight, and write handwritten notes. The planned reading trial uses an iPad A16 with Preview or Goodnotes.
 
-Status: the sample PDF builder is available; Phase 3 has a revised sample after initial layout feedback; iPad approval remains pending. Grouping is approved. Generate a local reading trial with a cover, selectable text, navigation and writing margins. The browser app is planned for Phase 4. See [sample review](docs/sample-review.md) and [tested progress](docs/progress.md).
+Status: the sample PDF builder is available; Phase 3 is complete with the revised sample approved by the user. Grouping is approved. Generate a local reading trial with a cover, selectable text, navigation and writing margins. The browser app is planned for Phase 4. See [sample review](docs/sample-review.md) and [tested progress](docs/progress.md).
 
 ## Windows setup
 
@@ -17,7 +17,7 @@ python scripts/setup_windows.py
 
 This installs the collection/PDF tools and Chromium, the browser used to print the PDF, and checks local storage. It does not download essays or open an app. See [Windows setup](docs/windows-setup.md) for details.
 
-Expected result: `Windows foundation ready.` Setup has been checked on Windows with Python 3.14.7, including a fresh folder with spaces in its name. PDF checks are recorded in the sample review; actual iPad reading and handwriting approval remains pending.
+Expected result: `Windows foundation ready.` Setup has been checked on Windows with Python 3.14.7, including a fresh folder with spaces in its name. PDF checks are recorded in the sample review; sample layout approval is recorded, while detailed device checks remain for the full-book review.
 
 ## Download and organise essays
 
@@ -57,11 +57,11 @@ Fonts, page dimensions, spacing, writing margins, colours and cover selection ar
 | --- | --- |
 | Windows setup and local storage | Complete |
 | Essay downloads and subject grouping | Complete; grouping approved |
-| Sample PDF and iPad trial | Builder available; awaiting iPad feedback |
+| Sample PDF and iPad trial | Complete; revised sample approved |
 | Local browser app with saved choices | Planned — Phase 4 |
 | Full book and reusable book-design guide | Planned — Phase 5 |
 
-This is an early development version. Samples are generated locally; a complete book and browser app are not delivered yet. The book-design skill is a draft, to be finalised after design approval.
+This is an early development version. Samples are generated locally; a complete book and browser app are not delivered yet. The book-design skill is a draft, to be finalised and independently validated in Phase 5.
 
 ## Project documents
 

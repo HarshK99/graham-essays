@@ -8,7 +8,7 @@
 
 **Spec:** [Design specification](../../design.md). Read it together with [decisions and evidence](../../decisions.md).
 
-This plan was saved during documentation-only planning. The user authorised Phase 1 on 2026-09-09; its completed work and exact setup commands are recorded in docs/progress.md and docs/windows-setup.md. Phase 2 is complete with user-approved grouping; Phase 3 awaits iPad review; Phases 4-5 remain unstarted. The writing-plans skill informed the file map, task checklists, and acceptance checks. No additional skills or subagents are required to read this document.
+This plan was saved during documentation-only planning. The user authorised Phase 1 on 2026-09-09; its completed work and exact setup commands are recorded in docs/progress.md and docs/windows-setup.md. Phase 2 is complete with user-approved grouping; Phase 3 is complete with user approval of the revised sample; Phases 4-5 remain unstarted. The writing-plans skill informed the file map, task checklists, and acceptance checks. No additional skills or subagents are required to read this document.
 
 ## Global constraints
 
@@ -112,9 +112,11 @@ At planning time only Markdown documentation existed. Phase 1 added scripts/setu
 - [x] Design and inspect a coherent cover, title page, contents, section/essay openings, reading pages, quotations, author notes, and page details. Refine typography and avoid stranded single lines and awkward breaks; judge the sample as a published book with intentional handwriting margins.
 - [x] Begin skills/book-design/SKILL.md using the available skill-creator instructions at execution time. Capture design rules and a configurable preset as the sample evolves; keep trial settings distinct from user-approved choices. Record iteration feedback in docs/sample-review.md and update the draft accordingly.
 - [x] Receive initial layout feedback and export a revised sample: 25% right, 7.5% bottom, faint bottom separator, top page numbers, justified prose, 12 pt notes, no return labels.
-- [ ] Obtain approval of the revised sample, including reading, highlighting and handwriting in Preview and Goodnotes on the iPad A16; record actual device feedback.
+- [x] Obtain approval of the revised sample and record feedback: the user approved it and requested phase closure on 2026-09-09. No app choice or individual device-check results were reported; retain full-book device checks in Phase 5.
 
 **Pass condition:** Windows sample checks pass and the user finds the layout comfortable on the iPad. If device feedback is pending, label the sample unapproved; independent app work may continue, but do not describe the reading experience as validated.
+
+**Closeout decision (2026-09-09):** The user explicitly approved the revised sample and requested closure. Phase 3 is Complete on that acceptance. No individual device interactions were reported, so none are marked tested; retain the explicit full-book device checks in Phase 5.
 
 ## Phase 4 — Make content and formatting configurable in the app
 
@@ -179,9 +181,9 @@ All Phase 2 checklist outputs are present. The user approved the grouped list on
 - [x] Render and assemble cover, title, contents, essays and navigation in `src/pdf_builder.py` with `templates/book.css`; save unique PDFs and build records.
 - [x] Add actual PDF verification and a fresh Windows installation check in `scripts/`; inspect output and fix observed layout defects.
 - [x] Draft the reusable book-design skill and update public setup/review/handoff records.
-- [ ] Receive actual iPad feedback and revise/approve the layout.
+- [x] Receive layout feedback, revise the sample, and record explicit user approval and Phase 3 closure on 2026-09-09; do not infer unreported iPad interactions.
 
 The 19-page trial uses labelled excerpts in `config/sample-selection.json`; the 110-page proof checks all five pieces in full. See `docs/sample-review.md` and `docs/progress.md` for exact files and evidence. Execution stayed in this session under the phase request. No Phase 4/5 task is complete. The builder's original-text test fixture does not replace Phase 5's independent reusable-skill exercise.
 
 
-Initial feedback revision: 25% right / 7.5% bottom reserves, top numbering, faint bottom separator, justified prose, 12 pt notes and no return labels. Revised exports are 17 and 94 pages; 19 tests and both PDF audits pass. See sample-review.md for exact files. Revised iPad approval remains pending.
+Initial feedback revision: 25% right / 7.5% bottom reserves, top numbering, faint bottom separator, justified prose, 12 pt notes and no return labels. Revised exports are 17 and 94 pages; 19 tests and both PDF audits pass. See sample-review.md for exact files. The user approved the revised sample and closed Phase 3 on 2026-09-09. Full-book iPad checks remain in Phase 5.

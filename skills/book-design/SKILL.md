@@ -5,7 +5,7 @@ description: Design and refine a book PDF from a manuscript, including typograph
 
 # Book design
 
-This is a draft, informed by a Windows reading-edition trial. Its typography has not yet been approved on the intended device. Read [the trial workflow](references/trial-workflow.md) when using this repository's builder; other manuscripts may need a different content adapter.
+This is a draft, informed by a Windows reading-edition trial. The user approved the revised sample layout on 2026-09-09; specific device interactions were not reported. Standalone validation and packaging remain Phase 5 work. Read [the trial workflow](references/trial-workflow.md) when using this repository's builder; other manuscripts may need a different content adapter.
 
 Start with the actual manuscript and the reader's intended page view. Choose page dimensions together with type size; points alone cannot establish reading comfort. Establish one typographic hierarchy spanning cover, title page, contents, section openings, essay/chapter openings, body, notes, and page details. Use an original typographic cover when no permitted image is available.
 

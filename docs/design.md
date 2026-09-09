@@ -24,13 +24,13 @@ The first release is a local app, opened in a browser on the same Windows comput
 - Keep essay text selectable for highlighting.
 - Provide clickable contents and section/essay bookmarks.
 
-## Initial page design
+## Approved sample page design
 
 The cover is the first page and does not need handwriting margins. Cover selection should be configurable. The reading-page rules below apply to essay and author-note pages.
 
-These are adjustable starting values, not an iPad-tested final layout.
+The user approved these revised sample settings and closed Phase 3 on 2026-09-09. They remain adjustable. Approval does not establish which device interactions were tested.
 
-| Setting | Initial proposal |
+| Setting | Approved sample default |
 | --- | --- |
 | Orientation | Portrait |
 | Page proportions | Approximately the iPad A16 display proportions; refine using the actual app viewport |
@@ -115,6 +115,6 @@ Use a new, unique filename for every sample and full export. Store a companion b
 
 ## Phase 3 trial implementation
 
-The configurable preset now specifies 612 × 880 pt pages, 36 pt outer margins and 24 pt header/footer bands. Source Code Pro at 11 pt is the trial code family. The specified 14 pt body, 1.45 line height and 25%/7.5% writing reserves reflect initial feedback and remain trial values. An original typographic cover is the default while inherited image terms remain unresolved. Visible numbering matches PDF page positions; the cover has no visible number.
+The configurable preset now specifies 612 × 880 pt pages, 36 pt outer margins and 24 pt header/footer bands. Source Code Pro at 11 pt is the trial code family. The specified 14 pt body, 1.45 line height and 25%/7.5% writing reserves reflect the user-approved revised sample. An original typographic cover is the default while inherited image terms remain unresolved. Visible numbering matches PDF page positions; the cover has no visible number.
 
-Direct Chromium printing with explicit pypdf navigation passed Windows checks. The short trial uses labelled excerpts plus referenced notes; the longer proof contains the five representative pieces in full. Sample cuts do not alter book inclusion. Short notes stay together; prose uses three-line widow/orphan settings, with actual pages inspected. Read `docs/sample-review.md` for iterations and pending iPad acceptance. No final layout approval is implied.
+Direct Chromium printing with explicit pypdf navigation passed Windows checks. The short trial uses labelled excerpts plus referenced notes; the longer proof contains the five representative pieces in full. Sample cuts do not alter book inclusion. Short notes stay together; prose uses three-line widow/orphan settings, with actual pages inspected. Read `docs/sample-review.md` for iterations and the recorded sample approval. Full-book device acceptance remains Phase 5 work.

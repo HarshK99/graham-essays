@@ -1,4 +1,4 @@
-# Trial workflow — not an approved preset
+# Approved sample workflow - skill package still a draft
 
 This reference applies to the surrounding reading-edition repository. The draft skill is not yet a standalone reproduction package. Phase 5 will supply the approved preset/templates and exercise it in a separate clean folder.
 
@@ -18,7 +18,7 @@ python scripts/setup_windows.py
 
 The normal sample uses explicitly labelled opening excerpts plus their linked notes for long material, and complete short/table essays. `--complete-essays` creates the longer five-piece proof. `--settings config/reading-settings.json` applies personal JSON overrides. `--essays <saved-id> ...` uses complete selected pieces in the configured book order. All commands require saved source data; this draft does not bundle a manuscript.
 
-Read `docs/sample-review.md` for observed iterations and pending reader feedback. Review first/last pages, every section boundary, notes, code, images, tables and the audit's sparse-page list. In Phase 5, separate general manuscript adapters from collection-specific rules, copy the approved style resources into the package, and test with original writing outside `output/`.
+Read `docs/sample-review.md` for observed iterations and user approval. Review first/last pages, every section boundary, notes, code, images, tables and the audit's sparse-page list. In Phase 5, separate general manuscript adapters from collection-specific rules, copy the approved style resources into the package, and test with original writing outside `output/`.
 
 
-Initial feedback revision: justified prose with automatic word breaks, 12 pt notes, no return labels, title and number on the same top line, and a faint bottom separator only. This replaces the first 30%/15% left-aligned trial; revised device approval remains pending.
+Initial feedback revision: justified prose with automatic word breaks, 12 pt notes, no return labels, title and number on the same top line, and a faint bottom separator only. This replaces the first 30%/15% left-aligned trial; the user approved the revised layout on 2026-09-09. Detailed device interactions were not reported.
