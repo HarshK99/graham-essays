@@ -4,12 +4,12 @@ Last updated: 2026-09-09
 
 ## Current state
 
-Phase 1 is complete. The upstream Git history, original source, and cover are preserved; a GitHub fork exists; the native Windows setup passes in two clean Python environments, including a project path with spaces. Phase 1 source and sharing guides are committed and pushed to `ipad-reading-edition`, now the fork's default branch. No collection, browser app, or PDF has been built.
+Phase 2 implementation is delivered locally: 234 index entries saved successfully, six proposed sections with Lisp last, and a grouped review list. No sources are intentionally excluded. User review of the proposed grouping is pending. The collection includes 10 author-hosted companion files; the complete Roots of Lisp PostScript document is saved but needs conversion before a full export. No browser app, PDF or iPad check exists yet. Phase 1 remains complete.
 
 | Phase | Status | Evidence / remaining work |
 | --- | --- | --- |
 | 1 — Windows foundation | Complete | Fork and upstream history retained; clean Windows setup and repeat-run checks passed |
-| 2 — Collection and sections | Not started | Requires the Windows foundation |
+| 2 - Collection and sections | Awaiting user review | 234 saved entries; grouped list available; source checks recorded below |
 | 3 — Sample PDF and iPad trial | Not started | Requires representative essay content; include cover |
 | 4 — Configurable app | Not started | Requires working sample generation |
 | 5 — Full reading edition | Not started | Requires usable app, reviewed content order and approved layout |
@@ -29,9 +29,9 @@ Documentation-only inspection and local link checks. No phase code, browser work
 
 ## Next action
 
-Open a new chat in `D:\FounderMode\Apps\pg-essays-pdf` and send `/phase 2`. If the app does not send that form, use `Start phase 2`.
+Review [the proposed essay order](essay-review.md), especially the overlap notes and the ten essays in the last section. User approval has not been received. To revise grouping, provide the essay titles and destination sections; `Start phase 2` resumes collection/review work without recreating saved sources.
 
-Read AGENTS.md and docs/commands/phase.md, then the required project docs, docs/windows-setup.md, and docs/upstream/PROVENANCE.md. Run `.\.venv\Scripts\python.exe run.py` to check the foundation. Preserve the local changes and upstream history. Implement source collection and cataloging in Phase 2 without importing or running the old `graham.py`, which has download and deletion effects at import time. Do not restart the design discussion.
+For independent sample work, open a new chat in this project and send `Start phase 3`. Read the required project docs plus `docs/collection-checks.md` and `docs/essay-review.md`. Run `.\.venv\Scripts\python.exe scripts/check_collection.py`. Use `writing44.html` for short prose, `greatwork.html` for long prose and notes, the second ANSI Common Lisp chapter for code, `wtax.html` for tables, and `langdes.html` for image handling. Handle `content_scope` and companion records explicitly: `rootsoflisp.html` is an introduction with the full text in saved PostScript, while `lwba.html` has a saved plain-text companion. Do not call an introductory page the complete essay. Strip identified site promotions from typesetting without changing the originals. Draft the book-design skill in Phase 3. Grouping and iPad/layout approval remain pending; do not start Phase 4 automatically.
 
 ## Phase work log
 
@@ -80,3 +80,29 @@ Publication commands: `git push -u origin ipad-reading-edition`, then `gh repo e
 Verified publication: commit `4c6493575fc1e15fce6ec7ca4b6e65d7a29bd522` was pushed successfully; `git ls-remote origin refs/heads/ipad-reading-edition` matched it, and `gh repo view HarshK99/graham-essays --json defaultBranchRef,url` confirmed the default branch. Public project link: https://github.com/HarshK99/graham-essays. The subsequent documentation-only commit records this result.
 
 Sharing checks passed: current Markdown links, staged-file scope, a credential-pattern scan, the Windows readiness command, `pip check`, and `git diff --cached --check`. One trailing space in the archived upstream README was removed to pass the whitespace check; its wording is unchanged. No browser or iPad check was added. Continue with `Start phase 2`.
+
+### 2026-09-09 - Phase 2 implementation; awaiting user review
+
+**Outputs:** `src/collection.py`, `src/catalog.py`, `scripts/check_collection.py`, ten focused tests in `tests/`, the shipped proposal `config/book.json`, `docs/essay-review.md`, and `docs/collection-checks.md`. Updated public README, setup/configuration/contributing guides and decisions. Local-only outputs: `data/catalog.json`, fingerprint-named original HTML/text, reading fragments, image bytes and companion files in `data/sources/`. No essay text is staged for Git. `config/book.local.json` is the ignored personal override; the shipped book file is the initial proposal.
+
+**Collection outcome:** 234 unique index entries, 234 successful main-source downloads, zero failed/pending main entries, zero intentional exclusions, 46 successful image references and 338 explicitly decorative source-only image references. Ten companion documents downloaded successfully, including two PostScript files. Five dates are unknown; the year-only 1993 date is kept without inventing a month or day. Index/page titles agree for every HTML source. Sections: Startups 83; Work 43; Thinking 38; Society 33; Programming 27; Lisp 10. All choices remain proposed, and overlaps are shown.
+
+**Implementation decisions:** Requests are sequential with a one-second gap, three attempts and finite timeouts. Save progress after each essay and reuse successful downloads on restart. Explicit refresh preserves previous byte versions and metadata; changed source titles retain history. Keep emphasis, notes, code, tables and links as HTML, including text links in sibling rows. Use original UTF-8 reading fragments and byte-preserved sources. Store author-hosted linked text/code/print documents separately. Do not infer dates from narrative references to earlier talks. URL identities ignore changing cache timestamps on the two fixed ANSI chapter links. Initial content-term grouping received an editorial pass over titles/openings and ambiguous topic cases; it is not a claim of a line-by-line reading or user approval.
+
+**Checks actually run on native Windows:**
+
+| Command/check | Outcome |
+| --- | --- |
+| `.\.venv\Scripts\python.exe run.py` | Foundation passed before collection work |
+| `.\.venv\Scripts\python.exe -m src.collection` | Initial run saved 232 HTML entries and two text originals; text parsing initially failed visibly; six failed remote footer icons recorded |
+| `.\.venv\Scripts\python.exe -m src.collection --reprocess` | After fixes, all 234 parsed successfully offline; text chapters preserved; known YC footer icon classified explicitly as decorative; date-line and sibling-link fixes applied |
+| `.\.venv\Scripts\python.exe -m src.collection` | Saved ten companion files; repeat run reused successful originals/companions and reported zero failures |
+| `.\.venv\Scripts\python.exe -m src.catalog` | Wrote complete grouped review; preserves saved choices; Lisp last |
+| `.\.venv\Scripts\python.exe -m unittest discover -s tests -v` | Ten tests passed: duplicate identity, source/title updates, bounded failure/retry, private choices, date precision, moving/excluding without deleting sources, sibling links and companion preservation |
+| `.\.venv\Scripts\python.exe scripts/check_collection.py` | Full collection verification; final outcome recorded in collection-checks.md |
+
+Representative original/fragment comparisons covered short prose, long prose with linked notes, Lisp introductions, code, tables and image references. No browser or iPad visual check was performed. Two linked print documents remain unconverted; the Roots of Lisp full text depends on one of them. This is explicit in the review and must be handled before full-book export. The separate Being Popular PostScript file duplicates an available HTML article.
+
+**Remaining:** Review/approve or revise grouped choices. Phase 3 selects the PDF tool, resolves full-text conversion as needed, removes site furniture from rendered content, creates the sample with cover, and drafts the reusable design skill. No Phase 3 implementation has started. Upstream cover reuse remains unconfirmed; iPad and layout feedback remain pending.
+
+Final checks: the full collection audit returned `234/234` and `0 issues`; all ten tests, the readiness command, `pip check`, local documentation links, original chapter-code comparison and `git diff --check` passed. Source and documentation are prepared for the authorised push to `origin/ipad-reading-edition`; downloaded data and personal settings are excluded. Publication result is recorded after remote verification.

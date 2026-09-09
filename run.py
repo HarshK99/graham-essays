@@ -38,7 +38,7 @@ def main():
         print(f"Readiness check failed: {error}")
         print("Run: python scripts/setup_windows.py")
         return 1
-    print("Windows foundation ready. No essays downloaded; app and PDF builder are future phases.")
+    print("Windows foundation ready. Use python -m src.collection to download or resume essays; app and PDF builder are future phases.")
     print("Original cover preserved; reuse permission remains unconfirmed. See docs/upstream/PROVENANCE.md.")
     return 0
 

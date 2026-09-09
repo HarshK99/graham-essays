@@ -8,7 +8,7 @@
 
 **Spec:** [Design specification](../../design.md). Read it together with [decisions and evidence](../../decisions.md).
 
-This plan was saved during documentation-only planning. The user authorised Phase 1 on 2026-09-09; its completed work and exact setup commands are recorded in docs/progress.md and docs/windows-setup.md. Later phases remain unstarted. The writing-plans skill informed the file map, task checklists, and acceptance checks. No additional skills or subagents are required to read this document.
+This plan was saved during documentation-only planning. The user authorised Phase 1 on 2026-09-09; its completed work and exact setup commands are recorded in docs/progress.md and docs/windows-setup.md. Phase 2 implementation is now delivered with grouping awaiting user review; Phases 3-5 remain unstarted. The writing-plans skill informed the file map, task checklists, and acceptance checks. No additional skills or subagents are required to read this document.
 
 ## Global constraints
 
@@ -81,13 +81,13 @@ At planning time only Markdown documentation existed. Phase 1 added scripts/setu
 
 **Inputs:** Upstream source URLs and downloaded content. **Outputs:** Stable essay records plus section assignments independent of source files.
 
-- [ ] Save source content with source URL, title, known date, retrieval time, and a content fingerprint so later exports can record which version they used.
-- [ ] Use bounded retries and respectful request pacing. Surface download failures and allow retries without discarding successful downloads.
-- [ ] Preserve punctuation, emphasis, author notes, meaningful images/tables, and links; compare representative converted essays with their originals.
-- [ ] Prevent silent omissions: show how many essays succeeded, failed, or were intentionally excluded.
-- [ ] Assign every included essay to one primary section using the content; put Lisp-focused essays last and flag ambiguous assignments.
-- [ ] Produce the grouped review list with source links, uncertain dates, and explanations for ambiguous placements.
-- [ ] Check duplicate URLs, title changes, missing dates, one failed download, and moving/excluding an essay without deleting its source.
+- [x] Save source content with source URL, title, known date, retrieval time, and a content fingerprint so later exports can record which version they used.
+- [x] Use bounded retries and respectful request pacing. Surface download failures and allow retries without discarding successful downloads.
+- [x] Preserve punctuation, emphasis, author notes, meaningful images/tables, and links; compare representative converted essays with their originals.
+- [x] Prevent silent omissions: show how many essays succeeded, failed, or were intentionally excluded.
+- [x] Assign every included essay to one primary section using the content; put Lisp-focused essays last and flag ambiguous assignments.
+- [x] Produce the grouped review list with source links, uncertain dates, and explanations for ambiguous placements.
+- [x] Check duplicate URLs, title changes, missing dates, one failed download, and moving/excluding an essay without deleting its source.
 
 **Pass condition:** Every source entry has a visible status; each included essay appears once; Lisp is last; the proposed grouped list is available for user review. Unresolved classifications are explicit.
 
@@ -164,3 +164,9 @@ Use [the phase command](../../commands/phase.md) to start or resume one phase pe
 The planning stage is complete when these documents reflect the conversation and their links work. Implementation starts only after the user requests it. During implementation, use the grouped essay list and sample PDF as concrete review points; avoid asking the user to decide routine tool details without evidence.
 
 The full project is complete when all five phase pass conditions are met. Do not substitute a generated file for the final device check or describe pending user feedback as a passed test.
+
+## Phase 2 implementation notes
+
+Delivered 2026-09-09. Added `src/__init__.py` for module commands and `scripts/check_collection.py` for offline collection checks; `config/book.local.json` holds ignored personal overrides. `docs/collection-checks.md` records preservation evidence and companion-document limitations. Original sources, reading fragments, images, companion files and the catalog remain local under `data/`. No extra conversion library was needed.
+
+All Phase 2 checklist outputs are present. The grouped list is proposed and awaits user review. Ten tests pass. The complete Roots of Lisp PostScript companion is preserved but needs conversion before full export; its introduction is not the full article. Read the current progress and collection-check documents before Phase 3. No later-phase checklist is marked complete.

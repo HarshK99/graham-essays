@@ -1,9 +1,10 @@
 # Saved configuration
 
-Phase 1 creates the folder but does not settle book settings.
+- `book.json`: shipped proposed section order and essay choices, awaiting review.
+- `book.local.json`: optional private copy of book choices; preferred when present, excluded from Git.
+- `reading-defaults.json`: layout preset to be introduced in Phase 3.
+- `reading-settings.json`: future personal layout choices, excluded from Git.
 
-- `reading-defaults.json`: shipped layout preset, introduced in Phase 3.
-- `reading-settings.json`: local user choices, excluded from Git.
-- `book.json`: editable section ordering and essay inclusion, introduced in Phase 2.
+Copy `book.json` to `book.local.json` before personal edits. Each essay has one section, an `included` switch, optional numeric `order`, and review notes. Source identities are based on URLs. Run the catalog command to regenerate the grouped review list; it does not reset choices or delete sources.
 
-Saved original content lives in `data/sources/`, source records in `data/catalog.json`, and new PDF exports and build records in `output/`. These paths are relative to the project folder, independent of the folder used to launch a command. Setup never clears them.
+Original content and images live in `data/sources/`, metadata and failures in `data/catalog.json`, and future PDF exports in `output/`. Setup never clears them.

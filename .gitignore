@@ -151,3 +151,5 @@ data/
 output/
 config/reading-settings.json
 *.pdf
+
+config/book.local.json

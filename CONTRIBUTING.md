@@ -1,6 +1,6 @@
 # Contributing
 
-This edition is in early development. Read the [current status](docs/progress.md) and [design requirements](docs/design.md) before proposing a change. Phase 1 provides Windows setup; essay collection, PDF output, and the app come later.
+This edition is in early development. Read the [current status](docs/progress.md) and [design requirements](docs/design.md) before proposing a change. Windows setup and essay collection are available; PDF output and the app come later.
 
 ## Report a problem
 
@@ -16,6 +16,7 @@ After changing the Windows foundation, run from the project folder:
 python scripts/setup_windows.py
 .\.venv\Scripts\python.exe run.py
 .\.venv\Scripts\python.exe -m pip check
+.\.venv\Scripts\python.exe -m unittest discover -s tests -v
 git diff --check
 ```
 

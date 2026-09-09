@@ -11,7 +11,7 @@
 | Organisation | Broad subject sections in one book |
 | Lisp placement | End of the main book |
 | Formatting | Good starting defaults, configurable later in the app |
-| Current work | Phase 1 authorised on 2026-09-09; Windows foundation implemented, no app yet |
+| Current work | Phase 2 implemented on 2026-09-09; proposed grouping awaits review; no app or PDF yet |
 | New exports | New files, without notes from previous copies |
 | Cover | Required; retain upstream cover for reuse after checking terms |
 | PDF route | Generate directly from essay content, without EPUB as an intermediate |
@@ -62,3 +62,13 @@ The font choices are proposals, not a verified claim that they are best for ever
 - `run.py` currently checks readiness only. Data, saved settings, and output locations are established without claiming an app or PDF builder. Font, PDF-tool, visual, and iPad choices remain open as planned.
 
 Details and evidence: [source review](upstream/PROVENANCE.md), [tested setup](windows-setup.md), and [phase log](progress.md).
+
+## Phase 2 implementation - 2026-09-09
+
+The live article index yielded 234 unique entries, all now saved locally. Sources retain URL, retrieval time, original-byte fingerprint, explicit date precision and status. Reading fragments preserve emphasis, notes, tables, code and links, including sibling-row download links. Known decorative spacers/footer icons are recorded rather than silently counted as missing essay images.
+
+Ten linked author-hosted documents are also saved. The Roots of Lisp page is only an introduction: its complete PostScript article requires conversion before full export. Lisp for Web-Based Applications has a ready plain-text companion. A PostScript version of Being Popular is also retained, alongside its available HTML. Do not confuse successful acquisition with completed print-format conversion.
+
+The six default sections and all 234 inclusion choices are shipped in `config/book.json`. Five unknown publication dates stay unknown; a printed year stays year-only. A content-based first pass plus review of openings and ambiguous cases produced the proposed grouping, with overlap reasons retained. User approval is still pending. Personal edits belong in ignored `config/book.local.json`, which takes precedence; source data never depends on these choices.
+
+The collector and catalog are command-line tools in this phase. `run.py` still checks the foundation. No new dependencies, PDF tool, app interface or iPad-approved settings have been introduced. See [collection checks](collection-checks.md) and [essay review](essay-review.md).

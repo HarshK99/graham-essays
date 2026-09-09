@@ -1,6 +1,6 @@
 # Windows setup
 
-Phase 1 prepares Python and local folders. It does not yet open an app, download essays, or generate a PDF.
+Setup prepares Python and local folders. Phase 2 adds the collection commands below. There is no browser app or PDF builder yet.
 
 ## Requirements
 
@@ -48,3 +48,24 @@ uv pip compile requirements.in --python-version 3.14 --generate-hashes --output-
 Normal setup only needs Python, not uv. Do not run `make` or `graham.py` as part of this Windows workflow; the archived pipeline does not meet this edition's content-preservation requirements.
 
 See [progress](progress.md) for the actual commands tested, outcomes, and next phase. See [source review](upstream/PROVENANCE.md) for upstream history, cover terms, and dependency decisions.
+
+## Collect and review (Phase 2)
+
+From the project folder:
+
+```powershell
+.\.venv\Scripts\python.exe -m src.collection
+.\.venv\Scripts\python.exe -m src.catalog
+.\.venv\Scripts\python.exe scripts/check_collection.py
+.\.venv\Scripts\python.exe -m unittest discover -s tests -v
+```
+
+Collection uses one request at a time, at least one second between requests, up to three attempts, and finite connection/read timeouts. Progress is saved after each essay. Rerun the collection command after interruption or failure; successful sources are reused. `--refresh` fetches a new index and all sources explicitly. Original versions use filenames based on their content fingerprints and are retained when content changes. A failed refresh is reported even if an older saved version exists.
+
+The catalog command writes `docs/essay-review.md`, with every entry, date precision, status and section. It preserves existing choices. For private edits, copy `config/book.json` to `config/book.local.json`; that file is excluded from Git and takes precedence. Change `section`, `included`, or optional numeric `order`, then rerun the catalog command. The six section names must each appear once. Unknown dates sort last, in website order. The initial proposal is awaiting user review.
+
+Source HTML is retained alongside a reading fragment; emphasis, links, author-note anchors, code and tables remain HTML rather than being flattened into plain text. Image records map original URLs to saved local bytes. Small spacers and title graphics are recorded as decorative and retained in source HTML only. Older promotional banners are still present in reading fragments; Phase 3 must distinguish them from essay text before typesetting. No converted PDF has been checked yet.
+
+If the source website changes structure, collection reports an error and keeps saved files. Do not treat a nonzero exit or failed image entry as a complete collection. Downloaded content is local and is not part of the GitHub repository.
+
+Use `.\.venv\Scripts\python.exe -m src.collection --reprocess` to rebuild reading fragments from saved originals without network requests after extraction fixes. Then run the normal collection command to save any newly discovered companion documents. Text companions have reading fragments; PostScript/PDF companions are preserved with an explicit conversion-review flag. A successful download does not mean those print formats have been converted for the book.
