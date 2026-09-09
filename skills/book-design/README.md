@@ -34,3 +34,5 @@ The current approved preset uses 12 pt essay text, 1.25 line spacing, 25% side s
 
 
 The approved colour treatment uses burnt-orange accents and apricot rules, charcoal text and white reading pages. The reusable preset keeps a typographic orange cover; this book's specific workbench art is not required or bundled. For your own illustration, set `cover_artwork` to an absolute local image path (with `cover: "typographic"`); title and author remain selectable. `accent_color`, `rule_color` and `cover_color` control page colours. The source reading edition's user confirmed iPad testing complete; other manuscripts still need their own reader review.
+
+The renderer also supports optional book fields for compiler credit, project/LinkedIn links, disclaimer, edition version and compilation date. Essay coverage is calculated from included dated records; it is distinct from the compilation date. These credits are optional and are not hardcoded to a particular compiler.

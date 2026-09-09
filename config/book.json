@@ -1775,5 +1775,11 @@
     "date": "2026-09-09",
     "scope": "Current 234 essay assignments and six-section grouping",
     "user_feedback": "grouping looks right, close this phase"
-  }
+  },
+  "compiled_by": "Harsh Kankaria",
+  "project_url": "https://github.com/HarshK99/graham-essays",
+  "disclaimer": "The essays are the work of Paul Graham. I claim no ownership of the essay content; my contribution is its compilation and reading layout. All rights in the original writing remain with their respective rights holders. This independent edition is not affiliated with or endorsed by Paul Graham.",
+  "linkedin_url": "https://linkedin.com/in/harshkankaria9",
+  "edition_version": "1.0",
+  "edition_updated": "2026-09-09"
 }

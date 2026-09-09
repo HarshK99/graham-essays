@@ -79,3 +79,10 @@ The 12 pt body / 1.25 line height / 3.75% bottom-space sample is now approved an
 The shipped book uses `cover_artwork: "assets/covers/makers-workbench.png"` with `cover: "typographic"`: artwork plus selectable author/title lettering. Set `cover_artwork` to an empty string for a text-only cover. For a complete supplied cover image, clear `cover_artwork` and set `cover` to that local image path.
 
 `accent_color: "#944018"` controls burnt-orange headings/links, `rule_color: "#EAD5C4"` controls apricot dividers, and `cover_color: "#ED7024"` controls the cover background. These do not alter the image's own colours. Body text stays charcoal on white. The cover is independent of `include_images`, which controls essay pictures.
+
+
+## Title-page credits and edition details
+
+`config/book.json` also holds optional `compiled_by`, `project_url`, `linkedin_url`, `disclaimer`, `edition_version` and `edition_updated` fields. The update date uses YYYY-MM-DD and describes the compilation; change it when preparing a revised edition. The latest dated essay month is calculated from the complete included selection, including in previews. Entries without dates are not assigned guessed dates. Current version: 1.0; compilation updated 2026-09-09; latest dated essay August 2026. If using `book.local.json`, copy these fields into that private file to override the shipped credits.
+
+Build the complete PDF from the project folder with `.\.venv\Scripts\python.exe -m src.pdf_builder --full`. The command prints a new PDF path under `output/`; previous exports stay unchanged.

@@ -168,13 +168,40 @@ def build(selected=None, settings=None, root=ROOT, output=None, excerpts=None,
                          + '</div><h1>' + html.escape(title_text) + '</h1></div></div>')
                 build_record['cover_sha256'] = hashlib.sha256(artwork.read_bytes()).hexdigest()
             cover_pdf = render(page, cover, css, s, (0, 0, 0, 0))
-            title = '<div class="title-page"><div class="eyebrow">PAUL GRAHAM</div><h1>Essays</h1><p>A reading edition</p><div class="colophon">A selection of ' + str(len(records)) + ' pieces, with space to think in the margins.<br><br>Writing by Paul Graham. Original chapter attribution is retained in the text. Sources: paulgraham.com.<br><br>Prepared for personal reading. This sample is not the complete collection.<br><br>' + html.escape(' · '.join(s[k] for k in ('body_font', 'label_font', 'code_font'))) + '<br>Trial typography — device review pending.</div></div>'
-            title = title.replace('PAUL GRAHAM', html.escape(author.upper())).replace('<h1>Essays</h1>', '<h1>' + html.escape(title_text) + '</h1>')
-            title = title.replace('Writing by Paul Graham. Original chapter attribution is retained in the text. Sources: paulgraham.com.', html.escape(source_credit))
-            if full:
-                title = title.replace('This sample is not the complete collection.',
-                    f"All {len(records)} included pieces from the saved catalog; {len(build_record['intentionally_excluded'])} intentionally excluded.")
-            title = title.replace('Trial typography — device review pending.', 'Generated from saved reading settings.')
+            edition_note = (f"All {len(records)} included pieces from the saved catalog; "
+                            f"{len(build_record['intentionally_excluded'])} intentionally excluded."
+                            if full else 'This sample is not the complete collection.')
+            title = ('<div class="title-page"><div class="eyebrow">' + html.escape(author.upper())
+                     + '</div><h1>' + html.escape(title_text) + '</h1><p>A reading edition</p>')
+            if book.get('compiled_by'):
+                title += '<p class="compiler">Compiled by ' + html.escape(book['compiled_by']) + '</p>'
+            edition_details = []
+            if book.get('edition_version'):
+                edition_details.append('Version ' + html.escape(book['edition_version']))
+            if book.get('edition_updated'):
+                updated = datetime.strptime(book['edition_updated'], '%Y-%m-%d')
+                edition_details.append('Compilation updated ' + updated.strftime('%d %B %Y'))
+            if edition_details:
+                title += '<p class="edition-details">' + '<br>'.join(edition_details) + '</p>'
+                # Use the complete included selection even when printing a short preview.
+                dates = [r['date'] for r in catalog['essays']
+                         if book['essays'][r['id']]['included'] and r.get('date')]
+                if dates:
+                    latest = datetime.strptime(max(dates)[:7], '%Y-%m')
+                    title += '<p class="edition-details">Latest dated essay in this edition: ' + latest.strftime('%B %Y') + '</p>'
+            title += ('<div class="colophon"><p>A selection of ' + str(len(records))
+                      + ' pieces, with space to think in the margins.</p><p>' + html.escape(source_credit)
+                      + '</p><p>Prepared for personal reading. ' + edition_note + '</p>')
+            if book.get('disclaimer'):
+                title += '<p>' + html.escape(book['disclaimer']) + '</p>'
+            if book.get('project_url'):
+                title += ('<p class="project-credit">Project on GitHub<br><a href="'
+                          + html.escape(book['project_url'], quote=True) + '">'
+                          + html.escape(book['project_url'].removeprefix('https://')) + '</a></p>')
+            if book.get('linkedin_url'):
+                title += ('<p><a class="linkedin-icon" aria-label="LinkedIn profile" href="'
+                          + html.escape(book['linkedin_url'], quote=True) + '">in</a></p>')
+            title += '</div></div>'
             title_pdf = render(page, title, css, s, (48, 48, 48, 48))
             front_count = len(PdfReader(BytesIO(cover_pdf)).pages) + len(PdfReader(BytesIO(title_pdf)).pages)
             toc_count = 1

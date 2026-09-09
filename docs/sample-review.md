@@ -89,3 +89,10 @@ The user confirmed iPad testing is done. New preview: `output/sample-20260909-17
 User feedback: "perfect - move ahead" approved the cover/theme preview. Final export: `output/full-20260909-180513-3c502f76.pdf`, 224 essays, 1,348 pages, 16,420,926 bytes. The cover adds 2,817,201 bytes compared with the previous full edition; page count is unchanged. Cover, contents and opening essay visually inspected. Cover lettering is selectable and the original illustration occurs once on the cover. The earlier full PDF's SHA-256 still matches its build record. User-reported iPad testing is complete; no additional device check is claimed for the colour-only finish.
 
 Final focused check passed: 224 essays, four contents pages, 1,347 header returns, embedded fonts and no reading images. Phase 5 is complete.
+
+
+## Title-page credit update - 2026-09-09
+
+Added Compiled by Harsh Kankaria, the GitHub project link, a clickable LinkedIn icon (https://linkedin.com/in/harshkankaria9), and a disclaimer distinguishing essay ownership from compilation/layout and stating no author affiliation or endorsement. Removed font-family and generated-settings lines. Added version 1.0 and compilation date 2026-09-09; latest dated essay month is derived from all included records, currently August 2026 (How Universities Should Prepare Founders). Unknown dates remain unknown.
+
+Checked `output/sample-20260909-182821-af5c8295.pdf`: 11 pages; page 2 visually inspected; credit/version/dates/disclaimer text and both external PDF links passed. Reusable renderer/template refreshed. No full rebuild or broad test suite: the user requested the command to generate the final file. The previous full book remains `output/full-20260909-180513-3c502f76.pdf` and does not contain these new credits. Run `.\.venv\Scripts\python.exe -m src.pdf_builder --full` from the project directory to produce the new complete edition; the command prints the new filename. All phases remain complete; this is a subsequent title-page change.

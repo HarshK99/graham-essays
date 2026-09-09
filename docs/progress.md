@@ -29,7 +29,7 @@ Documentation-only inspection and local link checks. No phase code, browser work
 
 ## Next action
 
-No phase remains. Open `output/full-20260909-180513-3c502f76.pdf` for the final book. Future changes are optional: edit private settings or request a specific change, export a uniquely named file, and use focused checks appropriate to that change. Do not restart the completed phase or repeat device review. Keep annotated copies separate.
+Title-page credits and edition details are implemented and checked in `output/sample-20260909-182821-af5c8295.pdf`. To include them in the full book, run `.\.venv\Scripts\python.exe -m src.pdf_builder --full`; the new filename is printed under `output/`. The existing full PDF predates this update. All five phases are complete; no repeat device review or broad audit is needed for this change. Keep annotated copies separate.
 
 ## Phase work log
 
@@ -284,3 +284,10 @@ User approved the cover/theme with "perfect - move ahead". Promoted the artwork 
 Focused final check passed with no issues: 224 selected essays/order/opening titles, four contents pages, bookmarks/destinations, 1,347 header-return links, embedded fonts and zero reading images. Cover text is selectable with exactly one cover image. Visually inspected cover, first contents and first essay page in `output/review/orange-final/`; earlier full-book inspection remains applicable to unchanged pagination. No broad test suite repeated.
 
 Refreshed reusable runtime and guidance, retaining a generic typographic orange cover and optional artwork support. Independent original manuscript export: `../book-design-orange-final-20260909/output/full-20260909-180443-8619ff11.pdf`, five pages, no audit issues; cover and first chapter visually inspected. Updated README, settings/setup docs, design decisions, review and plan. All phases complete; no next phase or pending user approval. Source/docs/artwork sharing follows existing authorisation; books, essay data, annotations and private settings stay local. Device testing completion is based on user feedback.
+
+
+## Title-page credit update - 2026-09-09
+
+Added Compiled by Harsh Kankaria, the GitHub project link, a clickable LinkedIn icon (https://linkedin.com/in/harshkankaria9), and a disclaimer distinguishing essay ownership from compilation/layout and stating no author affiliation or endorsement. Removed font-family and generated-settings lines. Added version 1.0 and compilation date 2026-09-09; latest dated essay month is derived from all included records, currently August 2026 (How Universities Should Prepare Founders). Unknown dates remain unknown.
+
+Checked `output/sample-20260909-182821-af5c8295.pdf`: 11 pages; page 2 visually inspected; credit/version/dates/disclaimer text and both external PDF links passed. Reusable renderer/template refreshed. No full rebuild or broad test suite: the user requested the command to generate the final file. The previous full book remains `output/full-20260909-180513-3c502f76.pdf` and does not contain these new credits. Run `.\.venv\Scripts\python.exe -m src.pdf_builder --full` from the project directory to produce the new complete edition; the command prints the new filename. All phases remain complete; this is a subsequent title-page change.
