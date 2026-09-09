@@ -4,7 +4,7 @@ Last updated: 2026-09-09
 
 ## Current state
 
-Phase 1 is complete. The upstream Git history, original source, and cover are preserved; a GitHub fork exists; the native Windows setup passes in two clean Python environments, including a project path with spaces. The Windows edition uses `ipad-reading-edition`; the user has authorised committing and pushing it for sharing. No collection, browser app, or PDF has been built.
+Phase 1 is complete. The upstream Git history, original source, and cover are preserved; a GitHub fork exists; the native Windows setup passes in two clean Python environments, including a project path with spaces. Phase 1 source and sharing guides are committed and pushed to `ipad-reading-edition`, now the fork's default branch. No collection, browser app, or PDF has been built.
 
 | Phase | Status | Evidence / remaining work |
 | --- | --- | --- |
@@ -73,6 +73,10 @@ Final local-link checks passed across ten project documents, and a checklist che
 
 ### 2026-09-09 ? Sharing preparation
 
-The user requested committing and pushing Phase 1 to GitHub and maintaining relevant README files for others. Added a newcomer quick start, clear feature status, attribution/reuse notes, `docs/README.md`, and `CONTRIBUTING.md`. Replaced the machine-specific install path with a clone-and-setup example. Saved the continuing README and commit/push preference in AGENTS.md. The Windows edition will be the fork's default branch so the main repository link opens the relevant instructions; the upstream `main` branch is preserved.
+The user requested committing and pushing Phase 1 to GitHub and maintaining relevant README files for others. Added a newcomer quick start, clear feature status, attribution/reuse notes, `docs/README.md`, and `CONTRIBUTING.md`. Replaced the machine-specific install path with a clone-and-setup example. Saved the continuing README and commit/push preference in AGENTS.md. The Windows edition is the fork's default branch so the main repository link opens the relevant instructions; the upstream `main` branch is preserved.
 
-Publication commands: `git push -u origin ipad-reading-edition`, then `gh repo edit HarshK99/graham-essays --default-branch ipad-reading-edition`. Remote verification follows the push. These publish source and documentation, not an essay collection or generated book. No later phase starts as part of this request.
+Publication commands: `git push -u origin ipad-reading-edition`, then `gh repo edit HarshK99/graham-essays --default-branch ipad-reading-edition`. Remote verification confirmed the pushed commit and default branch. These publish source and documentation, not an essay collection or generated book. No later phase starts as part of this request.
+
+Verified publication: commit `4c6493575fc1e15fce6ec7ca4b6e65d7a29bd522` was pushed successfully; `git ls-remote origin refs/heads/ipad-reading-edition` matched it, and `gh repo view HarshK99/graham-essays --json defaultBranchRef,url` confirmed the default branch. Public project link: https://github.com/HarshK99/graham-essays. The subsequent documentation-only commit records this result.
+
+Sharing checks passed: current Markdown links, staged-file scope, a credential-pattern scan, the Windows readiness command, `pip check`, and `git diff --cached --check`. One trailing space in the archived upstream README was removed to pass the whitespace check; its wording is unchanged. No browser or iPad check was added. Continue with `Start phase 2`.
