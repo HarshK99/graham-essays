@@ -29,7 +29,7 @@ Documentation-only inspection and local link checks. No phase code, browser work
 
 ## Next action
 
-Title-page credits and edition details are implemented and checked in `output/sample-20260909-182821-af5c8295.pdf`. To include them in the full book, run `.\.venv\Scripts\python.exe -m src.pdf_builder --full`; the new filename is printed under `output/`. The existing full PDF predates this update. All five phases are complete; no repeat device review or broad audit is needed for this change. Keep annotated copies separate.
+The reader-intention page, lower-half credits and lighter disclaimer are implemented and checked in `output/sample-20260909-183140-26c6d24b.pdf`. To include them in the full book, run `.\.venv\Scripts\python.exe -m src.pdf_builder --full`; the new filename is printed under `output/`. The existing full PDF predates this update. All five phases are complete; no repeat device review or broad audit is needed for this change. Keep annotated copies separate.
 
 ## Phase work log
 
@@ -291,3 +291,10 @@ Refreshed reusable runtime and guidance, retaining a generic typographic orange 
 Added Compiled by Harsh Kankaria, the GitHub project link, a clickable LinkedIn icon (https://linkedin.com/in/harshkankaria9), and a disclaimer distinguishing essay ownership from compilation/layout and stating no author affiliation or endorsement. Removed font-family and generated-settings lines. Added version 1.0 and compilation date 2026-09-09; latest dated essay month is derived from all included records, currently August 2026 (How Universities Should Prepare Founders). Unknown dates remain unknown.
 
 Checked `output/sample-20260909-182821-af5c8295.pdf`: 11 pages; page 2 visually inspected; credit/version/dates/disclaimer text and both external PDF links passed. Reusable renderer/template refreshed. No full rebuild or broad test suite: the user requested the command to generate the final file. The previous full book remains `output/full-20260909-180513-3c502f76.pdf` and does not contain these new credits. Run `.\.venv\Scripts\python.exe -m src.pdf_builder --full` from the project directory to produce the new complete edition; the command prints the new filename. All phases remain complete; this is a subsequent title-page change.
+
+
+## Reader-intention page revision - 2026-09-10
+
+Page 2 now begins with the selection introduction. Added About the format: right-side space for notes beside passages, bottom space for reflections/sketches/ideas, framed around active reading rather than any device. Moved compiler credit, edition details and links into the lower half; made the ownership disclaimer a lighter readable grey. Compilation date is 10 September 2026; version remains 1.0 and essay coverage August 2026.
+
+Preview: `output/sample-20260909-183140-26c6d24b.pdf` (UTC filename), 11 pages. Visually inspected page 2, verified text order and both external link destinations. Refreshed the reusable renderer/template. No full rebuild or broad test suite. To create the complete updated book, run `.\.venv\Scripts\python.exe -m src.pdf_builder --full`. Existing full PDFs remain unchanged.

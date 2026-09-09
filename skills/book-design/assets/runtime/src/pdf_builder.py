@@ -171,8 +171,14 @@ def build(selected=None, settings=None, root=ROOT, output=None, excerpts=None,
             edition_note = (f"All {len(records)} included pieces from the saved catalog; "
                             f"{len(build_record['intentionally_excluded'])} intentionally excluded."
                             if full else 'This sample is not the complete collection.')
-            title = ('<div class="title-page"><div class="eyebrow">' + html.escape(author.upper())
-                     + '</div><h1>' + html.escape(title_text) + '</h1><p>A reading edition</p>')
+            title = ('<div class="title-page"><div class="edition-introduction">'
+                     + '<p class="edition-lead">A selection of ' + str(len(records))
+                     + ' pieces, with space to think in the margins.</p>'
+                     + '<p>' + html.escape(source_credit) + '</p>')
+            if book.get('format_note'):
+                title += '<h2>About the format</h2><p>' + html.escape(book['format_note']) + '</p>'
+            title += ('<p class="edition-scope">Prepared for personal reading. ' + edition_note
+                      + '</p></div><div class="compiler-details">')
             if book.get('compiled_by'):
                 title += '<p class="compiler">Compiled by ' + html.escape(book['compiled_by']) + '</p>'
             edition_details = []
@@ -189,11 +195,6 @@ def build(selected=None, settings=None, root=ROOT, output=None, excerpts=None,
                 if dates:
                     latest = datetime.strptime(max(dates)[:7], '%Y-%m')
                     title += '<p class="edition-details">Latest dated essay in this edition: ' + latest.strftime('%B %Y') + '</p>'
-            title += ('<div class="colophon"><p>A selection of ' + str(len(records))
-                      + ' pieces, with space to think in the margins.</p><p>' + html.escape(source_credit)
-                      + '</p><p>Prepared for personal reading. ' + edition_note + '</p>')
-            if book.get('disclaimer'):
-                title += '<p>' + html.escape(book['disclaimer']) + '</p>'
             if book.get('project_url'):
                 title += ('<p class="project-credit">Project on GitHub<br><a href="'
                           + html.escape(book['project_url'], quote=True) + '">'
@@ -201,6 +202,8 @@ def build(selected=None, settings=None, root=ROOT, output=None, excerpts=None,
             if book.get('linkedin_url'):
                 title += ('<p><a class="linkedin-icon" aria-label="LinkedIn profile" href="'
                           + html.escape(book['linkedin_url'], quote=True) + '">in</a></p>')
+            if book.get('disclaimer'):
+                title += '<p class="ownership-note">' + html.escape(book['disclaimer']) + '</p>'
             title += '</div></div>'
             title_pdf = render(page, title, css, s, (48, 48, 48, 48))
             front_count = len(PdfReader(BytesIO(cover_pdf)).pages) + len(PdfReader(BytesIO(title_pdf)).pages)

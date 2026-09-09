@@ -32,12 +32,16 @@ li { widows: 3; orphans: 3; margin-bottom: 5pt; }
 .cover h1 { font-weight: 400; font-size: 76pt; line-height: .94; margin: 95pt 0 30pt; letter-spacing: -2pt; }
 .cover .author { font-size: 27pt; }
 .cover .edition { position: absolute; bottom: 48pt; left: 48pt; font: 11pt/1.6 var(--label); letter-spacing: 1pt; }
-.title-page { padding-top: 90pt; }
-.title-page h1 { font-size: 48pt; font-weight: 400; margin: 34pt 0 20pt; }
-.title-page .compiler { margin-top: 26pt; font: 600 12pt/1.5 var(--label); }
+.title-page { padding-top: 34pt; font: 11pt/1.55 var(--label); }
+.title-page .edition-introduction { min-height: 370pt; max-width: 410pt; }
+.title-page .edition-lead { font: 400 25pt/1.25 var(--body); margin-bottom: 24pt; }
+.title-page .edition-introduction h2 { margin: 30pt 0 12pt; }
+.title-page .edition-scope { color: var(--accent); font-size: 10pt; margin-top: 22pt; }
+.title-page .compiler-details { max-width: 410pt; }
+.title-page .compiler { margin: 0 0 12pt; font: 600 12pt/1.5 var(--label); }
 .title-page .edition-details { font: 10pt/1.5 var(--label); color: var(--accent); margin-bottom: 8pt; }
-.title-page .colophon { margin-top: 52pt; max-width: 390pt; font: 11pt/1.55 var(--label); color: var(--accent); }
-.title-page .colophon p { margin-bottom: 16pt; }
+.title-page .project-credit { margin: 18pt 0 12pt; }
+.title-page .ownership-note { color: #78736e; font: 9pt/1.5 var(--label); margin-top: 22pt; }
 .linkedin-icon { display: inline-block; width: 22pt; height: 22pt; border-radius: 2pt; background: var(--accent); color: white; text-align: center; text-decoration: none; font: 600 17pt/22pt var(--label); }
 .contents h1 { font-size: 28pt; margin-bottom: 20pt; }
 .toc-columns { column-count: var(--contents-columns); column-gap: 24pt; }
