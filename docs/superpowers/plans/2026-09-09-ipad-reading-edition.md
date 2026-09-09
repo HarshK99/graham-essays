@@ -230,3 +230,6 @@ Phase 5 final production: the approved 224-essay edition is 1,348 pages / 13,603
 - [x] Receive preview approval, export the full book once, refresh the reusable skill and finish source/documentation sharing. The earlier iPad review is complete by user report.
 
 Final closeout: all phases complete. Approved orange edition `full-20260909-180513-3c502f76.pdf`: 1,348 pages, 16,420,926 bytes, 224 essays. Focused checks passed, refreshed original package example passed, user-reported iPad review complete. No remaining phase.
+
+
+- [x] 2026-09-10 follow-up: deliver approved simplified edition page in `output/paul-graham-essays.pdf`, verify title/links/count/hash, and remove stale generated outputs under renewed user authorisation. Final 1,348 pages / 16,431,237 bytes; no remaining task.

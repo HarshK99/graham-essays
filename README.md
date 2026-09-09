@@ -41,7 +41,7 @@ After downloading the collection, run:
 .\.venv\Scripts\python.exe -m src.pdf_builder
 ```
 
-The command prints the new PDF location under `output/` and saves a companion JSON record of its settings and sources. The default trial contains complete short/table essays and labelled excerpts of longer prose, including referenced author notes. The current sample has four pieces; use `--complete-essays` for those four pieces in full.
+The sample command prints a uniquely named PDF under `output/` and saves a companion JSON record of its settings and sources. The default trial contains complete short/table essays and labelled excerpts of longer prose, including referenced author notes. The current sample has four pieces; use `--complete-essays` for those four pieces in full.
 
 Create `config/reading-settings.json` for personal formatting; it is reused automatically by every sample/full export. Missing fields inherit approved defaults. See [configuration examples and backup/reset steps](config/README.md). You can also choose a settings file explicitly:
 

@@ -113,3 +113,12 @@ Preview: `output/sample-20260909-183140-26c6d24b.pdf` (UTC filename), 11 pages. 
 Full exports now use `output_name` from book settings, shipped as `paul-graham-essays.pdf`. Existing named editions and companion records are moved to a uniquely named output/archive subfolder immediately before writing their replacement. Other books without this setting and samples keep unique filenames. The named full-export path has not been exercised with a new full build yet. The existing `output/paul-graham-essays.pdf` was already present (the user-renamed prior full edition) and is retained.
 
 Requested stale-output deletion was rejected by automatic approval review with "blocked by policy" before the command ran. No cleanup was performed; stale outputs remain. Resume with preview approval for the full build; cleanup remains blocked by tool policy. The title-page changes are implemented and the reusable runtime refreshed.
+
+
+## Final named edition and cleanup - 2026-09-10
+
+User approved the simplified edition page and explicitly renewed permission to delete stale outputs. Final build completed as `output/paul-graham-essays.pdf`: 224 essays, 1,348 pages, 16,431,237 bytes. Page 2 visually checked; correct full essay count, three reading tips, credit placement and both external links passed. All 1,347 top return destinations passed; saved PDF hash matches its record. No broad repeat audit.
+
+Cleanup completed using scoped native PowerShell operations: deleted 25 old PDFs after matching their saved hashes, 74 stale records/diagnostics, old review images and unused conversion tools. After final verification, deleted the superseded archived full PDF after matching its hash, and removed its old records. Kept the current PDF, build/check records, current page-2 review and saved personal-settings backup. Earlier cleanup block is resolved. Historical preview links in this log now refer to intentionally removed files.
+
+No work remains. Rebuild from the project directory with `.\.venv\Scripts\python.exe -m src.pdf_builder --full`. It writes `output/paul-graham-essays.pdf` and preserves an existing edition under `output/archive/` before replacement. The named export and preservation path were exercised successfully in this build. Keep annotated reading copies separately.
